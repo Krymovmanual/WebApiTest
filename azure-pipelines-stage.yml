@@ -1,0 +1,36 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: windows-latest
+
+variables:
+  - group: WebApiTest-Stage
+
+steps:
+  - checkout: self
+
+  - task: UseDotNet@2
+    displayName: Use .NET 8 SDK
+    inputs:
+      packageType: sdk
+      version: 8.x
+
+  - script: dotnet restore WebApiTest.sln
+    displayName: Restore
+
+  - script: dotnet build WebApiTest.sln --configuration Release --no-restore
+    displayName: Build
+
+  - script: dotnet test WebApiTest.sln --configuration Release --no-build --logger trx
+    displayName: Run tests
+    env:
+      STAGE_USERNAME: $(STAGE_USERNAME)
+      STAGE_PASSWORD: $(STAGE_PASSWORD)

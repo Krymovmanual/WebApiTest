@@ -1,167 +1,173 @@
-﻿using System;
-using System.Net.Http;
-using System.Text;
+using System;
 using System.Threading.Tasks;
+using WebApiTest.API.Clients;
 using Newtonsoft.Json.Linq;
 using Xunit;
 
-namespace ApiTests
+namespace WebApiTest
 {
     public class FireblocksProviderTests
     {
-        private readonly HttpClient _client;
-        private const string BearerToken = "";
-
-        public FireblocksProviderTests()
-        {
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri("https://dev-qfwebapi.bkgdsvc.com")
-            };
-
-            _client.DefaultRequestHeaders.Add("Authorization", $"Bearer {BearerToken}");
-        }
-
-        private async Task<JObject> PostRequestAsync(string endpoint)
-        {
-            var requestBody = new StringContent("{}", Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync(endpoint, requestBody);
-
-            Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
-
-            var content = await response.Content.ReadAsStringAsync();
-            var jsonResponse = JObject.Parse(content);
-
-            Assert.NotNull(jsonResponse);
-            Assert.Equal("ok", jsonResponse["error"]?.ToString());
-
-            return jsonResponse;
-        }
+        private readonly FireblocksProviderClient client = new();
 
         [Fact]
         public async Task GetExchangeAccounts_ShouldReturnValidResponse()
         {
-            var jsonResponse = await PostRequestAsync("/api/FireblocksProvider/getExchangeAccounts");
+            var jsonResponse = await client.GetExchangeAccountsAsync();
             var resultArray = jsonResponse["result"] as JArray;
 
             Assert.NotNull(resultArray);
-            Assert.NotEmpty(resultArray);
+            Assert.NotEmpty(resultArray!);
+
+            var assertions = new List<Action>();
 
             foreach (var item in resultArray)
             {
-                Assert.NotNull(item["id"]);
-                Assert.NotNull(item["type"]);
-                Assert.NotNull(item["name"]);
-                Assert.NotNull(item["assets"]);
-
-                Assert.Matches(@"^[a-f0-9\-]{36}$", item["id"].ToString());
-                Assert.Contains(item["type"].ToString(), new[] { "DERIBIT_TESTNET", "BITMEX_TESTNET" });
-
                 var assetsArray = item["assets"] as JArray;
-                Assert.NotNull(assetsArray);
-                Assert.NotEmpty(assetsArray);
+
+                assertions.AddRange(new Action[]
+                {
+                    () => Assert.NotNull(item["id"]),
+                    () => Assert.NotNull(item["type"]),
+                    () => Assert.NotNull(item["name"]),
+                    () => Assert.NotNull(item["assets"]),
+                    () => Assert.Matches(@"^[a-f0-9\-]{36}$", item["id"]!.ToString()),
+                    () => Assert.Contains(item["type"]!.ToString(), new[] { "DERIBIT_TESTNET", "BITMEX_TESTNET" }),
+                    () => Assert.NotNull(assetsArray),
+                    () => Assert.NotEmpty(assetsArray!)
+                });
+
+                if (assetsArray is null)
+                {
+                    continue;
+                }
 
                 foreach (var asset in assetsArray)
                 {
-                    Assert.NotNull(asset["id"]);
-                    Assert.NotNull(asset["total"]);
-                    Assert.NotNull(asset["balance"]);
-                    Assert.NotNull(asset["lockedAmount"]);
-                    Assert.NotNull(asset["available"]);
-
-                    decimal total = Convert.ToDecimal(asset["total"]);
-                    decimal balance = Convert.ToDecimal(asset["balance"]);
-                    decimal lockedAmount = Convert.ToDecimal(asset["lockedAmount"]);
-                    decimal available = Convert.ToDecimal(asset["available"]);
-
-                    Assert.True(total >= 0);
-                    Assert.True(balance >= 0);
-                    Assert.True(lockedAmount >= 0);
-                    Assert.True(available >= 0);
+                    assertions.AddRange(new Action[]
+                    {
+                        () => Assert.NotNull(asset["id"]),
+                        () => Assert.NotNull(asset["total"]),
+                        () => Assert.NotNull(asset["balance"]),
+                        () => Assert.NotNull(asset["lockedAmount"]),
+                        () => Assert.NotNull(asset["available"]),
+                        () => Assert.True(Convert.ToDecimal(asset["total"]) >= 0),
+                        () => Assert.True(Convert.ToDecimal(asset["balance"]) >= 0),
+                        () => Assert.True(Convert.ToDecimal(asset["lockedAmount"]) >= 0),
+                        () => Assert.True(Convert.ToDecimal(asset["available"]) >= 0)
+                    });
                 }
             }
+
+            Assert.Multiple(assertions.ToArray());
         }
 
         [Fact]
         public async Task GetAssets_ShouldReturnValidResponse()
         {
-            var jsonResponse = await PostRequestAsync("/api/FireblocksProvider/getAssets");
+            var jsonResponse = await client.GetAssetsAsync();
             var resultArray = jsonResponse["result"] as JArray;
 
             Assert.NotNull(resultArray);
-            Assert.NotEmpty(resultArray);
+            Assert.NotEmpty(resultArray!);
+
+            var assertions = new List<Action>();
 
             foreach (var item in resultArray)
             {
-                Assert.NotNull(item["id"]);
-                Assert.NotNull(item["name"]);
-                Assert.NotNull(item["type"]);
-                Assert.NotNull(item["contractAddress"]);
-                Assert.NotNull(item["nativeAsset"]);
-                Assert.NotNull(item["decimals"]);
+                assertions.AddRange(new Action[]
+                {
+                    () => Assert.NotNull(item["id"]),
+                    () => Assert.NotNull(item["name"]),
+                    () => Assert.NotNull(item["type"]),
+                    () => Assert.NotNull(item["contractAddress"]),
+                    () => Assert.NotNull(item["nativeAsset"]),
+                    () => Assert.NotNull(item["decimals"]),
+                    () => Assert.True(Convert.ToInt32(item["decimals"]) >= 0)
+                });
 
-                string contractAddress = item["contractAddress"].ToString();
+                string contractAddress = item["contractAddress"]?.ToString() ?? string.Empty;
                 if (!string.IsNullOrEmpty(contractAddress))
                 {
-                    Assert.Matches(@"^0x[a-fA-F0-9]{40}$", contractAddress);
+                    assertions.Add(() => Assert.Matches(@"^0x[a-fA-F0-9]{40}$", contractAddress));
                 }
-
-                int decimals = Convert.ToInt32(item["decimals"]);
-                Assert.True(decimals >= 0);
             }
+
+            Assert.Multiple(assertions.ToArray());
         }
 
         [Fact]
         public async Task GetFiatAccounts_ShouldReturnValidResponse()
         {
-            var jsonResponse = await PostRequestAsync("/api/FireblocksProvider/getFiatAccounts");
+            var jsonResponse = await client.GetFiatAccountsAsync();
             Assert.NotNull(jsonResponse);
         }
-        
 
         [Fact]
         public async Task GetInternalWallets_ShouldReturnValidResponse()
         {
-            var jsonResponse = await PostRequestAsync("/api/FireblocksProvider/getInternalWallets");
+            var jsonResponse = await client.GetInternalWalletsAsync();
             var resultArray = jsonResponse["result"] as JArray;
 
             Assert.NotNull(resultArray);
-            Assert.NotEmpty(resultArray);
+            Assert.NotEmpty(resultArray!);
+
+            var assertions = new List<Action>();
 
             foreach (var item in resultArray)
             {
-                Assert.NotNull(item["id"]);
-                Assert.NotNull(item["name"]);
-                Assert.NotNull(item["assets"]);
-
                 var assetsArray = item["assets"] as JArray;
-                Assert.NotNull(assetsArray);
+
+                assertions.AddRange(new Action[]
+                {
+                    () => Assert.NotNull(item["id"]),
+                    () => Assert.NotNull(item["name"]),
+                    () => Assert.NotNull(item["assets"]),
+                    () => Assert.NotNull(assetsArray)
+                });
+
+                if (assetsArray is null)
+                {
+                    continue;
+                }
 
                 foreach (var asset in assetsArray)
                 {
-                    Assert.NotNull(asset["id"]);
-                    Assert.NotNull(asset["status"]);
-                    Assert.Contains(asset["status"].ToString(), new[] { "APPROVED", "PENDING" });
+                    assertions.AddRange(new Action[]
+                    {
+                        () => Assert.NotNull(asset["id"]),
+                        () => Assert.NotNull(asset["status"]),
+                        () => Assert.Contains(asset["status"]!.ToString(), new[] { "APPROVED", "PENDING" })
+                    });
                 }
             }
+
+            Assert.Multiple(assertions.ToArray());
         }
+
         [Fact]
         public async Task GetExternalWallets_ShouldReturnValidResponse()
         {
-            var jsonResponse = await PostRequestAsync("/api/FireblocksProvider/getExternalWallets");
+            var jsonResponse = await client.GetExternalWalletsAsync();
             var resultArray = jsonResponse["result"] as JArray;
 
             Assert.NotNull(resultArray);
 
+            var assertions = new List<Action>();
+
             foreach (var item in resultArray)
             {
-                Assert.NotNull(item["id"]);
-                Assert.Matches(@"^[a-f0-9\-]{36}$", item["id"].ToString());
-                Assert.NotNull(item["name"]);
-                Assert.NotNull(item["assets"]);
-                Assert.IsType<JArray>(item["assets"]);
+                assertions.AddRange(new Action[]
+                {
+                    () => Assert.NotNull(item["id"]),
+                    () => Assert.Matches(@"^[a-f0-9\-]{36}$", item["id"]!.ToString()),
+                    () => Assert.NotNull(item["name"]),
+                    () => Assert.NotNull(item["assets"]),
+                    () => Assert.IsType<JArray>(item["assets"])
+                });
             }
+
+            Assert.Multiple(assertions.ToArray());
         }
     }
 }
-    

@@ -1,0 +1,3 @@
+WebApiTest/bin/*
+WebApiTest/obj/*
+stage_creds.json
