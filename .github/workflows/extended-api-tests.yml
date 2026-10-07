@@ -1,0 +1,42 @@
+name: Extended API tests
+
+on:
+  push:
+    branches: [main, feature/extended-api-tests]
+    paths:
+      - 'WebApiTest.Extended/**'
+      - '.github/workflows/extended-api-tests.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'WebApiTest.Extended/**'
+      - '.github/workflows/extended-api-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      WEBAPI_RUN_LIVE: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore
+        run: dotnet restore WebApiTest.Extended/WebApiTest.Extended.csproj
+      - name: Build
+        run: dotnet build WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-restore
+      - name: Run offline tests
+        run: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --filter 'Suite=Offline' --logger trx --results-directory TestResults
+      - name: Save test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extended-api-offline-results
+          path: TestResults/*.trx
+          if-no-files-found: ignore
