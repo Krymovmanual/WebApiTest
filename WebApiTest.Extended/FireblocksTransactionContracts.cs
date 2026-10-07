@@ -32,7 +32,7 @@ internal static class FireblocksTransactionChecks
         Assert.True(decimal.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var number), "Invalid amount.");
         return number;
     }
-    public static void History(JObject result, int limit)
+    public static void History(JObject result, int limit, bool descending = true)
     {
         var transactions = Assert.IsType<JArray>(result["transactions"]);
         Assert.InRange(transactions.Count, 0, limit); ProviderReadContracts.UniqueIds(transactions, "id");
@@ -45,7 +45,9 @@ internal static class FireblocksTransactionChecks
                 Assert.Equal(JTokenType.Integer, tx[field]?.Type); Assert.True(tx.Value<long>(field) >= 0);
             }
             var created = tx.Value<long>("createdAt");
-            if (previous != null) Assert.True(created <= previous, "Transactions are not ordered by createdAt DESC.");
+            if (previous != null) Assert.True(descending ? created <= previous : created >= previous,
+                $"Transactions are not ordered by createdAt {(descending ? "DESC" : "ASC")}.");
+            Assert.True(tx.Value<long>("lastUpdated") >= created, "Transaction update timestamp precedes creation.");
             previous = created;
             foreach (var field in new[] { "source", "destination" })
                 ProviderReadContracts.RequiredString(Assert.IsType<JObject>(tx[field]), "type");
@@ -61,6 +63,9 @@ internal static class FireblocksTransactionChecks
             foreach (var field in new[] { "amount", "requestedAmount", "netAmount", "amountUSD" })
                 if (amountInfo[field] != null && amountInfo[field]!.Type != JTokenType.Null)
                     ProviderReadContracts.NonNegativeNumber(amountInfo[field]);
+            if (amountInfo["requestedAmount"] != null && amountInfo["requestedAmount"]!.Type != JTokenType.Null)
+                Assert.Equal(ProviderReadContracts.NonNegativeNumber(tx["requestedAmount"]),
+                    ProviderReadContracts.NonNegativeNumber(amountInfo["requestedAmount"]));
             var feeInfo = Assert.IsType<JObject>(tx["feeInfo"]);
             foreach (var field in new[] { "networkFee", "serviceFee" })
                 if (feeInfo[field] != null && feeInfo[field]!.Type != JTokenType.Null)
@@ -110,5 +115,33 @@ public class FireblocksTransactionCheckTests(ITestOutputHelper output)
         var data = Failed(); var newer = data["transactions"]![0]!.DeepClone(); newer["id"] = "newer"; newer["createdAt"] = 4;
         ((JArray)data["transactions"]!).Add(newer);
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2));
+    }
+    [Fact]
+    public void UpdateTimestampBeforeCreationFails()
+    {
+        var data = Failed(); data["transactions"]![0]!["lastUpdated"] = 1;
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2));
+    }
+    [Fact]
+    public void InconsistentRequestedAmountFails()
+    {
+        var data = Failed(); data["transactions"]![0]!["amountInfo"]!["requestedAmount"] = "0.000002";
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2));
+    }
+    [Fact]
+    public void EquivalentRequestedAmountsPreserveDecimalPrecision()
+    {
+        var data = Failed(); data["transactions"]![0]!["amountInfo"]!["requestedAmount"] = "0.000001000000000000";
+        FireblocksTransactionChecks.History(data, 2);
+    }
+    [Fact]
+    public void AscendingOrderPassesAndIgnoredAscendingOrderFails()
+    {
+        var data = Failed(); var newer = data["transactions"]![0]!.DeepClone();
+        newer["id"] = "newer"; newer["createdAt"] = 4; newer["lastUpdated"] = 5;
+        ((JArray)data["transactions"]!).Add(newer);
+        FireblocksTransactionChecks.History(data, 2, false);
+        data["transactions"] = new JArray(data["transactions"]!.Reverse().Select(tx => tx.DeepClone()));
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2, false));
     }
 }

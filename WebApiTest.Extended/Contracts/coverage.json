@@ -419,7 +419,9 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "ReadContract",
-    "nextStep": "Extend data and negative checks where supported"
+    "nextStep": "Run FireblocksScenarioContracts on DEV; distinguish test-data prerequisites and unsupported wrapper forwarding from API defects",
+    "additionalScenarios": "Catalog/Vault/History identity relationships",
+    "additionalScenariosLiveVerification": "PendingDEVRun"
   },
   {
     "method": "POST",
@@ -429,7 +431,9 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "ReadContract",
-    "nextStep": "Extend data and negative checks where supported"
+    "nextStep": "Run FireblocksScenarioContracts on DEV; distinguish test-data prerequisites and unsupported wrapper forwarding from API defects",
+    "additionalScenarios": "Full cursor traversal, nonadjacent duplicates, catalog relationships",
+    "additionalScenariosLiveVerification": "PendingDEVRun"
   },
   {
     "method": "POST",
@@ -479,7 +483,9 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "ReadContract",
-    "nextStep": "Extend data and negative checks where supported"
+    "nextStep": "Run FireblocksScenarioContracts on DEV; distinguish test-data prerequisites and unsupported wrapper forwarding from API defects",
+    "additionalScenarios": "ASC/DESC, requestedAmount consistency, asset/source/status/hash/time filters, two-page cursor checks",
+    "additionalScenariosLiveVerification": "PendingDEVRun"
   },
   {
     "method": "POST",
