@@ -23,7 +23,7 @@ public class InfuraValidationContracts(ApiHarness api, ITestOutputHelper output)
     {
         var chain = Environment.GetEnvironmentVariable("WEBAPI_BLOCKCHAIN")!;
         var path = route.Replace("{blockchain}", Uri.EscapeDataString(chain));
-        var response = await TestReport.SendAsync(api, output, "POST", path, await TestReport.GetTokenAsync(api, output), "{}");
+        var response = await TestReport.SendAsync(api, output, "POST", path, await TestReport.GetTokenAsync(api, output), "{}", expectedStatuses: [400]);
         Assert.Equal(400, response.Status);
         var body = JObject.Parse(response.Body);
         var schema = ApiSpecification.Snapshot["paths"]![route]!["post"]!["responses"]!["400"]!["schema"]!;

@@ -28,9 +28,12 @@ internal static class TestReport
 
     internal static async Task<(int Status, string Body, double Milliseconds)> SendAsync(
         ApiHarness api, ITestOutputHelper output, string method, string path,
-        string? authorization = null, string? jsonBody = null)
+        string? authorization = null, string? jsonBody = null, int[]? expectedStatuses = null)
     {
         output.WriteLine("Request: {0} {1}", method, path);
+        var expected = expectedStatuses ?? [200];
+        output.WriteLine("Scenario: {0}; expected HTTP {1}.",
+            authorization == null ? "anonymous request" : "bearer supplied (value omitted)", string.Join(" or ", expected));
         (int Status, string Body, double Milliseconds) response;
         try { response = await api.SendAsync(method, path, authorization, jsonBody); }
         catch (Exception ex)
@@ -40,6 +43,7 @@ internal static class TestReport
         }
         output.WriteLine("HTTP {0}; elapsed {1:F0} ms; configured budget {2:F0} ms.",
             response.Status, response.Milliseconds, Settings.MaxMilliseconds);
+        ReportStatus(output, response.Status, expected);
         if (response.Status != 200) { output.WriteLine("Response body omitted. See assertion for expected status."); return response; }
         try
         {
@@ -63,6 +67,14 @@ internal static class TestReport
         }
         catch (JsonException) { output.WriteLine("Response is not valid JSON; body omitted."); }
         return response;
+    }
+
+    internal static void ReportStatus(ITestOutputHelper output, int actual, int[] expected)
+    {
+        output.WriteLine("HTTP expectation: {0}; expected {1}; actual {2}. Body/data assertions run separately.",
+            expected.Contains(actual) ? "MATCH" : "MISMATCH", string.Join(" or ", expected), actual);
+        if (actual == 401 && !expected.Contains(401))
+            output.WriteLine("Unexpected authorization rejection: check API environment and configured token/credentials. This is not a provider-data success.");
     }
 
     internal static void Describe(ITestOutputHelper output, string label, JToken token, bool names = false)

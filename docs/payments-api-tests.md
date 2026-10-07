@@ -52,3 +52,35 @@ result.accounts[0].assets[0]: id="BTC_TEST"; total=0; available=0
 ```
 
 When API authentication fails before a provider request, Output identifies authorization acquisition as the failing step; the existing assertion reports the token endpoint HTTP status without its body. Live validation still requires local credentials and is not run by CI.
+
+
+### Expected HTTP status and additional read scenarios
+
+Each request now prints expected and actual HTTP status separately from body assertions.
+Authorization rejection tests expect 401/403; their success does not verify a working provider operation.
+An authenticated read returning 401 prints an unexpected authorization rejection.
+Infura missing-body validation expects 400.
+
+New read-envelope tests cover PayRetailers `getBalance`, Bitolo `{currency}/getBalance`,
+and Infura `{blockchain}/getAccounts`. Swagger declares no body for these methods.
+These tests verify HTTP/application success and a structured result only; they have not yet
+been run against DEV and do not claim provider-specific field or financial correctness.
+Set `WEBAPI_BITOLO_CURRENCY` to a currency configured in DEV and `WEBAPI_BLOCKCHAIN`
+to a supported DEV chain in your runsettings to enable the corresponding tests. No default
+currency/chain is guessed. Empty collections are permitted.
+Other providers with an undocumented body still require verified request examples.
+`Contracts/coverage.json` and `docs/coverage.csv` include the next step for every Swagger operation.
+
+### Save a readable report and TRX together
+
+From Developer PowerShell at the repository root:
+
+```powershell
+.\scripts\Run-ExtendedTests.ps1
+```
+
+The script runs Extended with `dev.runsettings` and saves both `extended-results.trx`
+and `extended-results.html` in `TestResults/<timestamp>/`. Open HTML in a browser and
+expand any test to see its output. Test failures still return a failing process exit code;
+report generation does not turn them into passes. The report contains captured output and
+failure messages, so review it before sharing. No credentials are passed by the script.

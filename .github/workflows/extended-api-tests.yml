@@ -6,11 +6,13 @@ on:
     paths:
       - 'WebApiTest.Extended/**'
       - '.github/workflows/extended-api-tests.yml'
+      - 'scripts/Run-ExtendedTests.ps1'
   pull_request:
     branches: [main]
     paths:
       - 'WebApiTest.Extended/**'
       - '.github/workflows/extended-api-tests.yml'
+      - 'scripts/Run-ExtendedTests.ps1'
   workflow_dispatch:
 
 permissions:
@@ -33,10 +35,20 @@ jobs:
         run: dotnet build WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-restore
       - name: Run offline tests
         run: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --filter 'Suite=Offline' --logger trx --results-directory TestResults
+      - name: Verify readable report export
+        shell: pwsh
+        run: |
+          $trx = (Get-ChildItem TestResults/*.trx | Select-Object -First 1).FullName
+          & ./scripts/Run-ExtendedTests.ps1 -ExistingTrx $trx
+          if (!(Test-Path TestResults/extended-results.html)) { throw "HTML report missing" }
+          $report = Get-Content -Raw TestResults/extended-results.html
+          if ($report -notmatch 'ConfiguredReadCatalogContracts' -or $report -notmatch 'Passed') { throw "Test rows missing from report" }
       - name: Save test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: extended-api-offline-results
-          path: TestResults/*.trx
+          path: |
+            TestResults/*.trx
+            TestResults/*.html
           if-no-files-found: ignore
