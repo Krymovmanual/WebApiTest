@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace WebApiTest.Extended;
 
@@ -89,12 +90,24 @@ public sealed class ApiHarness : IDisposable
         var body = await response.Content.ReadAsStringAsync(); timer.Stop();
         return ((int)response.StatusCode, body, timer.Elapsed.TotalMilliseconds);
     }
+    internal static JToken ParseWireJson(string body)
+    {
+        // JSON dates are strings on the wire. Do not infer CLR Date tokens before schema validation.
+        using var text = new StringReader(body);
+        using var reader = new JsonTextReader(text) { DateParseHandling = DateParseHandling.None };
+        var value = JToken.ReadFrom(reader);
+        // Preserve JToken.Parse's rejection of extra non-comment content after the root value.
+        while (reader.Read())
+            if (reader.TokenType != JsonToken.Comment) throw new JsonReaderException("Additional JSON content after root value.");
+        return value;
+    }
+
     internal static JObject SuccessfulJson((int Status, string Body, double Milliseconds) response)
     {
         Assert.Equal(200, response.Status);
         Assert.False(string.IsNullOrWhiteSpace(response.Body), "Empty HTTP 200 response.");
         Assert.True(response.Milliseconds <= Settings.MaxMilliseconds, $"Response exceeded {Settings.MaxMilliseconds} ms; took {response.Milliseconds:F0} ms.");
-        var data = Assert.IsType<JObject>(JToken.Parse(response.Body));
+        var data = Assert.IsType<JObject>(ParseWireJson(response.Body));
         var error = data["error"];
         Assert.True(error == null || error.Type == JTokenType.Null || error.ToString() == "ok", "Provider returned an application error; value omitted.");
         Assert.NotNull(data["result"]);

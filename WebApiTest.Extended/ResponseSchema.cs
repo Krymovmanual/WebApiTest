@@ -41,6 +41,34 @@ internal static class ResponseSchema
 
 public class ResponseSchemaContracts(ITestOutputHelper output)
 {
+    [Theory, Trait("Suite", "Offline")]
+    [InlineData("2026-10-07T20:00:00Z")]
+    [InlineData("2026-10-07T23:00:00+03:00")]
+    [InlineData("2026-10-07T20:00:00.1234567Z")]
+    public void WireDateStringsRemainStringsForSchemaValidation(string timestamp)
+    {
+        var body = new JObject { ["error"] = "ok", ["result"] = new JObject { ["created_at"] = timestamp } }.ToString();
+        var parsed = ApiHarness.SuccessfulJson((200, body, 1));
+        var value = parsed["result"]!["created_at"]!;
+        Assert.Equal(JTokenType.String, value.Type);
+        Assert.Equal(timestamp, value.Value<string>());
+        ResponseSchema.Validate(value, JObject.Parse("{\"type\":\"string\"}"));
+        output.WriteLine("Timestamp preserves its JSON string type and original text.");
+    }
+
+    [Fact, Trait("Suite", "Offline")]
+    public void NumericTimestampStillFailsStringSchema()
+    {
+        var value = ApiHarness.ParseWireJson("1791403200000");
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => ResponseSchema.Validate(value, JObject.Parse("{\"type\":\"string\"}")));
+    }
+
+    [Fact, Trait("Suite", "Offline")]
+    public void WireParserRejectsExtraRootValues()
+    {
+        Assert.Throws<Newtonsoft.Json.JsonReaderException>(() => ApiHarness.ParseWireJson("{} {}"));
+    }
+
     [Fact, Trait("Suite", "Offline")]
     public void RejectsWrongTypeInsideNestedArrays()
     {
