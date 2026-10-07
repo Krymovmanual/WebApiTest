@@ -46,7 +46,7 @@ POST,/api/FireblocksProvider/getVaultAccount,FireblocksProvider,2,False,False,Ne
 POST,/api/FireblocksProvider/getFiatAccounts,FireblocksProvider,2,False,False,ReadContract
 POST,/api/FireblocksProvider/getFiatAccount,FireblocksProvider,2,False,False,NeedsVerifiedScenario
 POST,/api/FireblocksProvider/getNetworkFee,FireblocksProvider,2,False,False,NeedsVerifiedScenario
-POST,/api/FireblocksProvider/getTransactions,FireblocksProvider,2,False,False,NeedsVerifiedScenario
+POST,/api/FireblocksProvider/getTransactions,FireblocksProvider,2,False,False,ReadContract
 POST,/api/FireblocksProvider/getTransaction,FireblocksProvider,2,False,False,NeedsVerifiedScenario
 POST,/api/FireblocksProvider/createTransaction,FireblocksProvider,2,False,False,NeedsVerifiedScenario
 POST,/api/FireblocksProvider/cancelTransaction,FireblocksProvider,2,False,False,NeedsVerifiedScenario

@@ -429,7 +429,7 @@
     "authorizationCases": 2,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario"
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",

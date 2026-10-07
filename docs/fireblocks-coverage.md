@@ -97,3 +97,9 @@ Provider sources: [API reference](https://api-reference.fireblocks.com/), [offic
 `FireblocksVaultContracts` checks the successful wrapper, at most two accounts, unique account/asset IDs, names, boolean flags, nonnegative numeric amounts and nullable pagination fields. It supports missing `balance`, nullable `customerRefId`, nullable `blockHeight`, and the `"-1"` block-height sentinel. It does not assert balance totals stay equal between calls.
 
 The second live test sends the opaque `paging.after` in another POST body and checks that the next page does not repeat accounts or a nonnull cursor. Support for this request key is being tested, not predeclared as verified. No upstream nextUrl is followed and no credentials are sent to Fireblocks. If the workspace has only one page, output explicitly says advancement was not exercised.
+
+## Verified transaction-history wrapper
+
+User supplied a DEV history response for limit=2/orderBy=createdAt/sort=DESC. Added FireblocksTransactionContracts to validate limit, descending createdAt order, unique IDs, peer types and amount fields. The observed FAILED item has fee/networkFee/netAmount=-1 and nullable nested fees/height/hash. Exactly -1 is accepted for unavailable top-level values on noncompleted transactions; arbitrary negative amounts and sentinels on COMPLETED items fail. No fixed status enum, fee equality formula or mandatory txHash is imposed. Only transaction id/asset/status are logged. Cursor pagination and transaction detail remain gaps.
+
+The separately supplied low/medium/high fee response has not been assigned to getNetworkFee or estimateFeeForTransaction because its originating request was not identified.
