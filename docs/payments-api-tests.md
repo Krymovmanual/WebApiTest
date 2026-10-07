@@ -84,3 +84,49 @@ and `extended-results.html` in `TestResults/<timestamp>/`. Open HTML in a browse
 expand any test to see its output. Test failures still return a failing process exit code;
 report generation does not turn them into passes. The report contains captured output and
 failure messages, so review it before sharing. No credentials are passed by the script.
+
+
+### Fireblocks relationships and discriminating read scenarios
+
+`FireblocksScenarioContracts` contains nine live rows, separate from authorization checks:
+
+| Scenario | What must be proved |
+| --- | --- |
+| Complete vault traversal and catalog/history linkage | Reach the last page; no account or cursor repeats, including nonadjacent pages; vault and recent-history asset IDs exist in the supported catalog; at least one history transaction links to an existing source vault asset |
+| History filters (five rows) | Asset, source identity/type, completed status, transaction hash and creation-time window retain a known transaction and exclude nonmatching results |
+| History next cursor | Reuse the WebAPI route with the opaque cursor; no ID overlap and DESC order continues across the boundary |
+| History ASC/DESC (two rows) | At least two distinct timestamps, not a one-row/equal-timestamp pass |
+
+These are read-only scenarios using discovered DEV data. They do not prepare isolated test entities,
+create withdrawals, reconcile DB balances or assert that historical transfer amounts equal a current balance.
+The vault traversal stops only at a terminal cursor, with a maximum of 50 pages of two accounts.
+Exhausting the bound fails with an incomplete-coverage message; it does not silently pass a partial scan.
+A missing source/asset in the recent sample is reported as a test-data prerequisite, not proof of a backend defect.
+Retired assets may require an agreed exception policy before treating a catalog mismatch as a defect.
+
+The new history filter and `next` request keys are documented by Fireblocks, but our Swagger does not
+describe the wrapper body. Their forwarding through WebAPI is **pending live verification**:
+`Coverage=WrapperFilterCandidate` and `Coverage=WrapperCursorCandidate` identify these rows.
+The five filter scenarios require both a completed anchor and a contrasting seed record. A missing fixture
+fails explicitly; an empty result never proves filtering. Non-time filters use a window containing the
+contrasting records, so narrowing the window to the anchor cannot hide an ignored asset/source/status/hash filter.
+Provider pagination URLs are parsed as metadata only and never followed. Only `next`, `before`, and `after`
+are copied into a request to the existing WebAPI route. Cursors, hashes and request bodies are not printed.
+
+Transaction contracts also check that `lastUpdated >= createdAt` and that optional nested
+`amountInfo.requestedAmount` matches the top-level requested amount using decimal parsing.
+They do not impose equality on rounded legacy amounts, historical vs current balances, or unrelated currencies.
+
+Run this package after pulling changes:
+
+```powershell
+dotnet test .\WebApiTest.Extended\WebApiTest.Extended.csproj --settings .\WebApiTest.Extended\dev.runsettings --filter "FullyQualifiedName~FireblocksScenarioContracts" --logger "trx;LogFileName=fireblocks-scenarios.trx" --results-directory .\TestResults
+```
+
+Provider sources:
+- https://developers.fireblocks.com/api-reference/transactions/get-transaction-history
+- https://developers.fireblocks.com/api-reference/vaults/get-vault-accounts-paginated
+
+Offline regression fixtures deliberately inject ignored filters, lost anchors, cursor cycles, cross-page
+repeated identities, exhausted traversal, malicious pagination links, inverted ordering and inconsistent amounts.
+Offline passes validate the assertions; they do not verify DEV behavior.
