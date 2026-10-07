@@ -1,7 +1,6 @@
 namespace WebApiTest.Extended;
 
-// Requests carry no valid credentials and an empty body. Never retries with a real token.
-public abstract class ProviderAuthorizationTests(ApiHarness api)
+public abstract class ProviderAuthorizationContracts(ApiHarness api)
 {
     protected async Task Reject(string method, string path, string mode)
     {
@@ -12,7 +11,7 @@ public abstract class ProviderAuthorizationTests(ApiHarness api)
 }
 
 [Collection("Stage reads")]
-public class BitoloAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class BitoloAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -32,7 +31,7 @@ public class BitoloAuthorizationTests(ApiHarness api) : ProviderAuthorizationTes
 }
 
 [Collection("Stage reads")]
-public class CoinPaymentsProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class CoinPaymentsProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -52,7 +51,7 @@ public class CoinPaymentsProviderAuthorizationTests(ApiHarness api) : ProviderAu
 }
 
 [Collection("Stage reads")]
-public class ConsolidationAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class ConsolidationAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -64,7 +63,7 @@ public class ConsolidationAuthorizationTests(ApiHarness api) : ProviderAuthoriza
 }
 
 [Collection("Stage reads")]
-public class DistributedKeysAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class DistributedKeysAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -82,7 +81,7 @@ public class DistributedKeysAuthorizationTests(ApiHarness api) : ProviderAuthori
 }
 
 [Collection("Stage reads")]
-public class FacilitaPayProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class FacilitaPayProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -124,7 +123,7 @@ public class FacilitaPayProviderAuthorizationTests(ApiHarness api) : ProviderAut
 }
 
 [Collection("Stage reads")]
-public class FireblocksGasStationProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class FireblocksGasStationProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -136,7 +135,7 @@ public class FireblocksGasStationProviderAuthorizationTests(ApiHarness api) : Pr
 }
 
 [Collection("Stage reads")]
-public class FireblocksProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class FireblocksProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -190,6 +189,8 @@ public class FireblocksProviderAuthorizationTests(ApiHarness api) : ProviderAuth
         new object[] { "POST", "/api/FireblocksProvider/createInternalWallet", "malformed" },
         new object[] { "POST", "/api/FireblocksProvider/setCustomerRefIdForInternalWallet", "missing" },
         new object[] { "POST", "/api/FireblocksProvider/setCustomerRefIdForInternalWallet", "malformed" },
+        new object[] { "POST", "/api/FireblocksProvider/setCustomerRefIdForVaultAccount", "missing" },
+        new object[] { "POST", "/api/FireblocksProvider/setCustomerRefIdForVaultAccount", "malformed" },
         new object[] { "POST", "/api/FireblocksProvider/createInternalWalletAsset", "missing" },
         new object[] { "POST", "/api/FireblocksProvider/createInternalWalletAsset", "malformed" },
         new object[] { "POST", "/api/FireblocksProvider/deleteInternalWalletAsset", "missing" },
@@ -234,7 +235,55 @@ public class FireblocksProviderAuthorizationTests(ApiHarness api) : ProviderAuth
 }
 
 [Collection("Stage reads")]
-public class KashaProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class InfuraAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+{
+    public static IEnumerable<object[]> Cases => new object[][]
+    {
+        new object[] { "POST", "/api/Infura/ethereum/getAccounts", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getAccounts", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/generateAddress", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/generateAddress", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getBalance", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getBalance", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/getTransactions", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/getTransactions", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getEthTransactions", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getEthTransactions", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getBlockByNumber/0", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getBlockByNumber/0", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getTransactionRecipient", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getTransactionRecipient", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getTransactionByHash", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getTransactionByHash", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getGasPrice", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getGasPrice", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/estimateFees", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/estimateFees", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/getBalance", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/getBalance", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/getTransactionByHash", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/getTransactionByHash", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/sendTransaction", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/sendTransaction", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/boostTransaction", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/boostTransaction", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/cancelTransaction", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/token/0x0000000000000000000000000000000000000000/cancelTransaction", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/sendTransaction", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/sendTransaction", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/boostTransaction", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/boostTransaction", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/cancelTransaction", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/cancelTransaction", "malformed" },
+        new object[] { "POST", "/api/Infura/ethereum/getTransactionCount", "missing" },
+        new object[] { "POST", "/api/Infura/ethereum/getTransactionCount", "malformed" },
+    };
+    [LiveTheory, MemberData(nameof(Cases)), Trait("Suite", "Live"), Trait("Coverage", "Authorization"), Trait("Provider", "Infura")]
+    public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
+}
+
+[Collection("Stage reads")]
+public class KashaProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -248,7 +297,7 @@ public class KashaProviderAuthorizationTests(ApiHarness api) : ProviderAuthoriza
 }
 
 [Collection("Stage reads")]
-public class KoyweProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class KoyweProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -288,7 +337,7 @@ public class KoyweProviderAuthorizationTests(ApiHarness api) : ProviderAuthoriza
 }
 
 [Collection("Stage reads")]
-public class MailAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class MailAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -300,7 +349,7 @@ public class MailAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests
 }
 
 [Collection("Stage reads")]
-public class MaldoPayProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class MaldoPayProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -318,7 +367,7 @@ public class MaldoPayProviderAuthorizationTests(ApiHarness api) : ProviderAuthor
 }
 
 [Collection("Stage reads")]
-public class Nuvei_v2_ProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class Nuvei_v2_ProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -342,7 +391,7 @@ public class Nuvei_v2_ProviderAuthorizationTests(ApiHarness api) : ProviderAutho
 }
 
 [Collection("Stage reads")]
-public class NuveiProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class NuveiProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -366,7 +415,7 @@ public class NuveiProviderAuthorizationTests(ApiHarness api) : ProviderAuthoriza
 }
 
 [Collection("Stage reads")]
-public class OpenPaydProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class OpenPaydProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -392,7 +441,7 @@ public class OpenPaydProviderAuthorizationTests(ApiHarness api) : ProviderAuthor
 }
 
 [Collection("Stage reads")]
-public class PayRetailersProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class PayRetailersProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -408,7 +457,7 @@ public class PayRetailersProviderAuthorizationTests(ApiHarness api) : ProviderAu
 }
 
 [Collection("Stage reads")]
-public class QDTAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class QDTAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -420,7 +469,7 @@ public class QDTAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(
 }
 
 [Collection("Stage reads")]
-public class QuantfuryPaymentsProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class QuantfuryPaymentsProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -460,6 +509,8 @@ public class QuantfuryPaymentsProviderAuthorizationTests(ApiHarness api) : Provi
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositBitolo", "malformed" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositPaysafe", "missing" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositPaysafe", "malformed" },
+        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositZeroHash", "missing" },
+        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositZeroHash", "malformed" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/putRefundDeposit", "missing" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/putRefundDeposit", "malformed" },
     };
@@ -468,7 +519,7 @@ public class QuantfuryPaymentsProviderAuthorizationTests(ApiHarness api) : Provi
 }
 
 [Collection("Stage reads")]
-public class QuantfuryPaymentsSignAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class QuantfuryPaymentsSignAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -494,7 +545,19 @@ public class QuantfuryPaymentsSignAuthorizationTests(ApiHarness api) : ProviderA
 }
 
 [Collection("Stage reads")]
-public class WyreProviderAuthorizationTests(ApiHarness api) : ProviderAuthorizationTests(api)
+public class validate_addressAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+{
+    public static IEnumerable<object[]> Cases => new object[][]
+    {
+        new object[] { "POST", "/api/validate-address", "missing" },
+        new object[] { "POST", "/api/validate-address", "malformed" },
+    };
+    [LiveTheory, MemberData(nameof(Cases)), Trait("Suite", "Live"), Trait("Coverage", "Authorization"), Trait("Provider", "validate-address")]
+    public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
+}
+
+[Collection("Stage reads")]
+public class WyreProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {

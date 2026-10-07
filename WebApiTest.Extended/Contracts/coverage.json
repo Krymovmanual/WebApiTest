@@ -2,1931 +2,2197 @@
   {
     "method": "POST",
     "path": "/api/token",
-    "category": "AuthenticationInfrastructure",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "token",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Bitolo/{currency}/getBalance",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Bitolo",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Bitolo/{currency}/getTransactionStatus",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Bitolo",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Bitolo/{currency}/getTransactionList",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Bitolo",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Bitolo/{currency}/resendCallback",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Bitolo",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Bitolo/{currency}/withdraw",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Bitolo",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Bitolo/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Bitolo",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/getBalances",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/getExchangeRates",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/getWithdrawalInformation",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/getWithdrawalHistory",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/getCreateWithdrawal",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/ipn",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/CoinPaymentsProvider/ipnAll",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "CoinPaymentsProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Consolidation/adresses",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Consolidation",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/checkEnv",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/checkEnvAuth",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/loadDistributedKeys",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/loadDistributedKeysAuth",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/unloadDistributedKeys",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/unloadDistributedKeysAuth",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/DistributedKeys/clearKeyVault",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "DistributedKeys",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getToken",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedProviderSession"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ProviderTokenContract"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getExchangeRates",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getBankAccounts",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getBankAccount",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getBankAccountStatement",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getBankAccountBalance",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getTransactions",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/getTransaction",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/createInternalWithdrawal",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/createWithdrawal",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/enableWebhooks",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/disableWebhooks",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/refund",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/refundReceivedTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/notifications",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FacilitaPayProvider/resendNotification",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FacilitaPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksGasStationProvider/createTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksGasStationProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getAssetsData",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getAssets",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getVaultAccountsPaged",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getVaultAccount",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getFiatAccounts",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getFiatAccount",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getNetworkFee",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getTransactions",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getTransaction",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/cancelTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/estimateFeeForTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createValutAccount",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/updateVaultAccount",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/setAutoFuel",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getMaxSpendableAmount",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getUnspentInputs",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getBalance",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/refreshBalance",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createVaultAsset",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getInternalWallets",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getInternalWallet",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getInternalWalletPaginated",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getInternalWalletAsset",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createInternalWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/setCustomerRefIdForInternalWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/setCustomerRefIdForVaultAccount",
+    "provider": "FireblocksProvider",
+    "authorizationCases": 2,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createInternalWalletAsset",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/deleteInternalWalletAsset",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/deleteInternalWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getExternalWallets",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getExternalWallet",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getExternalWalletAsset",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createExternalWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/setCustomerRefIdForExternalWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createExternalWalletAsset",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/deleteExternalWalletAsset",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/deleteExternalWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getAccountAddresses",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getAccountAddressesPaginated",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/generateNewAddress",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/setCustomerRefIdForAddress",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/setDescriptionForAddress",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/createDeposit",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getExchangeAccounts",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getExchangeAccountById",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/FireblocksProvider/getFeeForAsset",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "FireblocksProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "GET",
     "path": "/api/DeployDate",
-    "category": "LiveSmoke",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "DeployDate",
     "authorizationCases": 0,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "GET",
     "path": "/api/Version",
-    "category": "LiveSmoke",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Version",
     "authorizationCases": 0,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getAccounts",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/generateAddress",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getBalance",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "MissingRequiredBodyValidationOnly"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/getTransactions",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getEthTransactions",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getBlockByNumber/{blockNumber}",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getTransactionRecipient",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getTransactionByHash",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "MissingRequiredBodyValidationOnly"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getGasPrice",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/estimateFees",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/getBalance",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/sendTransaction",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/boostTransaction",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/cancelTransaction",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/sendTransaction",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/boostTransaction",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/cancelTransaction",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getTransactionCount",
+    "provider": "Infura",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "MissingRequiredBodyValidationOnly"
   },
   {
     "method": "POST",
     "path": "/api/KashaProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KashaProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KashaProvider/getPayoutInfo",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KashaProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KashaProvider/createPayout",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KashaProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getToken",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedProviderSession"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ProviderTokenContract"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getAccounyInfo",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getAllCurrencyTokenPairs",
-    "category": "LiveReadContract",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedRead"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getCurrencyTokenPairs",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getAllTokenCurrenciesPairs",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getTokenCurrenciesPairs",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getPaymentMethods",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getPayoutMethods",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getHistory",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getOrderInfo",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getOrderInfoByExternalId",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/postOrder",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/getBalance",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "GET",
     "path": "/api/KoyweProvider/quotes/{quoteId}",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": false,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/KoyweProvider/quotes",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": false,
+    "provider": "KoyweProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Mail/sendMail",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Mail",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/MaldoPayProvider/createTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "MaldoPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/MaldoPayProvider/сheckTransactionStatus",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "MaldoPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/MaldoPayProvider/getBalance",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "MaldoPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/MaldoPayProvider/getHistory",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "MaldoPayProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/MaldoPayProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "MaldoPayProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/getSessionToken",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/payout",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/getPayoutStatus",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/getRequests",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/approveRequest",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/cancelRequest",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/submitRequest",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/eventWebhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Nuvei_v2_Provider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/getSessionToken",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedProviderSession"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ProviderTokenContract"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/payout",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/getPayoutStatus",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/getRequests",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/approveRequest",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/cancelRequest",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/submitRequest",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/NuveiProvider/eventWebhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "NuveiProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/getToken",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "ImplementedProviderSession"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "ProviderTokenContract"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/getHistory",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/getTransactionInfo",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/createSweepTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/updateTransaction",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/updatePayoutStatus",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/getAccount",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/OpenPaydProvider/getAccounts",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "OpenPaydProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/PayRetailersProvider/getBalance",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "PayRetailersProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/PayRetailersProvider/getPayoutInfo",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "PayRetailersProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/PayRetailersProvider/createPayout",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "PayRetailersProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/PayRetailersProvider/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "PayRetailersProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "HEAD",
     "path": "/api/Paysafe/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Paysafe",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/Paysafe/webhook",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "Paysafe",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QDT/statistic",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QDT",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/deploydate",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/getKyc",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "PUT",
     "path": "/api/QuantfuryPaymentsProvider/kyc",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/process",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/processStockWithdrawal",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/withdrawal",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/saveFee",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositCustomerAddress",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositFacilitaPay",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/checkDeposit",
-    "category": "StateChangingOrUnclassified",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositNuvei",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositPayRetailers",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositMaldoPay",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/eventWebhookNuvei",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/getCurrencyFee",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositKasha",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositKoywe",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/updateAccountKoywe",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositOpenPayd",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositBitolo",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/depositPaysafe",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/QuantfuryPaymentsProvider/depositZeroHash",
+    "provider": "QuantfuryPaymentsProvider",
+    "authorizationCases": 2,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/putRefundDeposit",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/verifySign",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/insertSignature",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/updatePublicKeyFromFile/{user_name}",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": false,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/updatePublicKey",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/checkSign",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/signBody",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/verifyBody",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/signBodyString",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/verifyBodyString",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/insertSignatureForConsolidationPayments",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/QuantfuryPaymentsSign/getCertificateData",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": false,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "QuantfuryPaymentsSign",
     "authorizationCases": 0,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/validate-address",
+    "provider": "validate-address",
+    "authorizationCases": 2,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/getBalances",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/getAccount",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/getRates",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/getWallet",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/createWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/updateWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/deleteWallet",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/createTransfer",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/confirmTransfer",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/sendTransfer",
-    "category": "StateChangingOrUnclassified",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/getHistory",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
   },
   {
     "method": "POST",
     "path": "/api/WyreProvider/getTransfer",
-    "category": "NeedsWrapperContractAndFixture",
-    "secured": true,
-    "emptyBodySchema": true,
-    "responseSchemaMissing": true,
+    "provider": "WyreProvider",
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/webhook",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/assets",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/withdrawals/requests",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/requests",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/requests/{id}",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/ZeroHashProvider/withdrawals/requests/{id}",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/locked_network_fee",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/withdrawals/execute",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/estimate_network_fee",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/digital_asset_addresses",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/digital_asset_addresses/{id}",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/validate_address",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/transfers",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/transfers",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/transfers/{id}",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/movements",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/accounts",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{accountId}",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{accountId}/movements",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{accountId}/run_history",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{zrn}/details",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/ZeroHashProvider/accounts/{zrn}",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/accounts/{zrn}/divest",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/accounts/{zrn}/close",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": false,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "POST",
+    "path": "/api/ZeroHashProvider/deposits/digital_asset_addresses",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/ZeroHashProvider/deposits/digital_asset_addresses",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": true,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "NeedsVerifiedScenario"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/deposits/digital_asset_addresses",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
+  },
+  {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/deposits",
+    "provider": "ZeroHashProvider",
+    "authorizationCases": 0,
+    "bodySchemaKnown": false,
+    "responseSchemaKnown": true,
+    "functionalCoverage": "SwaggerResponseContract"
   }
 ]

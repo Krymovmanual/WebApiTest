@@ -6,11 +6,11 @@ namespace WebApiTest.Extended;
 
 public sealed class LiveFactAttribute : FactAttribute
 {
-    public LiveFactAttribute() { if (!Settings.Live) Skip = "Set WEBAPI_RUN_LIVE=1 to run Stage integration tests."; }
+    public LiveFactAttribute() { if (!Settings.Live) Skip = "Set WEBAPI_RUN_LIVE=1 to run API integration tests."; }
 }
 public sealed class LiveTheoryAttribute : TheoryAttribute
 {
-    public LiveTheoryAttribute() { if (!Settings.Live) Skip = "Set WEBAPI_RUN_LIVE=1 to run Stage integration tests."; }
+    public LiveTheoryAttribute() { if (!Settings.Live) Skip = "Set WEBAPI_RUN_LIVE=1 to run API integration tests."; }
 }
 internal static class Settings
 {
@@ -19,7 +19,7 @@ internal static class Settings
     {
         get
         {
-            var value = Environment.GetEnvironmentVariable("WEBAPI_BASE_URL") ?? "https://qu-stage-qfwebapi.azurewebsites.net/";
+            var value = Environment.GetEnvironmentVariable("WEBAPI_BASE_URL") ?? "https://qu-dev-qfwebapi.azurewebsites.net/";
             if (!Uri.TryCreate(value, UriKind.Absolute, out var uri) || uri.Scheme != "https" ||
                 !string.IsNullOrEmpty(uri.UserInfo) || uri.Query.Length != 0 || uri.Fragment.Length != 0 ||
                 uri.AbsolutePath != "/") throw new InvalidOperationException("WEBAPI_BASE_URL must be an HTTPS origin.");
