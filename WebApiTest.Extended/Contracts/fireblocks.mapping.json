@@ -44,12 +44,12 @@
     "operation": "getVaultAccountsPaged",
     "providerOperation": "GET /vault/accounts_paged",
     "source": "https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/VaultsApi.md#getPagedVaultAccounts",
-    "mappingConfidence": "CandidateByName",
+    "mappingConfidence": "EstablishedWrapperCall",
     "action": "ReadOrEstimate",
-    "wrapperBodyVerified": false,
-    "liveFunctionalTest": null,
-    "nextStep": "Verify wrapper JSON body and representative response; then add valid/invalid read cases",
-    "notes": ""
+    "wrapperBodyVerified": true,
+    "liveFunctionalTest": "FireblocksVaultContracts",
+    "nextStep": "Run limit and cursor read checks; verify other filters separately",
+    "notes": "User supplied DEV response for limit=2/orderBy=ASC. Wrapper result contains accounts/paging/links; amounts are JSON numbers; balance can be absent; blockHeight can be null or -1. after request remains an explicit provider-based hypothesis exercised by the new test."
   },
   {
     "method": "POST",

@@ -41,7 +41,7 @@ POST,/api/FacilitaPayProvider/resendNotification,FacilitaPayProvider,2,False,Fal
 POST,/api/FireblocksGasStationProvider/createTransaction,FireblocksGasStationProvider,2,False,False,NeedsVerifiedScenario
 POST,/api/FireblocksProvider/getAssetsData,FireblocksProvider,2,False,False,NeedsVerifiedScenario
 POST,/api/FireblocksProvider/getAssets,FireblocksProvider,2,False,False,ReadContract
-POST,/api/FireblocksProvider/getVaultAccountsPaged,FireblocksProvider,2,False,False,NeedsVerifiedScenario
+POST,/api/FireblocksProvider/getVaultAccountsPaged,FireblocksProvider,2,False,False,ReadContract
 POST,/api/FireblocksProvider/getVaultAccount,FireblocksProvider,2,False,False,NeedsVerifiedScenario
 POST,/api/FireblocksProvider/getFiatAccounts,FireblocksProvider,2,False,False,ReadContract
 POST,/api/FireblocksProvider/getFiatAccount,FireblocksProvider,2,False,False,NeedsVerifiedScenario

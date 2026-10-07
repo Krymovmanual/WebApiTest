@@ -8,7 +8,8 @@ namespace WebApiTest.Extended;
 public class FireblocksReadContracts(ApiHarness api, ITestOutputHelper output)
 {
     public static readonly string[] Paths = ["/api/FireblocksProvider/getAssets", "/api/FireblocksProvider/getExchangeAccounts",
-        "/api/FireblocksProvider/getFiatAccounts", "/api/FireblocksProvider/getInternalWallets", "/api/FireblocksProvider/getExternalWallets"];
+        "/api/FireblocksProvider/getFiatAccounts", "/api/FireblocksProvider/getInternalWallets", "/api/FireblocksProvider/getExternalWallets",
+        "/api/FireblocksProvider/getVaultAccountsPaged"];
 
     private async Task<JArray> Read(string operation)
     {

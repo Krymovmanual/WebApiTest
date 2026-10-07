@@ -1,8 +1,8 @@
 # Fireblocks: wrapper coverage and provider mapping
 
-Reviewed 2026-10-07. Official SDK reference pinned to [4bc7844](https://github.com/fireblocks/ts-sdk/tree/4bc7844181b41c0947b89af0cc63b221b6718a30). All mappings outside the five established wrapper calls are hypotheses based on names, not proof of controller forwarding. No WebAPI controller/service implementation was supplied.
+Reviewed 2026-10-07. Official SDK reference pinned to [4bc7844](https://github.com/fireblocks/ts-sdk/tree/4bc7844181b41c0947b89af0cc63b221b6718a30). All mappings outside the six established wrapper calls are hypotheses based on names, not proof of controller forwarding. No WebAPI controller/service implementation was supplied.
 
-The supplied Swagger contains **49 Fireblocks operations** (including Gas Station). Only five have verified empty request bodies and successful-response checks. Authentication coverage is recorded separately in coverage.csv. Moving tests into a provider group adds no newly covered endpoint.
+The supplied Swagger contains **49 Fireblocks operations** (including Gas Station). Five have established empty-body read checks; getVaultAccountsPaged now has a user-supplied DEV response for limit=2/orderBy=ASC and tests for limit and cursor advancement. Other filters and ordering enforcement are not yet covered. Authentication coverage is recorded separately in coverage.csv. Moving the original five reads into a provider group adds no endpoint coverage; the vault listing adds one read endpoint.
 
 ## Implemented read checks
 
@@ -19,7 +19,7 @@ The supplied Swagger contains **49 Fireblocks operations** (including Gas Statio
 | `GasStation/createTransaction` | [POST /transactions](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#createTransaction) | CandidateByName | ChangesState — wrapper contract required |
 | `getAssetsData` | Unresolved | NeedsImplementation | ReadOrEstimate — wrapper contract required |
 | `getAssets` | [GET /supported_assets](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/BlockchainsAssetsApi.md#getSupportedAssets) | EstablishedWrapperCall | Read contract |
-| `getVaultAccountsPaged` | [GET /vault/accounts_paged](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/VaultsApi.md#getPagedVaultAccounts) | CandidateByName | ReadOrEstimate — wrapper contract required |
+| `getVaultAccountsPaged` | [GET /vault/accounts_paged](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/VaultsApi.md#getPagedVaultAccounts) | EstablishedWrapperCall | Read contract: limit=2 and cursor progression |
 | `getVaultAccount` | [GET /vault/accounts/{vaultAccountId}](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/VaultsApi.md#getVaultAccount) | CandidateByName | ReadOrEstimate — wrapper contract required |
 | `getFiatAccounts` | [GET /fiat_accounts](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/FiatAccountsApi.md#getFiatAccounts) | EstablishedWrapperCall | Read contract |
 | `getFiatAccount` | [GET /fiat_accounts/{accountId}](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/FiatAccountsApi.md#getFiatAccount) | CandidateByName | ReadOrEstimate — wrapper contract required |
@@ -89,3 +89,11 @@ The supplied Swagger contains **49 Fireblocks operations** (including Gas Statio
 To unblock parameterized reads, provide a working, sanitized WebAPI request/response example (or controller/service source) for getVaultAccountsPaged, getVaultAccount, getBalance, getNetworkFee and getTransactions. Provider SDK parameter names alone are insufficient evidence for the JSON keys accepted by our wrapper.
 
 Provider sources: [API reference](https://api-reference.fireblocks.com/), [official SDK endpoint index](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/README.md), [asset model](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/models/AssetTypeResponse.md), [exchange model](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/models/ExchangeAccount.md), [wallet model](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/models/UnmanagedWallet.md).
+
+## Verified DEV vault response (2026-10-07)
+
+`POST /api/FireblocksProvider/getVaultAccountsPaged`, body `{"limit":2,"orderBy":"ASC"}` returned `error:"ok"` and a `result` object with two accounts and an `after` cursor. This confirms the response shape; two returned records alone do not prove sorting enforcement.
+
+`FireblocksVaultContracts` checks the successful wrapper, at most two accounts, unique account/asset IDs, names, boolean flags, nonnegative numeric amounts and nullable pagination fields. It supports missing `balance`, nullable `customerRefId`, nullable `blockHeight`, and the `"-1"` block-height sentinel. It does not assert balance totals stay equal between calls.
+
+The second live test sends the opaque `paging.after` in another POST body and checks that the next page does not repeat accounts or a nonnull cursor. Support for this request key is being tested, not predeclared as verified. No upstream nextUrl is followed and no credentials are sent to Fireblocks. If the workspace has only one page, output explicitly says advancement was not exercised.

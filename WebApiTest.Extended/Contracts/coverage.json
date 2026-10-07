@@ -384,7 +384,7 @@
     "authorizationCases": 2,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario"
+    "functionalCoverage": "ReadContract"
   },
   {
     "method": "POST",
@@ -1171,7 +1171,7 @@
   },
   {
     "method": "POST",
-    "path": "/api/MaldoPayProvider/сheckTransactionStatus",
+    "path": "/api/MaldoPayProvider/\u0441heckTransactionStatus",
     "provider": "MaldoPayProvider",
     "authorizationCases": 2,
     "bodySchemaKnown": false,
