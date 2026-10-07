@@ -1,5 +1,6 @@
 using System.Globalization;
 using Newtonsoft.Json.Linq;
+using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
@@ -7,7 +8,7 @@ namespace WebApiTest.Extended;
 public class StageReadCollection : ICollectionFixture<ApiHarness> { }
 
 [Collection("Stage reads")]
-public class ProviderReadContracts(ApiHarness api)
+public class ProviderReadContracts(ApiHarness api, ITestOutputHelper output)
 {
     public static readonly string[] Paths = [
         "/api/FireblocksProvider/getAssets", "/api/FireblocksProvider/getExchangeAccounts",
@@ -26,6 +27,14 @@ public class ProviderReadContracts(ApiHarness api)
             var items = Assert.IsType<JArray>(result);
             // Empty configured account/wallet collections are valid.
             if (path.EndsWith("getAssets")) Assert.NotEmpty(items);
+            if (path.EndsWith("getAssets"))
+            {
+                output.WriteLine("Fireblocks assets: {0}", items.Count);
+                foreach (var asset in items)
+                    output.WriteLine("id={0}; name={1}",
+                        asset["id"]?.ToString(Newtonsoft.Json.Formatting.None),
+                        asset["name"]?.ToString(Newtonsoft.Json.Formatting.None));
+            }
             UniqueIds(items, "id");
             foreach (var item in items)
             {
