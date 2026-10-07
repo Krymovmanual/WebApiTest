@@ -130,3 +130,8 @@ Provider sources:
 Offline regression fixtures deliberately inject ignored filters, lost anchors, cursor cycles, cross-page
 repeated identities, exhausted traversal, malicious pagination links, inverted ordering and inconsistent amounts.
 Offline passes validate the assertions; they do not verify DEV behavior.
+
+
+### Bitolo, OpenPayd, FacilitaPay and Nuvei_v2
+
+See [provider-read-batch.md](provider-read-batch.md) for the fixed read catalog, known-contract batch, local verified request/assertion format and one-command run. Missing verified scenarios remain uncovered functionally.
