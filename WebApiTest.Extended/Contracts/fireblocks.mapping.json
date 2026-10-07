@@ -109,12 +109,12 @@
     "operation": "getTransactions",
     "providerOperation": "GET /transactions",
     "source": "https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#getTransactions",
-    "mappingConfidence": "CandidateByName",
+    "mappingConfidence": "EstablishedWrapperCall",
     "action": "ReadOrEstimate",
-    "wrapperBodyVerified": false,
-    "liveFunctionalTest": null,
-    "nextStep": "Verify wrapper JSON body and representative response; then add valid/invalid read cases",
-    "notes": ""
+    "wrapperBodyVerified": true,
+    "liveFunctionalTest": "FireblocksTransactionContracts",
+    "nextStep": "Run limit and sort checks; verify transaction details and cursor separately",
+    "notes": "User supplied wrapper response for limit=2/orderBy=createdAt/sort=DESC. result.transactions and pageDetails; noncompleted numeric -1 sentinels and nullable feeInfo are permitted. No fee arithmetic inferred."
   },
   {
     "method": "POST",
