@@ -1,6 +1,6 @@
 # Fireblocks: wrapper coverage and provider mapping
 
-Reviewed 2026-10-07. Official SDK reference pinned to [4bc7844](https://github.com/fireblocks/ts-sdk/tree/4bc7844181b41c0947b89af0cc63b221b6718a30). All mappings outside the six established wrapper calls are hypotheses based on names, not proof of controller forwarding. No WebAPI controller/service implementation was supplied.
+Reviewed 2026-10-07. Official SDK reference pinned to [4bc7844](https://github.com/fireblocks/ts-sdk/tree/4bc7844181b41c0947b89af0cc63b221b6718a30). All mappings outside the seven established wrapper calls are hypotheses based on names, not proof of controller forwarding. No WebAPI controller/service implementation was supplied.
 
 The supplied Swagger contains **49 Fireblocks operations** (including Gas Station). Five have established empty-body read checks; getVaultAccountsPaged now has a user-supplied DEV response for limit=2/orderBy=ASC and tests for limit and cursor advancement. Other filters and ordering enforcement are not yet covered. Authentication coverage is recorded separately in coverage.csv. Moving the original five reads into a provider group adds no endpoint coverage; the vault listing adds one read endpoint.
 
@@ -24,7 +24,7 @@ The supplied Swagger contains **49 Fireblocks operations** (including Gas Statio
 | `getFiatAccounts` | [GET /fiat_accounts](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/FiatAccountsApi.md#getFiatAccounts) | EstablishedWrapperCall | Read contract |
 | `getFiatAccount` | [GET /fiat_accounts/{accountId}](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/FiatAccountsApi.md#getFiatAccount) | CandidateByName | ReadOrEstimate — wrapper contract required |
 | `getNetworkFee` | [GET /estimate_network_fee](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#estimateNetworkFee) | CandidateByName | ReadOrEstimate — wrapper contract required |
-| `getTransactions` | [GET /transactions](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#getTransactions) | CandidateByName | ReadOrEstimate — wrapper contract required |
+| `getTransactions` | [GET /transactions](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#getTransactions) | EstablishedWrapperCall | Read contract: limit and createdAt DESC |
 | `getTransaction` | [GET /transactions/{txId}](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#getTransaction) | CandidateByName | ReadOrEstimate — wrapper contract required |
 | `createTransaction` | [POST /transactions](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#createTransaction) | CandidateByName | ChangesState — wrapper contract required |
 | `cancelTransaction` | [POST /transactions/{txId}/cancel](https://github.com/fireblocks/ts-sdk/blob/4bc7844181b41c0947b89af0cc63b221b6718a30/docs/apis/TransactionsApi.md#cancelTransaction) | CandidateByName | ChangesState — wrapper contract required |
