@@ -6,7 +6,8 @@ public abstract class ProviderAuthorizationContracts(ApiHarness api, ITestOutput
     protected async Task Reject(string method, string path, string mode)
     {
         output.WriteLine("Authorization: {0} bearer; expected HTTP 401 or 403.", mode);
-        var response = await TestReport.SendAsync(api, output, method, path, mode == "missing" ? null : "not-a-valid-token");
+        var response = await TestReport.SendAsync(api, output, method, path, mode == "missing" ? null : "not-a-valid-token", expectedStatuses: [401, 403]);
+        output.WriteLine("Negative authorization test: an expected rejection does not verify provider functionality.");
         Assert.True(response.Status is 401 or 403,
             $"{method} {path}: {mode} bearer returned HTTP {response.Status}; expected 401/403. Body omitted.");
     }

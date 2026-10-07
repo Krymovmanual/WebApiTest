@@ -70,6 +70,7 @@ public class ProviderReadContracts(ApiHarness api, ITestOutputHelper output)
     internal static void UniqueIds(JArray items, string field)
     {
         var ids = items.Select(item => { Assert.IsType<JObject>(item); return RequiredString(item, field); }).ToArray();
-        Assert.Equal(ids.Length, ids.Distinct(StringComparer.Ordinal).Count());
+        Assert.True(ids.Length == ids.Distinct(StringComparer.Ordinal).Count(),
+            $"Duplicate {field} values: {ids.Length} records, {ids.Distinct(StringComparer.Ordinal).Count()} unique IDs. Values omitted.");
     }
 }

@@ -21,7 +21,7 @@ internal static class ResponseSchema
             "string" => value.Type == JTokenType.String, "integer" => value.Type == JTokenType.Integer,
             "number" => value.Type is JTokenType.Integer or JTokenType.Float,
             "boolean" => value.Type == JTokenType.Boolean, null => true, _ => false };
-        Assert.True(valid, $"{location}: expected schema type {type}; values omitted.");
+        Assert.True(valid, $"{location}: expected schema type {type}; actual JSON type {value.Type}; values omitted.");
         if (schema["enum"] is JArray allowed) Assert.True(allowed.Any(v => JToken.DeepEquals(v, value)), $"{location}: unknown enum value.");
         if (value is JObject obj)
         {

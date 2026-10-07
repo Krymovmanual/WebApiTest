@@ -4,3 +4,6 @@ stage_creds.json
 stage.runsettings
 *.local.runsettings
 scenarios.json
+
+# Local test reports
+TestResults/
