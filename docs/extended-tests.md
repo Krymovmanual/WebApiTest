@@ -3,8 +3,8 @@
 ## Baseline and implementation
 
 Recovered uploaded archive `WebApiTest-main (1).zip` and Swagger 2 snapshot
-`WebApiTest-main.json`, both from 2026-06-10. This is an uploaded snapshot, not a
-verified current checkout of GitHub main. Original solution, clients, tests,
+`WebApiTest-main.json`, both from 2026-06-10. GitHub main was inspected at
+`09c3b71899c47e6a3b2e528ead4fc12d4ea9ac36`; its Swagger blob matches the uploaded snapshot. Original solution, clients, tests,
 authentication helpers and pipeline are unchanged byte for byte. Original suite:
 11 Facts (one Koywe Fact calls two endpoints).
 
@@ -87,8 +87,8 @@ Fireblocks payloads blindly or require every negative case to return HTTP 400.
 5. Add mutation tests separately with an isolated provider sandbox, scoped test
    accounts, effects/cleanup and idempotency checks. Includes create/cancel,
    approvals, signatures, webhooks, deposits and distributed-key operations.
-6. Run new suite in Stage, investigate failures and add its project to CI once
-   environment and expected contracts are confirmed. Old pipeline is unchanged.
+6. Run new suite in Stage and investigate failures once environment and contracts
+   are confirmed. New offline suite runs in GitHub Actions; old pipeline is unchanged.
 
 ## Findings in existing code (unchanged)
 
@@ -105,7 +105,11 @@ Fireblocks payloads blindly or require every negative case to return HTTP 400.
 
 Original file SHA-256 preservation and catalog/snapshot consistency checked by
 local Python validation. XML/JSON syntax and local schema references checked.
-No .NET SDK/compiler is installed in the execution environment: C# build and xUnit
-execution are **not verified**. Stage Swagger access returned proxy HTTP 502;
+GitHub Actions run 37631392553 successfully restored and built the new .NET 8
+project, then ran all 207 offline cases: 207 passed, 0 failed, 0 skipped.
+Workflow: `.github/workflows/extended-api-tests.yml`; runs on relevant pushes/PRs
+and manual dispatch without credentials, with live tests disabled.
+Results: https://github.com/Krymovmanual/WebApiTest/actions/runs/37631392553.
+The local editing environment still has no usable .NET SDK. Stage Swagger access returned proxy HTTP 502;
 no live API case was run. No Bearer token or Stage credential file was found in the
 uploaded archive. No payment or provider mutation was performed.
