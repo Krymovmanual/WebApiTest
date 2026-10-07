@@ -227,7 +227,7 @@
     "emptyBodySchema": false,
     "responseSchemaMissing": true,
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -937,7 +937,7 @@
     "emptyBodySchema": false,
     "responseSchemaMissing": true,
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -1237,7 +1237,7 @@
     "emptyBodySchema": false,
     "responseSchemaMissing": true,
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -1327,7 +1327,7 @@
     "emptyBodySchema": false,
     "responseSchemaMissing": true,
     "authorizationCases": 2,
-    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",

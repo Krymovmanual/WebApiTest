@@ -3,7 +3,7 @@
 The 193 Swagger operations are NOT all functionally verified.
 
 - 163 Bearer-protected operations now each have missing/malformed-token integration cases (326 cases), grouped by provider in Test Explorer. These never acquire credentials or send a populated body. Path placeholders use ARS / deliberately nonexistent IDs. A 400/404 is a failure, not evidence of authorization enforcement.
-- Existing 8 successful read contracts remain unchanged. Their 16 auth cases overlap the new comprehensive suite.
+- Existing 8 successful read contracts remain unchanged. Four provider session contracts (OpenPayd, Nuvei, FacilitaPay, Koywe) are now implemented separately, using response fields already established by original tests. Their 16 auth cases overlap the new comprehensive suite.
 - 30 operations without Swagger Bearer security include callbacks, deposits and key-management calls. They are not automatically treated as harmless/public reads.
 - A separate Scenarios suite contains all 193 operations. It is disabled by default. When enabled it fails every missing/unverified fixture; missing coverage is never reported as passed.
 

@@ -42,7 +42,11 @@ public class OperationScenarioTests(ApiHarness api)
         var expectedStatus = fixture.Value<int?>("expectedStatus"); Assert.NotNull(expectedStatus);
         var expected = fixture["expectedJson"];
         Assert.True(expected != null && expected.Type != JTokenType.Null, "Set a deterministic expectedJson; status alone is insufficient.");
-        var bearer = fixture.Value<bool>("protected") ? await api.GetTokenAsync() : null;
+        var snapshot = JObject.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "swagger.snapshot.json")));
+        var security = snapshot["paths"]![path]![method]!["security"] ?? snapshot["security"];
+        var protectedRoute = security is JArray { Count: > 0 };
+        Assert.Equal(protectedRoute, fixture.Value<bool>("protected"));
+        var bearer = protectedRoute ? await api.GetTokenAsync() : null;
         var response = await api.SendAsync(method.ToUpperInvariant(), target, bearer,
             fixture["body"]?.Type is null or JTokenType.Null ? null : fixture["body"]!.ToString(Newtonsoft.Json.Formatting.None));
         Assert.Equal(expectedStatus.Value, response.Status);
