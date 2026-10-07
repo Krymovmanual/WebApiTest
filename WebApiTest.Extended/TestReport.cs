@@ -23,6 +23,7 @@ internal static class TestReport
         "id", "_id", "assetId", "symbol", "type", "status", "operation", "decimals",
         "total", "balance", "available", "pending", "frozen", "lockedAmount", "staked",
         "amount", "requestedAmount", "netAmount", "fee", "networkFee", "serviceFee", "feeCurrency",
+        "currency", "currencyCode", "availableBalance", "currentBalance", "totalElements", "number", "size", "errCode", "isSuccess",
         "page", "total_pages", "min", "max", "createdAt", "lastUpdated", "hiddenOnUI", "autoFuel"
     };
 
@@ -61,13 +62,22 @@ internal static class TestReport
                         output.WriteLine("{0} = {1}", JsonConvert.ToString(rate.Name), rate.Value.ToString(Formatting.None));
             }
             else if (path.EndsWith("getBankAccounts", StringComparison.Ordinal))
-                output.WriteLine("Bank accounts: {0}. Account details omitted.", (result is JObject bankWrapper ? bankWrapper["data"] as JArray : null)?.Count ?? 0);
+            {
+                var accounts = (result as JObject)?["data"] as JArray;
+                output.WriteLine("Bank accounts: {0}. Account numbers and owner details omitted.", accounts?.Count ?? 0);
+                if (accounts != null)
+                    foreach (var account in accounts.OfType<JObject>())
+                        output.WriteLine("Account: id={0}; currency={1}; account_type={2}",
+                            SafeScalar(account["id"]), SafeScalar(account["currency"]), SafeScalar(account["account_type"]));
+            }
             else if (result != null) Describe(output, "result", result, path.Contains("FireblocksProvider", StringComparison.Ordinal) || path.EndsWith("getAllCurrencyTokenPairs", StringComparison.Ordinal));
             else output.WriteLine("No result wrapper; body omitted.");
         }
         catch (JsonException) { output.WriteLine("Response is not valid JSON; body omitted."); }
         return response;
     }
+
+    private static string SafeScalar(JToken? value) => value is JValue ? value.ToString(Formatting.None) : "[missing/structured]";
 
     internal static void ReportStatus(ITestOutputHelper output, int actual, int[] expected)
     {
@@ -90,7 +100,7 @@ internal static class TestReport
                 .Where(p => p.Value is JValue).Select(p => $"{p.Name}={p.Value.ToString(Formatting.None)}");
             output.WriteLine("{0}: {1}", label, string.Join("; ", fields));
             foreach (var property in obj.Properties().Where(p => p.Value is JArray || p.Value is JObject))
-                if (property.Name is "assets" or "accounts" or "transactions" or "tokens" or "limits" or "message" or "data" or "amountInfo" or "feeInfo")
+                if (property.Name is "assets" or "accounts" or "transactions" or "tokens" or "limits" or "message" or "data" or "amountInfo" or "feeInfo" or "content" or "items" or "balances" or "results")
                     Describe(output, $"{label}.{property.Name}", property.Value, names);
         }
         else output.WriteLine("{0}: {1}", label, token.Type);

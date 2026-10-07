@@ -19,7 +19,10 @@
     "functionalCoverage": "ReadEnvelopeOnly",
     "requiredConfiguration": "WEBAPI_BITOLO_CURRENCY",
     "liveVerification": "NotYetRun",
-    "nextStep": "Confirm live wrapper; add provider-specific data assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "BitoloBalance",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -29,7 +32,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "BitoloTransactionStatus",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -39,7 +45,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "BitoloTransactionList",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -259,7 +268,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "FacilitaPayBankAccount",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -269,7 +281,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "FacilitaPayBankAccountStatement",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -279,7 +294,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "FacilitaPayBankAccountBalance",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -289,7 +307,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "FacilitaPayTransactions",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -299,7 +320,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "FacilitaPayTransaction",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -1356,8 +1380,9 @@
     "authorizationCases": 2,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "functionalCoverage": "ProviderTokenContract",
+    "nextStep": "Run Nuvei_v2 session contract; does not prove payout or request flows",
+    "liveVerification": "PendingDEVRun"
   },
   {
     "method": "POST",
@@ -1377,7 +1402,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "NuveiV2PayoutStatus",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -1387,7 +1415,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "NuveiV2Requests",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -1557,7 +1588,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "OpenPaydHistory",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -1567,7 +1601,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "OpenPaydTransactionInfo",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -1607,7 +1644,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "OpenPaydAccount",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",
@@ -1617,7 +1657,10 @@
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
+    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "configuredReadScenario": "OpenPaydAccounts",
+    "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
+    "configuredReadLiveVerification": "NotYetRun"
   },
   {
     "method": "POST",

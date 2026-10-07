@@ -7,3 +7,6 @@ scenarios.json
 
 # Local test reports
 TestResults/
+
+# Local verified provider requests and assertions
+provider-read.local.json
