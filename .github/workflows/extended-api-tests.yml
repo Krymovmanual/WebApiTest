@@ -2,7 +2,7 @@ name: Extended API tests
 
 on:
   push:
-    branches: [main, feature/extended-api-tests]
+    branches: [main, feature/extended-api-tests, 'feature/fireblocks-*']
     paths:
       - 'WebApiTest.Extended/**'
       - '.github/workflows/extended-api-tests.yml'

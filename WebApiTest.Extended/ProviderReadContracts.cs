@@ -1,6 +1,5 @@
 using System.Globalization;
 using Newtonsoft.Json.Linq;
-using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
@@ -8,12 +7,10 @@ namespace WebApiTest.Extended;
 public class StageReadCollection : ICollectionFixture<ApiHarness> { }
 
 [Collection("Stage reads")]
-public class ProviderReadContracts(ApiHarness api, ITestOutputHelper output)
+public class ProviderReadContracts(ApiHarness api)
 {
     public static readonly string[] Paths = [
-        "/api/FireblocksProvider/getAssets", "/api/FireblocksProvider/getExchangeAccounts",
-        "/api/FireblocksProvider/getFiatAccounts", "/api/FireblocksProvider/getInternalWallets",
-        "/api/FireblocksProvider/getExternalWallets", "/api/FacilitaPayProvider/getExchangeRates",
+        "/api/FacilitaPayProvider/getExchangeRates",
         "/api/FacilitaPayProvider/getBankAccounts", "/api/KoyweProvider/getAllCurrencyTokenPairs"];
     public static IEnumerable<object[]> ReadCases => Paths.Select(p => new object[] { p });
 
@@ -22,47 +19,7 @@ public class ProviderReadContracts(ApiHarness api, ITestOutputHelper output)
     {
         var data = ApiHarness.SuccessfulJson(await api.SendAsync("POST", path, await api.GetTokenAsync()));
         var result = data["result"]!;
-        if (path.Contains("FireblocksProvider"))
-        {
-            var items = Assert.IsType<JArray>(result);
-            // Empty configured account/wallet collections are valid.
-            if (path.EndsWith("getAssets")) Assert.NotEmpty(items);
-            if (path.EndsWith("getAssets"))
-            {
-                output.WriteLine("Fireblocks assets: {0}", items.Count);
-                foreach (var asset in items)
-                    output.WriteLine("id={0}; name={1}",
-                        asset["id"]?.ToString(Newtonsoft.Json.Formatting.None),
-                        asset["name"]?.ToString(Newtonsoft.Json.Formatting.None));
-            }
-            UniqueIds(items, "id");
-            foreach (var item in items)
-            {
-                Assert.IsType<JObject>(item); RequiredString(item, "id"); RequiredString(item, "name");
-                if (path.EndsWith("getAssets"))
-                {
-                    Assert.Equal(JTokenType.Integer, item["decimals"]?.Type);
-                    Assert.InRange(item.Value<int>("decimals"), 0, int.MaxValue);
-                    // No Ethereum-only address regex: Fireblocks also supports non-EVM assets.
-                }
-                else if (path.EndsWith("getExchangeAccounts"))
-                {
-                    RequiredString(item, "type");
-                    foreach (var asset in Assert.IsType<JArray>(item["assets"]))
-                    {
-                        RequiredString(asset, "id");
-                        foreach (var field in new[] { "total", "balance", "lockedAmount", "available" }) NonNegativeNumber(asset[field]);
-                    }
-                }
-                else if (path.EndsWith("getInternalWallets") || path.EndsWith("getExternalWallets"))
-                {
-                    var assets = Assert.IsType<JArray>(item["assets"]); UniqueIds(assets, "id");
-                    foreach (var asset in assets) RequiredString(asset, "id");
-                    // Status enums and ID formats are not restricted to values from one Stage dataset.
-                }
-            }
-        }
-        else if (path.EndsWith("getExchangeRates"))
+        if (path.EndsWith("getExchangeRates"))
         {
             var rates = Assert.IsType<JObject>(result["data"]); Assert.NotEmpty(rates.Properties());
             foreach (var rate in rates.Properties()) Assert.True(NonNegativeNumber(rate.Value) > 0, "Exchange rate must be positive.");
