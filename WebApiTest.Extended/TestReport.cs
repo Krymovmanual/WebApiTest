@@ -47,7 +47,7 @@ internal static class TestReport
         if (response.Status != 200) { output.WriteLine("Response body omitted. See assertion for expected status."); return response; }
         try
         {
-            if (JToken.Parse(response.Body) is not JObject body) return response;
+            if (ApiHarness.ParseWireJson(response.Body) is not JObject body) return response;
             var error = body["error"];
             output.WriteLine("Application error: {0}.", error == null || error.Type == JTokenType.Null || error.ToString() == "ok" ? "none" : "present (text omitted)");
             var result = body["result"];
