@@ -1,3 +1,4 @@
+using Xunit.Abstractions;
 using Newtonsoft.Json.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -22,13 +23,15 @@ internal static class ApiSpecification
     }
 }
 
-public class SwaggerContracts
+public class SwaggerContracts(ITestOutputHelper output)
 {
     public static IEnumerable<object[]> Operations => ApiSpecification.Operations;
     [Theory, MemberData(nameof(Operations)), Trait("Suite", "Offline")]
     public void OperationHasValidResponsesSecurityAndParameters(string method, string path)
     {
+        output.WriteLine("Swagger snapshot: {0} operations. This checks documentation, not live functionality.", Operations.Count());
         var spec = ApiSpecification.Snapshot;
+        output.WriteLine("Checking {0} {1}", method.ToUpperInvariant(), path);
         var operation = spec["paths"]![path]![method]!;
         var responses = Assert.IsType<JObject>(operation["responses"]); Assert.NotEmpty(responses.Properties());
         Assert.All(responses.Properties(), response => Assert.NotNull(response.Value["description"]));
@@ -44,18 +47,22 @@ public class SwaggerContracts
     {
         foreach (var property in ApiSpecification.Snapshot.Descendants().OfType<JProperty>().Where(p => p.Name == "$ref"))
             ApiSpecification.Resolve(property.Parent!);
+        output.WriteLine("All local schema references resolve.");
     }
     [Fact, Trait("Suite", "Offline")]
     public void CatalogMatchesEveryOperation()
     {
         var catalog = JArray.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "coverage.json")));
+        foreach (var group in catalog.GroupBy(row => row["functionalCoverage"]?.ToString() ?? "unclassified"))
+            output.WriteLine("Coverage category {0}: {1} operations", group.Key, group.Count());
         var actual = catalog.Select(x => $"{x["method"]} {x["path"]}").OrderBy(x => x).ToArray();
         var expected = Operations.Select(x => $"{((string)x[0]).ToUpperInvariant()} {x[1]}").OrderBy(x => x).ToArray();
-        Assert.Equal(expected, actual); Assert.Equal(actual.Length, actual.Distinct().Count());
+        Assert.Equal(expected, actual); output.WriteLine("Matched {0} catalog/authorization entries.", actual.Length); Assert.Equal(actual.Length, actual.Distinct().Count());
     }
     [Fact, Trait("Suite", "Offline")]
     public void AuthorizationCasesMatchEveryProtectedOperation()
     {
+        output.WriteLine("Swagger snapshot: {0} operations. This checks documentation, not live functionality.", Operations.Count());
         var spec = ApiSpecification.Snapshot;
         string Concrete(string path) => Regex.Replace(path, @"\{([^}]+)\}", m => m.Groups[1].Value switch {
             "currency" => "ARS", "blockchain" => "ethereum", "blockNumber" => "0",
@@ -67,13 +74,13 @@ public class SwaggerContracts
             .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(ProviderAuthorizationContracts)))
             .SelectMany(t => (IEnumerable<object[]>)t.GetProperty("Cases", BindingFlags.Public | BindingFlags.Static)!.GetValue(null)!)
             .Select(row => $"{row[0]} {row[1]} {row[2]}").OrderBy(x => x, StringComparer.Ordinal).ToArray();
-        Assert.Equal(expected, actual); Assert.Equal(actual.Length, actual.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(expected, actual); output.WriteLine("Matched {0} catalog/authorization entries.", actual.Length); Assert.Equal(actual.Length, actual.Distinct(StringComparer.Ordinal).Count());
     }
 
     [LiveFact, Trait("Suite", "Live")]
     public async Task CurrentApiContainsEverySnapshotOperationAndSecurityContract()
     {
-        using var api = new ApiHarness(); var response = await api.SendAsync("GET", "/swagger/v1/swagger.json");
+        using var api = new ApiHarness(); var response = await TestReport.SendAsync(api, output, "GET", "/swagger/v1/swagger.json");
         Assert.Equal(200, response.Status); var current = JObject.Parse(response.Body); var snapshot = ApiSpecification.Snapshot;
         foreach (var row in Operations)
         {
@@ -83,5 +90,6 @@ public class SwaggerContracts
             var actual = operation!["security"] ?? current["security"] ?? new JArray();
             Assert.True(JToken.DeepEquals(expected, actual), $"Security contract changed for {method} {path}.");
         }
+        output.WriteLine("Live Swagger contains all {0} snapshot operations with matching security.", Operations.Count());
     }
 }

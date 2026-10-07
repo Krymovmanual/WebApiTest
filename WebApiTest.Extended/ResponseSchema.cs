@@ -1,3 +1,4 @@
+using Xunit.Abstractions;
 using Newtonsoft.Json.Linq;
 
 namespace WebApiTest.Extended;
@@ -38,17 +39,19 @@ internal static class ResponseSchema
     }
 }
 
-public class ResponseSchemaContracts
+public class ResponseSchemaContracts(ITestOutputHelper output)
 {
     [Fact, Trait("Suite", "Offline")]
     public void RejectsWrongTypeInsideNestedArrays()
     {
+        output.WriteLine("Offline fixture check: RejectsWrongTypeInsideNestedArrays. No live API request.");
         var schema = JObject.Parse("{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"amount\":{\"type\":\"string\"}}}}");
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => ResponseSchema.Validate(JArray.Parse("[{\"amount\":12}]"), schema));
     }
     [Fact, Trait("Suite", "Offline")]
     public void RejectsMissingOrNullRequiredValues()
     {
+        output.WriteLine("Offline fixture check: RejectsMissingOrNullRequiredValues. No live API request.");
         var schema = JObject.Parse("{\"type\":\"object\",\"required\":[\"id\"]}");
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => ResponseSchema.Validate(JObject.Parse("{}"), schema));
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => ResponseSchema.Validate(JObject.Parse("{\"id\":null}"), schema));
@@ -56,6 +59,7 @@ public class ResponseSchemaContracts
     [Fact, Trait("Suite", "Offline")]
     public void ResolvesRealZeroHashResponseSchema()
     {
+        output.WriteLine("Offline fixture check: ResolvesRealZeroHashResponseSchema. No live API request.");
         ResponseSchema.Validate(JObject.Parse("{\"error\":null,\"result\":{\"page\":1,\"total_pages\":0,\"message\":[]}}"),
             JObject.Parse("{\"$ref\":\"#/definitions/ZeroHashAccountsListResponseZeroHashBaseResponse\"}"));
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => ResponseSchema.Validate(JObject.Parse("{\"result\":{\"page\":\"wrong\"}}"),

@@ -12,8 +12,8 @@ public class FireblocksVaultContracts(ApiHarness api, ITestOutputHelper output)
     {
         var request = new JObject { ["limit"] = Limit, ["orderBy"] = "ASC" };
         if (after != null) request["after"] = after;
-        var data = ApiHarness.SuccessfulJson(await api.SendAsync("POST", "/api/FireblocksProvider/getVaultAccountsPaged",
-            await api.GetTokenAsync(), request.ToString()));
+        var data = ApiHarness.SuccessfulJson(await TestReport.SendAsync(api, output, "POST", "/api/FireblocksProvider/getVaultAccountsPaged",
+            await TestReport.GetTokenAsync(api, output), request.ToString()));
         var page = Assert.IsType<JObject>(data["result"]);
         FireblocksVaultChecks.Page(page, Limit);
         output.WriteLine("Vault page: {0} accounts; next cursor present: {1}",
@@ -105,7 +105,7 @@ internal static class FireblocksVaultChecks
 }
 
 [Trait("Suite", "Offline"), Trait("Provider", "Fireblocks")]
-public class FireblocksVaultCheckTests
+public class FireblocksVaultCheckTests(ITestOutputHelper output)
 {
     private static JObject Example() => JObject.Parse("""
         {"accounts":[{"id":"0","name":"Test vault","customerRefId":null,"hiddenOnUI":false,"autoFuel":false,
@@ -115,28 +115,35 @@ public class FireblocksVaultCheckTests
         """);
     [Fact]
     public void ObservedWrapperShapeAllowsMissingBalanceAndNullableHeight()
-        => FireblocksVaultChecks.Page(Example(), 2);
+    {
+        output.WriteLine("Offline fixture check: ObservedWrapperShapeAllowsMissingBalanceAndNullableHeight. No live API request.");
+        FireblocksVaultChecks.Page(Example(), 2);
+    }
     [Fact]
     public void IgnoredPageLimitFails()
     {
+        output.WriteLine("Offline fixture check: IgnoredPageLimitFails. No live API request.");
         var page = Example(); ((JArray)page["accounts"]!).Add(page["accounts"]![0]!.DeepClone());
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksVaultChecks.Page(page, 1));
     }
     [Fact]
     public void NegativeVaultAmountFails()
     {
+        output.WriteLine("Offline fixture check: NegativeVaultAmountFails. No live API request.");
         var page = Example(); page["accounts"]![0]!["assets"]![0]!["available"] = -1;
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksVaultChecks.Page(page, 2));
     }
     [Fact]
     public void RepeatedPageFailsEvenIfCursorChanges()
     {
+        output.WriteLine("Offline fixture check: RepeatedPageFailsEvenIfCursorChanges. No live API request.");
         var first = Example(); var second = Example(); second["paging"]!["after"] = "different-cursor";
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksVaultChecks.Advances(first, second));
     }
     [Fact]
     public void DifferentPageAcceptsEndOfPagination()
     {
+        output.WriteLine("Offline fixture check: DifferentPageAcceptsEndOfPagination. No live API request.");
         var first = Example(); var second = Example(); second["accounts"]![0]!["id"] = "1"; second["paging"]!["after"] = null;
         FireblocksVaultChecks.Advances(first, second);
     }
