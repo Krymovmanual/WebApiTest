@@ -79,10 +79,10 @@ public sealed class ApiHarness : IDisposable
         }
         finally { tokenLock.Release(); }
     }
-    public async Task<(int Status, string Body, double Milliseconds)> SendAsync(string method, string path, string? authorization = null)
+    public async Task<(int Status, string Body, double Milliseconds)> SendAsync(string method, string path, string? authorization = null, string? jsonBody = null)
     {
         using var request = new HttpRequestMessage(new HttpMethod(method), path);
-        if (method == "POST") request.Content = new StringContent("{}", System.Text.Encoding.UTF8, "application/json");
+        if (method is "POST" or "PUT" or "PATCH" || jsonBody != null) request.Content = new StringContent(jsonBody ?? "{}", System.Text.Encoding.UTF8, "application/json");
         if (authorization != null) request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authorization);
         var timer = Stopwatch.StartNew();
         using var response = await client.SendAsync(request);

@@ -5,7 +5,9 @@
     "category": "AuthenticationInfrastructure",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -13,7 +15,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -21,7 +25,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -29,7 +35,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -37,7 +45,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -45,7 +55,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -53,7 +65,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -61,7 +75,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -69,7 +85,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -77,7 +95,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -85,7 +105,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -93,7 +115,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -101,7 +125,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -109,7 +135,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -117,7 +145,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -125,7 +155,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -133,7 +165,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -141,7 +175,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -149,7 +185,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -157,7 +195,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -165,7 +205,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -173,7 +215,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -181,7 +225,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -189,7 +235,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -197,7 +245,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -205,7 +255,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -213,7 +265,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -221,7 +275,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -229,7 +285,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -237,7 +295,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -245,7 +305,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -253,7 +315,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -261,7 +325,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -269,7 +335,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -277,7 +345,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -285,7 +355,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -293,7 +365,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -301,7 +375,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -309,7 +385,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -317,7 +395,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -325,7 +405,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -333,7 +415,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -341,7 +425,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -349,7 +435,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -357,7 +445,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -365,7 +455,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -373,7 +465,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -381,7 +475,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -389,7 +485,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -397,7 +495,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -405,7 +505,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -413,7 +515,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -421,7 +525,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -429,7 +535,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -437,7 +545,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -445,7 +555,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -453,7 +565,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -461,7 +575,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -469,7 +585,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -477,7 +595,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -485,7 +605,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -493,7 +615,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -501,7 +625,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -509,7 +635,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -517,7 +645,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -525,7 +655,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -533,7 +665,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -541,7 +675,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -549,7 +685,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -557,7 +695,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -565,7 +705,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -573,7 +715,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -581,7 +725,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -589,7 +735,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -597,7 +745,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -605,7 +755,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -613,7 +765,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -621,7 +775,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -629,7 +785,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -637,7 +795,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -645,7 +805,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -653,7 +815,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -661,7 +825,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -669,7 +835,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -677,7 +845,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -685,7 +855,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -693,7 +865,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "GET",
@@ -701,7 +875,9 @@
     "category": "LiveSmoke",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "GET",
@@ -709,7 +885,9 @@
     "category": "LiveSmoke",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -717,7 +895,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -725,7 +905,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -733,7 +915,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -741,7 +925,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -749,7 +935,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -757,7 +945,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -765,7 +955,9 @@
     "category": "LiveReadContract",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedRead"
   },
   {
     "method": "POST",
@@ -773,7 +965,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -781,7 +975,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -789,7 +985,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -797,7 +995,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -805,7 +1005,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -813,7 +1015,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -821,7 +1025,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -829,7 +1035,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -837,7 +1045,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -845,7 +1055,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "GET",
@@ -853,7 +1065,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": false
+    "responseSchemaMissing": false,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -861,7 +1075,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": false
+    "responseSchemaMissing": false,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -869,7 +1085,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -877,15 +1095,19 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
-    "path": "/api/MaldoPayProvider/\u0441heckTransactionStatus",
+    "path": "/api/MaldoPayProvider/сheckTransactionStatus",
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -893,7 +1115,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -901,7 +1125,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -909,7 +1135,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -917,7 +1145,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -925,7 +1155,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -933,7 +1165,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -941,7 +1175,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -949,7 +1185,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -957,7 +1195,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -965,7 +1205,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -973,7 +1215,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -981,7 +1225,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -989,7 +1235,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -997,7 +1245,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1005,7 +1255,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1013,7 +1265,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1021,7 +1275,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1029,7 +1285,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1037,7 +1295,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1045,7 +1305,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1053,7 +1315,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1061,7 +1325,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "ImplementedProviderSession"
   },
   {
     "method": "POST",
@@ -1069,7 +1335,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1077,7 +1345,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1085,7 +1355,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1093,7 +1365,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1101,7 +1375,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1109,7 +1385,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1117,7 +1395,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1125,7 +1405,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1133,7 +1415,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1141,7 +1425,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1149,7 +1435,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1157,7 +1445,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "HEAD",
@@ -1165,7 +1455,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1173,7 +1465,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1181,7 +1475,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1189,7 +1485,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1197,7 +1495,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "PUT",
@@ -1205,7 +1505,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1213,7 +1515,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1221,7 +1525,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1229,7 +1535,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1237,7 +1545,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1245,7 +1555,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1253,7 +1565,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1261,7 +1575,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1269,7 +1585,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1277,7 +1595,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1285,7 +1605,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1293,7 +1615,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1301,7 +1625,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1309,7 +1635,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1317,7 +1645,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1325,7 +1655,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1333,7 +1665,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1341,7 +1675,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1349,7 +1685,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1357,7 +1695,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1365,7 +1705,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1373,7 +1715,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1381,7 +1725,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": false,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1389,7 +1735,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1397,7 +1745,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1405,7 +1755,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1413,7 +1765,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1421,7 +1775,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1429,7 +1785,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1437,7 +1795,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1445,7 +1805,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": false,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 0,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1453,7 +1815,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1461,7 +1825,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1469,7 +1835,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1477,7 +1845,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1485,7 +1855,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1493,7 +1865,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1501,7 +1875,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1509,7 +1885,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1517,7 +1895,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1525,7 +1905,9 @@
     "category": "StateChangingOrUnclassified",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1533,7 +1915,9 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   },
   {
     "method": "POST",
@@ -1541,6 +1925,8 @@
     "category": "NeedsWrapperContractAndFixture",
     "secured": true,
     "emptyBodySchema": true,
-    "responseSchemaMissing": true
+    "responseSchemaMissing": true,
+    "authorizationCases": 2,
+    "functionalScenario": "NeedsVerifiedFixtureOrDedicatedLifecycleTest"
   }
 ]

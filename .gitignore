@@ -1,3 +1,6 @@
 WebApiTest/bin/*
 WebApiTest/obj/*
 stage_creds.json
+stage.runsettings
+*.local.runsettings
+scenarios.json

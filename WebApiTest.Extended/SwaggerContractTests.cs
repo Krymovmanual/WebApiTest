@@ -53,14 +53,16 @@ public class SwaggerContractTests
         var current = JObject.Parse(response.Body);
         // Handles both Swagger 2 and OpenAPI 3 paths without assuming version equality.
         Assert.NotNull(current["paths"]);
-        foreach (var path in ReadContractTests.Paths)
+        foreach (var row in Operations)
         {
-            var operation = current["paths"]![path]?["post"];
-            Assert.True(operation != null, $"Tested route removed: POST {path}");
-            var security = operation!["security"] ?? current["security"];
-            Assert.True(security is JArray rules && rules.Count > 0 && rules.All(r => r is JObject obj && obj.Count > 0),
-                $"Expected protected route: {path}");
+            var method = (string)row[0]; var path = (string)row[1];
+            var operation = current["paths"]![path]?[method];
+            Assert.True(operation != null, $"Swagger route removed: {method} {path}");
+            var previous = Snapshot["paths"]![path]![method]!;
+            var expectedSecurity = previous["security"] ?? Snapshot["security"] ?? new JArray();
+            var currentSecurity = operation!["security"] ?? current["security"] ?? new JArray();
+            Assert.True(JToken.DeepEquals(expectedSecurity, currentSecurity),
+                $"Security contract changed: {method} {path}");
         }
-        foreach (var path in new[] { "/api/Version", "/api/DeployDate" }) Assert.NotNull(current["paths"]![path]?["get"]);
     }
 }
