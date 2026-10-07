@@ -1,3 +1,4 @@
+using Xunit.Abstractions;
 using Newtonsoft.Json.Linq;
 
 namespace WebApiTest.Extended;
@@ -12,7 +13,7 @@ public sealed class InfuraTheoryAttribute : TheoryAttribute
 }
 
 [Collection("Stage reads")]
-public class InfuraValidationContracts(ApiHarness api)
+public class InfuraValidationContracts(ApiHarness api, ITestOutputHelper output)
 {
     [InfuraTheory, Trait("Suite", "Live"), Trait("Provider", "Infura")]
     [InlineData("/api/Infura/{blockchain}/getBalance")]
@@ -22,7 +23,7 @@ public class InfuraValidationContracts(ApiHarness api)
     {
         var chain = Environment.GetEnvironmentVariable("WEBAPI_BLOCKCHAIN")!;
         var path = route.Replace("{blockchain}", Uri.EscapeDataString(chain));
-        var response = await api.SendAsync("POST", path, await api.GetTokenAsync(), "{}");
+        var response = await TestReport.SendAsync(api, output, "POST", path, await TestReport.GetTokenAsync(api, output), "{}");
         Assert.Equal(400, response.Status);
         var body = JObject.Parse(response.Body);
         var schema = ApiSpecification.Snapshot["paths"]![route]!["post"]!["responses"]!["400"]!["schema"]!;

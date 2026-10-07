@@ -1,17 +1,19 @@
+using Xunit.Abstractions;
 namespace WebApiTest.Extended;
 
-public abstract class ProviderAuthorizationContracts(ApiHarness api)
+public abstract class ProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output)
 {
     protected async Task Reject(string method, string path, string mode)
     {
-        var response = await api.SendAsync(method, path, mode == "missing" ? null : "not-a-valid-token");
+        output.WriteLine("Authorization: {0} bearer; expected HTTP 401 or 403.", mode);
+        var response = await TestReport.SendAsync(api, output, method, path, mode == "missing" ? null : "not-a-valid-token");
         Assert.True(response.Status is 401 or 403,
             $"{method} {path}: {mode} bearer returned HTTP {response.Status}; expected 401/403. Body omitted.");
     }
 }
 
 [Collection("Stage reads")]
-public class BitoloAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class BitoloAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -31,7 +33,7 @@ public class BitoloAuthorizationContracts(ApiHarness api) : ProviderAuthorizatio
 }
 
 [Collection("Stage reads")]
-public class CoinPaymentsProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class CoinPaymentsProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -51,7 +53,7 @@ public class CoinPaymentsProviderAuthorizationContracts(ApiHarness api) : Provid
 }
 
 [Collection("Stage reads")]
-public class ConsolidationAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class ConsolidationAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -63,7 +65,7 @@ public class ConsolidationAuthorizationContracts(ApiHarness api) : ProviderAutho
 }
 
 [Collection("Stage reads")]
-public class DistributedKeysAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class DistributedKeysAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -81,7 +83,7 @@ public class DistributedKeysAuthorizationContracts(ApiHarness api) : ProviderAut
 }
 
 [Collection("Stage reads")]
-public class FacilitaPayProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class FacilitaPayProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -123,7 +125,7 @@ public class FacilitaPayProviderAuthorizationContracts(ApiHarness api) : Provide
 }
 
 [Collection("Stage reads")]
-public class FireblocksGasStationProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class FireblocksGasStationProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -135,7 +137,7 @@ public class FireblocksGasStationProviderAuthorizationContracts(ApiHarness api) 
 }
 
 [Collection("Stage reads")]
-public class FireblocksProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class FireblocksProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -235,7 +237,7 @@ public class FireblocksProviderAuthorizationContracts(ApiHarness api) : Provider
 }
 
 [Collection("Stage reads")]
-public class InfuraAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class InfuraAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -283,7 +285,7 @@ public class InfuraAuthorizationContracts(ApiHarness api) : ProviderAuthorizatio
 }
 
 [Collection("Stage reads")]
-public class KashaProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class KashaProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -297,7 +299,7 @@ public class KashaProviderAuthorizationContracts(ApiHarness api) : ProviderAutho
 }
 
 [Collection("Stage reads")]
-public class KoyweProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class KoyweProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -337,7 +339,7 @@ public class KoyweProviderAuthorizationContracts(ApiHarness api) : ProviderAutho
 }
 
 [Collection("Stage reads")]
-public class MailAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class MailAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -349,7 +351,7 @@ public class MailAuthorizationContracts(ApiHarness api) : ProviderAuthorizationC
 }
 
 [Collection("Stage reads")]
-public class MaldoPayProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class MaldoPayProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -367,7 +369,7 @@ public class MaldoPayProviderAuthorizationContracts(ApiHarness api) : ProviderAu
 }
 
 [Collection("Stage reads")]
-public class Nuvei_v2_ProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class Nuvei_v2_ProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -391,7 +393,7 @@ public class Nuvei_v2_ProviderAuthorizationContracts(ApiHarness api) : ProviderA
 }
 
 [Collection("Stage reads")]
-public class NuveiProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class NuveiProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -415,7 +417,7 @@ public class NuveiProviderAuthorizationContracts(ApiHarness api) : ProviderAutho
 }
 
 [Collection("Stage reads")]
-public class OpenPaydProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class OpenPaydProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -441,7 +443,7 @@ public class OpenPaydProviderAuthorizationContracts(ApiHarness api) : ProviderAu
 }
 
 [Collection("Stage reads")]
-public class PayRetailersProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class PayRetailersProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -457,7 +459,7 @@ public class PayRetailersProviderAuthorizationContracts(ApiHarness api) : Provid
 }
 
 [Collection("Stage reads")]
-public class QDTAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class QDTAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -469,7 +471,7 @@ public class QDTAuthorizationContracts(ApiHarness api) : ProviderAuthorizationCo
 }
 
 [Collection("Stage reads")]
-public class QuantfuryPaymentsProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class QuantfuryPaymentsProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -519,7 +521,7 @@ public class QuantfuryPaymentsProviderAuthorizationContracts(ApiHarness api) : P
 }
 
 [Collection("Stage reads")]
-public class QuantfuryPaymentsSignAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class QuantfuryPaymentsSignAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -545,7 +547,7 @@ public class QuantfuryPaymentsSignAuthorizationContracts(ApiHarness api) : Provi
 }
 
 [Collection("Stage reads")]
-public class validate_addressAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class validate_addressAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {
@@ -557,7 +559,7 @@ public class validate_addressAuthorizationContracts(ApiHarness api) : ProviderAu
 }
 
 [Collection("Stage reads")]
-public class WyreProviderAuthorizationContracts(ApiHarness api) : ProviderAuthorizationContracts(api)
+public class WyreProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
 {
     public static IEnumerable<object[]> Cases => new object[][]
     {

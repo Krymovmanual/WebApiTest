@@ -29,3 +29,26 @@ CLI offline: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --filter
 CLI live: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --settings WebApiTest.Extended/dev.runsettings --filter "Suite=Live"
 
 FireblocksTransactionContracts checks transaction-history limit and createdAt DESC order, wrapper fields and nullable/unavailable fee representations. No fee arithmetic or cursor pagination is inferred.
+
+
+### Viewing test responses in Visual Studio
+
+After running Extended tests, select an individual test case in Test Explorer and open its Output / Standard Output link (label varies by VS version). xUnit captures output for passed and failed tests. A grouped theory node may not show output: select the individual data row. The green toolbar Start button starts the application, not these tests.
+
+All live Extended requests now report method, route, HTTP status, elapsed milliseconds and configured response-time budget before assertions. Read tests report collection counts and selected IDs, asset names, balances, transaction amounts/statuses/fees and currency pairs. Exchange rates are listed individually. Empty configured collections print zero items; this does not establish provider availability or exercise pagination. Vault pagination reports whether another cursor is present. Provider session tests report token receipt without printing its value. Authorization cases state missing/malformed bearer and the expected HTTP 401/403.
+
+Responses use an explicit field allowlist instead of raw JSON. Passwords, tokens, headers, bank account details, addresses, notes and unknown nested objects are omitted. Bank-account reads show count only. Offline tests describe fixture/documentation checks, never live provider results; the Swagger catalog summary separates functional coverage categories from authorization-only coverage. Output does not weaken existing assertions or turn application errors into success.
+
+Example output:
+
+```text
+Request: POST /api/FireblocksProvider/getVaultAccountsPaged
+HTTP 200; elapsed 180 ms; configured budget 5000 ms.
+Application error: none.
+result.accounts: 2 items
+result.accounts[0]: id="0"; name="Default"; hiddenOnUI=false; autoFuel=false
+result.accounts[0].assets: 1 items
+result.accounts[0].assets[0]: id="BTC_TEST"; total=0; available=0
+```
+
+When API authentication fails before a provider request, Output identifies authorization acquisition as the failing step; the existing assertion reports the token endpoint HTTP status without its body. Live validation still requires local credentials and is not run by CI.

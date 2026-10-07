@@ -11,8 +11,8 @@ public class FireblocksTransactionContracts(ApiHarness api, ITestOutputHelper ou
     public async Task GetTransactionsHonorsLimitAndCreatedAtDescendingOrder()
     {
         var body = new JObject { ["limit"] = 2, ["orderBy"] = "createdAt", ["sort"] = "DESC" };
-        var data = ApiHarness.SuccessfulJson(await api.SendAsync("POST", "/api/FireblocksProvider/getTransactions",
-            await api.GetTokenAsync(), body.ToString()));
+        var data = ApiHarness.SuccessfulJson(await TestReport.SendAsync(api, output, "POST", "/api/FireblocksProvider/getTransactions",
+            await TestReport.GetTokenAsync(api, output), body.ToString()));
         var result = Assert.IsType<JObject>(data["result"]);
         FireblocksTransactionChecks.History(result, 2);
         output.WriteLine("Transactions: {0}", ((JArray)result["transactions"]!).Count);
@@ -74,7 +74,7 @@ internal static class FireblocksTransactionChecks
 }
 
 [Trait("Suite", "Offline"), Trait("Provider", "Fireblocks")]
-public class FireblocksTransactionCheckTests
+public class FireblocksTransactionCheckTests(ITestOutputHelper output)
 {
     private static JObject Failed() => JObject.Parse("""
     {"transactions":[{"id":"test-id","createdAt":2,"lastUpdated":3,"assetId":"ETH_TEST5","status":"FAILED","operation":"TRANSFER",
@@ -84,22 +84,29 @@ public class FireblocksTransactionCheckTests
     "pageDetails":{"prevPage":"","nextPage":""}}
     """);
     [Fact]
-    public void FailedTransactionAcceptsUnavailableFeeSentinels() => FireblocksTransactionChecks.History(Failed(), 2);
+    public void FailedTransactionAcceptsUnavailableFeeSentinels()
+    {
+        output.WriteLine("Offline fixture check: FailedTransactionAcceptsUnavailableFeeSentinels. No live API request.");
+        FireblocksTransactionChecks.History(Failed(), 2);
+    }
     [Fact]
     public void CompletedTransactionRejectsUnavailableFeeSentinels()
     {
+        output.WriteLine("Offline fixture check: CompletedTransactionRejectsUnavailableFeeSentinels. No live API request.");
         var data = Failed(); data["transactions"]![0]!["status"] = "COMPLETED";
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2));
     }
     [Fact]
     public void InvalidNegativeFeeFails()
     {
+        output.WriteLine("Offline fixture check: InvalidNegativeFeeFails. No live API request.");
         var data = Failed(); data["transactions"]![0]!["fee"] = -2;
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2));
     }
     [Fact]
     public void IgnoredDescendingSortFails()
     {
+        output.WriteLine("Offline fixture check: IgnoredDescendingSortFails. No live API request.");
         var data = Failed(); var newer = data["transactions"]![0]!.DeepClone(); newer["id"] = "newer"; newer["createdAt"] = 4;
         ((JArray)data["transactions"]!).Add(newer);
         Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksTransactionChecks.History(data, 2));

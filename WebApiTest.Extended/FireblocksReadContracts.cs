@@ -13,7 +13,7 @@ public class FireblocksReadContracts(ApiHarness api, ITestOutputHelper output)
 
     private async Task<JArray> Read(string operation)
     {
-        var data = ApiHarness.SuccessfulJson(await api.SendAsync("POST", "/api/FireblocksProvider/" + operation, await api.GetTokenAsync()));
+        var data = ApiHarness.SuccessfulJson(await TestReport.SendAsync(api, output, "POST", "/api/FireblocksProvider/" + operation, await TestReport.GetTokenAsync(api, output)));
         var items = Assert.IsType<JArray>(data["result"]);
         output.WriteLine("{0}: {1} items", operation, items.Count);
         return items;
@@ -135,37 +135,54 @@ internal static class FireblocksResponseChecks
 }
 
 [Trait("Suite", "Offline"), Trait("Provider", "Fireblocks")]
-public class FireblocksResponseCheckTests
+public class FireblocksResponseCheckTests(ITestOutputHelper output)
 {
     [Fact]
     public void AssetMetadataAcceptsNonEvmContractAddresses()
-        => FireblocksResponseChecks.Assets(JArray.Parse("[{\"id\":\"SOL_TOKEN\",\"name\":\"Token\",\"type\":\"SOLANA_TOKEN\",\"decimals\":6,\"contractAddress\":\"non-EVM-address\"}]"));
+    {
+        output.WriteLine("Offline fixture check: AssetMetadataAcceptsNonEvmContractAddresses. No live API request.");
+        FireblocksResponseChecks.Assets(JArray.Parse("[{\"id\":\"SOL_TOKEN\",\"name\":\"Token\",\"type\":\"SOLANA_TOKEN\",\"decimals\":6,\"contractAddress\":\"non-EVM-address\"}]"));
+    }
     [Fact]
     public void ExchangeRetrievalFailureIsNotSuccessfulData()
-        => Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksResponseChecks.ExchangeAccounts(JArray.Parse("[{\"id\":\"1\",\"name\":\"Exchange\",\"type\":\"NEW_EXCHANGE\",\"success\":false,\"assets\":[]}]")));
+    {
+        output.WriteLine("Offline fixture check: ExchangeRetrievalFailureIsNotSuccessfulData. No live API request.");
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksResponseChecks.ExchangeAccounts(JArray.Parse("[{\"id\":\"1\",\"name\":\"Exchange\",\"type\":\"NEW_EXCHANGE\",\"success\":false,\"assets\":[]}]")));
+    }
     [Fact]
     public void MalformedFiatBalancesFail()
-        => Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksResponseChecks.FiatAccounts(JArray.Parse("[{\"id\":\"1\",\"name\":\"Fiat\",\"assets\":[{\"id\":\"USD\",\"balance\":\"not-a-number\"}]}]")));
+    {
+        output.WriteLine("Offline fixture check: MalformedFiatBalancesFail. No live API request.");
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksResponseChecks.FiatAccounts(JArray.Parse("[{\"id\":\"1\",\"name\":\"Fiat\",\"assets\":[{\"id\":\"USD\",\"balance\":\"not-a-number\"}]}]")));
+    }
     [Fact]
     public void DuplicateWalletAssetsFail()
-        => Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksResponseChecks.Wallets(JArray.Parse("[{\"id\":\"1\",\"name\":\"Wallet\",\"assets\":[{\"id\":\"ETH\"},{\"id\":\"ETH\"}]}]"), false));
+    {
+        output.WriteLine("Offline fixture check: DuplicateWalletAssetsFail. No live API request.");
+        Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => FireblocksResponseChecks.Wallets(JArray.Parse("[{\"id\":\"1\",\"name\":\"Wallet\",\"assets\":[{\"id\":\"ETH\"},{\"id\":\"ETH\"}]}]"), false));
+    }
     [Fact]
     public void EmptyConfiguredCollectionsAreValid()
     {
+        output.WriteLine("Offline fixture check: EmptyConfiguredCollectionsAreValid. No live API request.");
         FireblocksResponseChecks.ExchangeAccounts(new JArray()); FireblocksResponseChecks.FiatAccounts(new JArray());
         FireblocksResponseChecks.Wallets(new JArray(), false); FireblocksResponseChecks.Wallets(new JArray(), true);
     }
     [Fact]
     public void FutureWalletStatusesDoNotRequireEnumChanges()
-        => FireblocksResponseChecks.Wallets(JArray.Parse("[{\"id\":\"1\",\"name\":\"Wallet\",\"assets\":[{\"id\":\"SOL\",\"status\":\"FUTURE_STATUS\",\"address\":\"non-EVM\"}]}]"), true);
+    {
+        output.WriteLine("Offline fixture check: FutureWalletStatusesDoNotRequireEnumChanges. No live API request.");
+        FireblocksResponseChecks.Wallets(JArray.Parse("[{\"id\":\"1\",\"name\":\"Wallet\",\"assets\":[{\"id\":\"SOL\",\"status\":\"FUTURE_STATUS\",\"address\":\"non-EVM\"}]}]"), true);
+    }
 }
 
 [Trait("Suite", "Offline"), Trait("Provider", "Fireblocks")]
-public class FireblocksCoverageChecks
+public class FireblocksCoverageChecks(ITestOutputHelper output)
 {
     [Fact]
     public void MappingContainsEveryFireblocksSwaggerOperationExactlyOnce()
     {
+        output.WriteLine("Offline fixture check: MappingContainsEveryFireblocksSwaggerOperationExactlyOnce. No live API request.");
         var mapping = JArray.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "fireblocks.mapping.json")));
         var expected = ApiSpecification.Operations.Where(row => ((string)row[1]).StartsWith("/api/Fireblocks"))
             .Select(row => $"{((string)row[0]).ToUpperInvariant()} {row[1]}").OrderBy(x => x).ToArray();

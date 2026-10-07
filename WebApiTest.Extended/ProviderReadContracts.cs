@@ -1,3 +1,4 @@
+using Xunit.Abstractions;
 using System.Globalization;
 using Newtonsoft.Json.Linq;
 
@@ -7,7 +8,7 @@ namespace WebApiTest.Extended;
 public class StageReadCollection : ICollectionFixture<ApiHarness> { }
 
 [Collection("Stage reads")]
-public class ProviderReadContracts(ApiHarness api)
+public class ProviderReadContracts(ApiHarness api, ITestOutputHelper output)
 {
     public static readonly string[] Paths = [
         "/api/FacilitaPayProvider/getExchangeRates",
@@ -17,7 +18,7 @@ public class ProviderReadContracts(ApiHarness api)
     [LiveTheory, MemberData(nameof(ReadCases)), Trait("Suite", "Live")]
     public async Task ReadResponsesMatchKnownWrapperContract(string path)
     {
-        var data = ApiHarness.SuccessfulJson(await api.SendAsync("POST", path, await api.GetTokenAsync()));
+        var data = ApiHarness.SuccessfulJson(await TestReport.SendAsync(api, output, "POST", path, await TestReport.GetTokenAsync(api, output)));
         var result = data["result"]!;
         if (path.EndsWith("getExchangeRates"))
         {
@@ -47,7 +48,8 @@ public class ProviderReadContracts(ApiHarness api)
     [LiveTheory, InlineData("/api/Version"), InlineData("/api/DeployDate"), Trait("Suite", "Live")]
     public async Task PublicInfoReturnsNonEmptySuccess(string path)
     {
-        var response = await api.SendAsync("GET", path);
+        var response = await TestReport.SendAsync(api, output, "GET", path);
+        output.WriteLine("Public API metadata: {0}", Newtonsoft.Json.JsonConvert.ToString(response.Body.Length <= 512 ? response.Body : "[metadata exceeds display limit]"));
         Assert.Equal(200, response.Status); Assert.False(string.IsNullOrWhiteSpace(response.Body));
         Assert.True(response.Milliseconds <= Settings.MaxMilliseconds, $"{path} exceeded response-time budget.");
     }
