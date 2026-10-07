@@ -10,7 +10,7 @@ public class FireblocksScenarioCheckTests(ITestOutputHelper output)
     {
         ["accounts"] = new JArray(new JObject { ["id"] = id, ["name"] = "Fixture vault",
             ["hiddenOnUI"] = false, ["autoFuel"] = false, ["assets"] = new JArray() }),
-        ["paging"] = new JObject { ["after"] = next }
+        ["paging"] = new JObject { ["after"] = next == null ? JValue.CreateNull() : new JValue(next) }
     };
     private static JToken Anchor() => JObject.Parse("""
         {"id":"anchor","createdAt":20,"assetId":"SOL_TEST","status":"COMPLETED","txHash":"fixture-hash",
