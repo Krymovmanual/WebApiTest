@@ -3,7 +3,7 @@
   "info": {
     "title": "Quantfury API",
     "description": "Integration with crypto providers on the platform ASP.NET Core Web API",
-    "version": "1.0.8"
+    "version": "1.0.10"
   },
   "paths": {
     "/api/token": {
@@ -87,7 +87,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -113,7 +113,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -129,7 +129,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -155,7 +155,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -171,7 +171,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -197,7 +197,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -213,7 +213,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -239,7 +239,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -255,7 +255,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -299,7 +299,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -309,7 +309,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -326,7 +326,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -336,7 +336,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -353,7 +353,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -363,7 +363,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -380,7 +380,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -390,7 +390,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -407,7 +407,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -417,7 +417,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -476,7 +476,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -486,7 +486,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -506,7 +506,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -537,7 +537,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -559,7 +559,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -579,7 +579,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -610,7 +610,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -632,7 +632,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -673,7 +673,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -695,7 +695,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -715,7 +715,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -737,7 +737,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -754,7 +754,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -771,7 +771,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -788,7 +788,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -805,7 +805,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -815,7 +815,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -832,7 +832,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -842,7 +842,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -859,7 +859,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -869,7 +869,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -886,7 +886,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -896,7 +896,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -913,7 +913,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -923,7 +923,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -940,7 +940,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -950,7 +950,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -967,7 +967,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -977,7 +977,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -994,7 +994,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1004,7 +1004,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1021,7 +1021,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1041,7 +1041,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1069,7 +1069,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1079,7 +1079,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1096,7 +1096,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1106,7 +1106,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1123,7 +1123,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1133,7 +1133,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1150,7 +1150,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1160,7 +1160,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1177,7 +1177,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1187,7 +1187,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1204,7 +1204,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1214,7 +1214,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1231,7 +1231,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1248,7 +1248,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1258,7 +1258,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1275,7 +1275,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1285,7 +1285,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1302,7 +1302,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1319,7 +1319,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1329,7 +1329,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1346,7 +1346,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1356,7 +1356,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1373,7 +1373,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1383,7 +1383,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1400,7 +1400,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1410,7 +1410,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1427,7 +1427,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1437,7 +1437,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1454,7 +1454,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1464,7 +1464,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1481,7 +1481,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1491,7 +1491,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1508,7 +1508,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1518,7 +1518,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1535,7 +1535,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1545,7 +1545,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1562,7 +1562,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1572,7 +1572,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1589,7 +1589,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1599,7 +1599,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1616,7 +1616,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1626,7 +1626,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1643,7 +1643,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1653,7 +1653,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1670,7 +1670,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1680,7 +1680,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1697,7 +1697,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1707,7 +1707,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1724,7 +1724,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1741,7 +1741,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1751,7 +1751,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1768,7 +1768,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1790,7 +1790,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1800,7 +1800,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1817,7 +1817,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1827,7 +1827,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1844,7 +1844,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1854,7 +1854,34 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/FireblocksProvider/setCustomerRefIdForVaultAccount": {
+      "post": {
+        "tags": [
+          "FireblocksProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
           }
         ]
       }
@@ -1871,7 +1898,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1881,7 +1908,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1898,7 +1925,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1908,7 +1935,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1925,7 +1952,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1935,7 +1962,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1952,7 +1979,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1969,7 +1996,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -1979,7 +2006,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -1996,7 +2023,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2006,7 +2033,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2023,7 +2050,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2033,7 +2060,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2050,7 +2077,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2060,7 +2087,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2077,7 +2104,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2087,7 +2114,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2104,7 +2131,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2114,7 +2141,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2131,7 +2158,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2141,7 +2168,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2179,7 +2206,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2189,7 +2216,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2206,7 +2233,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2216,7 +2243,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2233,7 +2260,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2243,7 +2270,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2260,7 +2287,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2270,7 +2297,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2287,7 +2314,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2297,7 +2324,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2314,7 +2341,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2336,7 +2363,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2353,7 +2380,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2363,7 +2390,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2380,7 +2407,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2390,7 +2417,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2419,6 +2446,854 @@
         }
       }
     },
+    "/api/Infura/{blockchain}/getAccounts": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/generateAddress": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GenerateEthereumAddressRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getBalance": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BalanceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/token/{contractAddress}/getTransactions": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contractAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetTransactionsRequets"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getEthTransactions": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetTransactionsRequets"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getBlockByNumber/{blockNumber}": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "blockNumber",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getTransactionRecipient": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TransactionByHashRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getTransactionByHash": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TransactionByHashRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getGasPrice": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/estimateFees": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/EthEstimateGasRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/token/{contractAddress}/getBalance": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contractAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Erc20BalanceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contractAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TokenTransactionByHashRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/token/{contractAddress}/sendTransaction": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contractAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SendErc20TransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/token/{contractAddress}/boostTransaction": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contractAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BoostTransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/token/{contractAddress}/cancelTransaction": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contractAddress",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CancelTransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/sendTransaction": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SendEthTransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/boostTransaction": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BoostTransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/cancelTransaction": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CancelTransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/Infura/{blockchain}/getTransactionCount": {
+      "post": {
+        "tags": [
+          "Infura"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "blockchain",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/GetTransactionCountRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
     "/api/KashaProvider/webhook": {
       "post": {
         "tags": [
@@ -2434,7 +3309,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2468,7 +3343,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2478,7 +3353,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2495,7 +3370,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2505,7 +3380,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2524,7 +3399,7 @@
           },
           "400": {
             "description": "Bad Request",
-            "schema": { }
+            "schema": {}
           },
           "default": {
             "description": "Error",
@@ -2562,7 +3437,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2582,7 +3457,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2604,7 +3479,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2636,7 +3511,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2656,7 +3531,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2678,7 +3553,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2710,7 +3585,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2730,7 +3605,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2752,7 +3627,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2772,7 +3647,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2794,7 +3669,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2814,7 +3689,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2836,7 +3711,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2856,7 +3731,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2878,7 +3753,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2898,7 +3773,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2920,7 +3795,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2940,7 +3815,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -2962,7 +3837,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -2982,7 +3857,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3004,7 +3879,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3024,7 +3899,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3046,7 +3921,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3095,7 +3970,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3142,7 +4017,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3162,7 +4037,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3184,7 +4059,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3201,7 +4076,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3211,7 +4086,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3228,7 +4103,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3238,7 +4113,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3255,7 +4130,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3265,7 +4140,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3282,7 +4157,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3292,7 +4167,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3336,7 +4211,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3353,7 +4228,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3363,7 +4238,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3380,7 +4255,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3390,7 +4265,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3407,7 +4282,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3417,7 +4292,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3434,7 +4309,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3444,7 +4319,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3461,7 +4336,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3471,7 +4346,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3488,7 +4363,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3498,7 +4373,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3569,7 +4444,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3586,7 +4461,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3596,7 +4471,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3613,7 +4488,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3623,7 +4498,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3640,7 +4515,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3650,7 +4525,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3667,7 +4542,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3677,7 +4552,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3694,7 +4569,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3704,7 +4579,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3721,7 +4596,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3731,7 +4606,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3778,7 +4653,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3827,7 +4702,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3874,7 +4749,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3896,7 +4771,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3916,7 +4791,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3938,7 +4813,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -3958,7 +4833,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -3980,7 +4855,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4000,7 +4875,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4022,7 +4897,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4042,7 +4917,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4064,7 +4939,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4084,7 +4959,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4106,7 +4981,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4126,7 +5001,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4148,7 +5023,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4165,7 +5040,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4182,7 +5057,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4192,7 +5067,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4209,7 +5084,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4219,7 +5094,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4236,7 +5111,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4307,7 +5182,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4317,7 +5192,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4334,7 +5209,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4351,7 +5226,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4361,7 +5236,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4378,7 +5253,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4388,7 +5263,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4405,7 +5280,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4415,7 +5290,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4432,7 +5307,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4442,7 +5317,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4459,7 +5334,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4469,7 +5344,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4486,7 +5361,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4508,7 +5383,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4518,7 +5393,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4535,7 +5410,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4545,7 +5420,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4562,7 +5437,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4584,7 +5459,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4594,7 +5469,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4611,7 +5486,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4621,7 +5496,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4638,7 +5513,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4648,7 +5523,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4665,7 +5540,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4675,7 +5550,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4692,7 +5567,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4714,7 +5589,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4724,7 +5599,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4741,7 +5616,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4751,7 +5626,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4768,7 +5643,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4778,7 +5653,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4795,7 +5670,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4805,7 +5680,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4822,7 +5697,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4832,7 +5707,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4849,7 +5724,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4859,7 +5734,34 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/QuantfuryPaymentsProvider/depositZeroHash": {
+      "post": {
+        "tags": [
+          "QuantfuryPaymentsProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
           }
         ]
       }
@@ -4876,7 +5778,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4886,7 +5788,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4903,7 +5805,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4925,7 +5827,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -4935,7 +5837,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4987,7 +5889,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5004,7 +5906,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5014,7 +5916,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5031,7 +5933,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5053,7 +5955,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5063,7 +5965,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5083,7 +5985,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5099,7 +6001,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5116,7 +6018,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5126,7 +6028,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5146,7 +6048,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5162,7 +6064,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5179,7 +6081,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5189,7 +6091,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5206,7 +6108,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5214,6 +6116,44 @@
             "description": "Success"
           }
         }
+      }
+    },
+    "/api/validate-address": {
+      "post": {
+        "tags": [
+          "ValidateAddress"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ValidateAddressRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/api/WyreProvider/getBalances": {
@@ -5228,7 +6168,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5238,7 +6178,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5255,7 +6195,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5265,7 +6205,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5282,7 +6222,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5292,7 +6232,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5309,7 +6249,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5319,7 +6259,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5336,7 +6276,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5346,7 +6286,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5363,7 +6303,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5373,7 +6313,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5390,7 +6330,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5400,7 +6340,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5417,7 +6357,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5427,7 +6367,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5444,7 +6384,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5454,7 +6394,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5471,7 +6411,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5481,7 +6421,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5498,7 +6438,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5508,7 +6448,7 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -5525,7 +6465,7 @@
           {
             "in": "body",
             "name": "body",
-            "schema": { }
+            "schema": {}
           }
         ],
         "responses": {
@@ -5535,13 +6475,1631 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
+      }
+    },
+    "/api/ZeroHashProvider/webhook": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/assets": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Stablecoin",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "in": "query",
+            "name": "ChainCode",
+            "type": "string",
+            "default": null
+          },
+          {
+            "in": "query",
+            "name": "Symbol",
+            "type": "string",
+            "default": null
+          },
+          {
+            "in": "query",
+            "name": "NyAllowed",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "in": "query",
+            "name": "FundEnabled",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "in": "query",
+            "name": "StakingEnabled",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAssetsResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAssetsResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/requests": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Status",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "GasPrice",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ClientWithdrawalRequestId",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampGt",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampGte",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampE",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampLt",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampLte",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "OnChainStatus",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountLabel",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestsListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestsListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/requests/{id}": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponseListZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponseListZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponseListZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponseListZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/locked_network_fee": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountGroup",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountLabel",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Asset",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Amount",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "MaxAmount",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "WithdrawalAccountId",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "WithdrawalAddress",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "DestinationTag",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "NoDestinationTag",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashLockedNetworkFeeResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashLockedNetworkFeeResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/execute": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashExecuteWithdrawalRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashExecuteWithdrawalResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashExecuteWithdrawalResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/estimate_network_fee": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Underlying",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "QuotedCurrency",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Amount",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "DestinationAddress",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ContractCall",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashEstimateNetworkFeeResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashEstimateNetworkFeeResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/digital_asset_addresses": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDigitalAssetAddressesResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDigitalAssetAddressesResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/digital_asset_addresses/{id}": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDigitalAssetAddressItemZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDigitalAssetAddressItemZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/withdrawals/validate_address": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Asset",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Address",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "DestinationTag",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashValidateAddressResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashValidateAddressResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/transfers": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateTransferRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateTransferResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateTransferResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "PageSize",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "ToParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "FromParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampGt",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampGte",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampE",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampLt",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "RequestedTimestampLte",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "ClientTransferId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashTransfersListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashTransfersListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/transfers/{id}": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateTransferResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateTransferResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/movements": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "PageSize",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "ParentLinkId",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "MovementType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "TransferType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashMovementsListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashMovementsListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountGroup",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountLabel",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountOwner",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Asset",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountType",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAccountsListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAccountsListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateCustomerAccountRequest"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCustomerAccountResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCustomerAccountResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{accountId}": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAccountItemZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAccountItemZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{accountId}/movements": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "MovementTimestampGt",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "MovementTimestampGte",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "MovementTimestampE",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "MovementTimestampLt",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "MovementTimestampLte",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "ParentLinkId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashMovementsListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashMovementsListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{accountId}/run_history": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAccountRunHistoryResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashAccountRunHistoryResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{zrn}/details": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zrn",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCustomerAccountResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCustomerAccountResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{zrn}": {
+      "patch": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zrn",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashUpdateCustomerAccountRequest"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/JTokenZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/JTokenZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{zrn}/divest": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zrn",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/JTokenZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/JTokenZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/accounts/{zrn}/close": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zrn",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/JTokenZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/JTokenZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/deposits/digital_asset_addresses": {
+      "post": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateDepositDigitalAssetAddressRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateDepositDigitalAssetAddressResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashCreateDepositDigitalAssetAddressResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashTransferDepositDigitalAssetAddressRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashTransferDepositDigitalAssetAddressResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashTransferDepositDigitalAssetAddressResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Asset",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "InactivityInterval",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "Limit",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDepositDigitalAssetAddressesListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDepositDigitalAssetAddressesListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/ZeroHashProvider/deposits": {
+      "get": {
+        "tags": [
+          "ZeroHashProvider"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Page",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Asset",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "IncludeCustomerDeposits",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "ParticipantCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "AccountLabel",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "SettleTimestampGt",
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDepositsListResponseZeroHashBaseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ZeroHashDepositsListResponseZeroHashBaseResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
       }
     }
   },
   "definitions": {
+    "BalanceRequest": {
+      "required": [
+        "address"
+      ],
+      "type": "object",
+      "properties": {
+        "blockTag": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "BoostTransactionRequest": {
+      "required": [
+        "keyName",
+        "transactionHash"
+      ],
+      "type": "object",
+      "properties": {
+        "keyName": {
+          "type": "string"
+        },
+        "transactionHash": {
+          "type": "string"
+        },
+        "gasMultiplier": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "CancelTransactionRequest": {
+      "required": [
+        "keyName",
+        "transactionHash"
+      ],
+      "type": "object",
+      "properties": {
+        "keyName": {
+          "type": "string"
+        },
+        "transactionHash": {
+          "type": "string"
+        },
+        "gasMultiplier": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "Erc20BalanceRequest": {
+      "required": [
+        "address"
+      ],
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "EthEstimateGasRequest": {
+      "type": "object",
+      "properties": {
+        "keyName": {
+          "type": "string"
+        },
+        "withdrawalId": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "gas": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "gasPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxPriorityFeePerGas": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxFeePerGas": {
+          "format": "double",
+          "type": "number"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "data": {
+          "type": "string"
+        }
+      }
+    },
+    "GenerateEthereumAddressRequest": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "GetTransactionCountRequest": {
+      "required": [
+        "address"
+      ],
+      "type": "object",
+      "properties": {
+        "blockNumber": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "GetTransactionsRequets": {
+      "required": [
+        "address"
+      ],
+      "type": "object",
+      "properties": {
+        "fromBlock": {
+          "type": "string"
+        },
+        "toBlock": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "JTokenZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {}
+      }
+    },
     "KoyweQuoteRequest": {
       "type": "object",
       "properties": {
@@ -5640,7 +8198,7 @@
         "error": {
           "type": "string"
         },
-        "result": { },
+        "result": {},
         "httpStatus": {
           "format": "int32",
           "type": "integer"
@@ -5653,7 +8211,7 @@
         "error": {
           "type": "string"
         },
-        "result": { },
+        "result": {},
         "httpStatus": {
           "format": "int32",
           "type": "integer"
@@ -5666,7 +8224,7 @@
         "error": {
           "type": "string"
         },
-        "result": { }
+        "result": {}
       }
     },
     "ObjectOpenPaydBaseResponse": {
@@ -5675,7 +8233,7 @@
         "error": {
           "type": "string"
         },
-        "result": { },
+        "result": {},
         "httpStatus": {
           "format": "int32",
           "type": "integer"
@@ -5688,7 +8246,7 @@
         "error": {
           "type": "string"
         },
-        "result": { }
+        "result": {}
       }
     },
     "ProblemDetails": {
@@ -5711,7 +8269,90 @@
           "type": "string"
         }
       },
-      "additionalProperties": { }
+      "additionalProperties": {}
+    },
+    "SendErc20TransactionRequest": {
+      "required": [
+        "amount",
+        "from",
+        "keyName",
+        "to"
+      ],
+      "type": "object",
+      "properties": {
+        "keyName": {
+          "type": "string"
+        },
+        "withdrawalId": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "gas": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "gasPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxPriorityFeePerGas": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxFeePerGas": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "SendEthTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "keyName": {
+          "type": "string"
+        },
+        "withdrawalId": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "gas": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "gasPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxPriorityFeePerGas": {
+          "format": "double",
+          "type": "number"
+        },
+        "maxFeePerGas": {
+          "format": "double",
+          "type": "number"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "data": {
+          "type": "string"
+        }
+      }
     },
     "StringKashaBaseResponse": {
       "type": "object",
@@ -5750,6 +8391,1378 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "TokenTransactionByHashRequest": {
+      "required": [
+        "transactionHash"
+      ],
+      "type": "object",
+      "properties": {
+        "transactionHash": {
+          "type": "string"
+        }
+      }
+    },
+    "TransactionByHashRequest": {
+      "required": [
+        "transactionHash"
+      ],
+      "type": "object",
+      "properties": {
+        "transactionHash": {
+          "type": "string"
+        }
+      }
+    },
+    "ValidateAddressRequest": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashAccountItem": {
+      "type": "object",
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "account_owner": {
+          "type": "string"
+        },
+        "account_type": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "string"
+        },
+        "account_id": {
+          "type": "string"
+        },
+        "last_update": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashAccountItemZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashAccountItem"
+        }
+      }
+    },
+    "ZeroHashAccountRunHistoryItem": {
+      "type": "object",
+      "properties": {
+        "run_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "run_type": {
+          "type": "string"
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "change": {
+          "type": "string"
+        },
+        "new_balance": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashAccountRunHistoryResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashAccountRunHistoryItem"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashAccountRunHistoryResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashAccountRunHistoryResponse"
+        }
+      }
+    },
+    "ZeroHashAccountsListResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashAccountItem"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashAccountsListResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashAccountsListResponse"
+        }
+      }
+    },
+    "ZeroHashAssetNetwotk": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "label": {
+          "type": "string"
+        },
+        "chain_code": {
+          "type": "string"
+        },
+        "short_code": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashAssetsResponse": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "chain_code": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "withdrawal_minimum": {
+          "type": "string"
+        },
+        "stablecoin": {
+          "type": "boolean"
+        },
+        "precision": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tag_name": {
+          "type": "string"
+        },
+        "fee_asset": {
+          "type": "string"
+        },
+        "rfq_liquidity_enabled": {
+          "type": "boolean"
+        },
+        "custody_enabled": {
+          "type": "boolean"
+        },
+        "deposit_address_creation": {
+          "type": "string"
+        },
+        "deposits_onchain_confirms": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ny_allowed": {
+          "default": null,
+          "type": "boolean"
+        },
+        "contract_address": {
+          "type": "string"
+        },
+        "fund_enabled": {
+          "type": "boolean"
+        },
+        "depegged": {
+          "type": "boolean"
+        },
+        "explorer_link": {
+          "type": "string"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "transaction_explorer_link": {
+          "type": "string"
+        },
+        "staking_enabled": {
+          "type": "boolean"
+        },
+        "network": {
+          "$ref": "#/definitions/ZeroHashAssetNetwotk"
+        }
+      }
+    },
+    "ZeroHashAssetsResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashAssetsResponse"
+        }
+      }
+    },
+    "ZeroHashCreateCustomerAccountRequest": {
+      "type": "object",
+      "properties": {
+        "zrn": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "platform_code": {
+          "type": "string"
+        },
+        "prefunded": {
+          "type": "boolean"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "tenants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "financial_advisors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ZeroHashCreateDepositDigitalAssetAddressRequest": {
+      "type": "object",
+      "properties": {
+        "participant_code": {
+          "type": "string"
+        },
+        "platform_code": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashCreateDepositDigitalAssetAddressResponse": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "address": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "platform_code": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashCreateDepositDigitalAssetAddressResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashCreateDepositDigitalAssetAddressResponse"
+        }
+      }
+    },
+    "ZeroHashCreateTransferRequest": {
+      "type": "object",
+      "properties": {
+        "from_participant_code": {
+          "type": "string"
+        },
+        "from_account_group": {
+          "type": "string"
+        },
+        "from_account_label": {
+          "type": "string"
+        },
+        "to_participant_code": {
+          "type": "string"
+        },
+        "to_account_group": {
+          "type": "string"
+        },
+        "to_account_label": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "client_transfer_id": {
+          "type": "string"
+        },
+        "prefunded": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ZeroHashCreateTransferResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "from_participant_code": {
+          "type": "string"
+        },
+        "from_account_group": {
+          "type": "string"
+        },
+        "from_account_label": {
+          "type": "string"
+        },
+        "to_participant_code": {
+          "type": "string"
+        },
+        "to_account_group": {
+          "type": "string"
+        },
+        "to_account_label": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "movement_id": {
+          "type": "string"
+        },
+        "client_transfer_id": {
+          "type": "string"
+        },
+        "parent_link_id_source": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashCreateTransferResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashCreateTransferResponse"
+        }
+      }
+    },
+    "ZeroHashCustomerAccountResponse": {
+      "type": "object",
+      "properties": {
+        "zrn": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "platform_code": {
+          "type": "string"
+        },
+        "prefunded": {
+          "type": "boolean"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "tenants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "financial_advisors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ZeroHashCustomerAccountResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashCustomerAccountResponse"
+        }
+      }
+    },
+    "ZeroHashDepositDigitalAssetAddressesListResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashCreateDepositDigitalAssetAddressResponse"
+          }
+        }
+      }
+    },
+    "ZeroHashDepositDigitalAssetAddressesListResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashDepositDigitalAssetAddressesListResponse"
+        }
+      }
+    },
+    "ZeroHashDepositItem": {
+      "type": "object",
+      "properties": {
+        "settle_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "account_id": {
+          "type": "string"
+        },
+        "movement_id": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "reference_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "received_address": {
+          "type": "string"
+        },
+        "run_id": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashDepositsListResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashDepositItem"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page_size": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "count": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashDepositsListResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashDepositsListResponse"
+        }
+      }
+    },
+    "ZeroHashDigitalAssetAddressItem": {
+      "type": "object",
+      "properties": {
+        "withdrawal_account_id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "limit": {
+          "format": "double",
+          "type": "number"
+        },
+        "last_update": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "submitted_address": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashDigitalAssetAddressItemZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashDigitalAssetAddressItem"
+        }
+      }
+    },
+    "ZeroHashDigitalAssetAddressesResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashDigitalAssetAddressItem"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashDigitalAssetAddressesResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashDigitalAssetAddressesResponse"
+        }
+      }
+    },
+    "ZeroHashEstimateNetworkFeeResponse": {
+      "type": "object",
+      "properties": {
+        "underlying": {
+          "type": "string"
+        },
+        "quoted_currency": {
+          "type": "string"
+        },
+        "network_fee_asset": {
+          "type": "string"
+        },
+        "network_fee_quantity": {
+          "type": "string"
+        },
+        "total_notional": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashEstimateNetworkFeeResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashEstimateNetworkFeeResponse"
+        }
+      }
+    },
+    "ZeroHashExecuteWithdrawalRequest": {
+      "type": "object",
+      "properties": {
+        "withdrawal_quote_id": {
+          "type": "string"
+        },
+        "client_withdrawal_request_id": {
+          "type": "string"
+        },
+        "beneficiary_participant_code": {
+          "type": "string"
+        },
+        "beneficiary_first_name": {
+          "type": "string"
+        },
+        "beneficiary_last_name": {
+          "type": "string"
+        },
+        "beneficiary_business_name": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashExecuteWithdrawalResponse": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "withdrawal_quote_id": {
+          "type": "string"
+        },
+        "withdrawal_request_id": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "withdrawal_address": {
+          "type": "string"
+        },
+        "destination_tag": {
+          "type": "string"
+        },
+        "no_destination_tag": {
+          "type": "boolean"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "amount_notional": {
+          "type": "string"
+        },
+        "network_fee": {
+          "type": "string"
+        },
+        "network_fee_notional": {
+          "type": "string"
+        },
+        "on_chain_status": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashExecuteWithdrawalResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashExecuteWithdrawalResponse"
+        }
+      }
+    },
+    "ZeroHashLockedNetworkFeeResponse": {
+      "type": "object",
+      "properties": {
+        "participant_code": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "max_amount": {
+          "type": "boolean"
+        },
+        "withdrawal_account_id": {
+          "type": "string"
+        },
+        "withdrawal_address": {
+          "type": "string"
+        },
+        "destination_tag": {
+          "type": "string"
+        },
+        "no_destination_tag": {
+          "type": "boolean"
+        },
+        "withdrawal_quote_id": {
+          "type": "string"
+        },
+        "network_fee": {
+          "type": "string"
+        },
+        "network_fee_notional": {
+          "type": "string"
+        },
+        "net_withdrawal_quantity": {
+          "type": "string"
+        },
+        "net_withdrawal_notional": {
+          "type": "string"
+        },
+        "amount_notional": {
+          "type": "string"
+        },
+        "withdrawal_fee": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashLockedNetworkFeeResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashLockedNetworkFeeResponse"
+        }
+      }
+    },
+    "ZeroHashMovementItem": {
+      "type": "object",
+      "properties": {
+        "movement_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "account_id": {
+          "type": "string"
+        },
+        "movement_id": {
+          "type": "string"
+        },
+        "movement_type": {
+          "type": "string"
+        },
+        "transfer_type": {
+          "type": "string"
+        },
+        "deposit_reference_id": {
+          "type": "string"
+        },
+        "withdrawal_request_id": {
+          "type": "string"
+        },
+        "parent_link_id": {
+          "type": "string"
+        },
+        "trade_id": {
+          "type": "string"
+        },
+        "change": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashMovementsListResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashMovementItem"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashMovementsListResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashMovementsListResponse"
+        }
+      }
+    },
+    "ZeroHashTransferDepositDigitalAssetAddressRequest": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "blockchain": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashTransferDepositDigitalAssetAddressResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashCreateDepositDigitalAssetAddressResponse"
+          }
+        }
+      }
+    },
+    "ZeroHashTransferDepositDigitalAssetAddressResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashTransferDepositDigitalAssetAddressResponse"
+        }
+      }
+    },
+    "ZeroHashTransfersListResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashCreateTransferResponse"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page_size": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "count": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashTransfersListResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashTransfersListResponse"
+        }
+      }
+    },
+    "ZeroHashUpdateCustomerAccountRequest": {
+      "type": "object",
+      "properties": {
+        "prefunded": {
+          "type": "boolean"
+        },
+        "tier": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashValidateAddressResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashValidateAddressResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashValidateAddressResponse"
+        }
+      }
+    },
+    "ZeroHashWithdrawalAccountCreate": {
+      "required": [
+        "account_number",
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "limit": {
+          "format": "double",
+          "type": "number"
+        },
+        "type": {
+          "type": "string"
+        },
+        "beneficiary_name": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "bank_name": {
+          "type": "string"
+        },
+        "routing_number": {
+          "type": "string"
+        },
+        "swift_code": {
+          "type": "string"
+        },
+        "recipient_instructions": {
+          "type": "string"
+        },
+        "intermediary_bank": {
+          "type": "boolean"
+        },
+        "intermediary_bank_name": {
+          "type": "string"
+        },
+        "intermediary_bank_code_type": {
+          "type": "string"
+        },
+        "intermediary_bank_code": {
+          "type": "string"
+        },
+        "intermediary_bank_account_number": {
+          "type": "string"
+        },
+        "correspondent_bank_name": {
+          "type": "string"
+        },
+        "correspondent_bank_code_type": {
+          "type": "string"
+        },
+        "correspondent_bank_code": {
+          "type": "string"
+        },
+        "correspondent_bank_account_number": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestCreate": {
+      "required": [
+        "amount",
+        "asset",
+        "participant_code"
+      ],
+      "type": "object",
+      "properties": {
+        "client_withdrawal_request_id": {
+          "type": "string"
+        },
+        "withdrawal_account_id": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/definitions/ZeroHashWithdrawalAccountCreate"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "beneficiary_participant_code": {
+          "type": "string"
+        },
+        "beneficiary_first_name": {
+          "type": "string"
+        },
+        "beneficiary_last_name": {
+          "type": "string"
+        },
+        "beneficiary_business_name": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "destination_tag": {
+          "type": "string"
+        },
+        "no_destination_tag": {
+          "type": "boolean"
+        },
+        "gas_price": {
+          "type": "string"
+        },
+        "input_data": {
+          "type": "string"
+        },
+        "trade_id": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestCreateResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "withdrawal_account_id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "requestor_participant_code": {
+          "type": "string"
+        },
+        "requested_amount": {
+          "type": "string"
+        },
+        "settled_amount": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "transaction_id": {
+          "type": "string"
+        },
+        "requested_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "created_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "gas_price": {
+          "type": "string"
+        },
+        "client_withdrawal_request_id": {
+          "type": "string"
+        },
+        "on_chain_status": {
+          "type": "string"
+        },
+        "fee_amount": {
+          "type": "string"
+        },
+        "withdrawal_fee": {
+          "type": "string"
+        },
+        "quoted_fee_amount": {
+          "type": "string"
+        },
+        "quoted_fee_notional": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestCreateResponseListZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponse"
+          }
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestCreateResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashWithdrawalRequestCreateResponse"
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestGetResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "withdrawal_account_id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "participant_code": {
+          "type": "string"
+        },
+        "requestor_participant_code": {
+          "type": "string"
+        },
+        "requested_amount": {
+          "type": "string"
+        },
+        "settled_amount": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "account_group": {
+          "type": "string"
+        },
+        "account_label": {
+          "type": "string"
+        },
+        "transaction_id": {
+          "type": "string"
+        },
+        "requested_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "created_timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "gas_price": {
+          "type": "string"
+        },
+        "client_withdrawal_request_id": {
+          "type": "string"
+        },
+        "on_chain_status": {
+          "type": "string"
+        },
+        "fee_amount": {
+          "type": "string"
+        },
+        "withdrawal_fee": {
+          "type": "string"
+        },
+        "quoted_fee_amount": {
+          "type": "string"
+        },
+        "quoted_fee_notional": {
+          "type": "string"
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestsListResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZeroHashWithdrawalRequestGetResponse"
+          }
+        },
+        "page": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "page_size": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total_pages": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "count": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ZeroHashWithdrawalRequestsListResponseZeroHashBaseResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ZeroHashWithdrawalRequestsListResponse"
         }
       }
     }

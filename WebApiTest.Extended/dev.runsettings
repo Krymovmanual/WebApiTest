@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <WEBAPI_RUN_LIVE>1</WEBAPI_RUN_LIVE>
+      <WEBAPI_BASE_URL>https://qu-dev-qfwebapi.azurewebsites.net/</WEBAPI_BASE_URL>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>

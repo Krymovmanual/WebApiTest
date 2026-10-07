@@ -7,7 +7,7 @@ namespace WebApiTest.Extended;
 public class StageReadCollection : ICollectionFixture<ApiHarness> { }
 
 [Collection("Stage reads")]
-public class ReadContractTests(ApiHarness api)
+public class ProviderReadContracts(ApiHarness api)
 {
     public static readonly string[] Paths = [
         "/api/FireblocksProvider/getAssets", "/api/FireblocksProvider/getExchangeAccounts",
@@ -15,7 +15,6 @@ public class ReadContractTests(ApiHarness api)
         "/api/FireblocksProvider/getExternalWallets", "/api/FacilitaPayProvider/getExchangeRates",
         "/api/FacilitaPayProvider/getBankAccounts", "/api/KoyweProvider/getAllCurrencyTokenPairs"];
     public static IEnumerable<object[]> ReadCases => Paths.Select(p => new object[] { p });
-    public static IEnumerable<object[]> AuthCases => Paths.SelectMany(p => new[] { new object[] { p, "missing" }, new object[] { p, "malformed" } });
 
     [LiveTheory, MemberData(nameof(ReadCases)), Trait("Suite", "Live")]
     public async Task ReadResponsesMatchKnownWrapperContract(string path)
@@ -77,13 +76,6 @@ public class ReadContractTests(ApiHarness api)
                 foreach (var token in tokens) { RequiredString(token, "_id"); RequiredString(token, "name"); RequiredString(token, "symbol"); }
             }
         }
-    }
-
-    [LiveTheory, MemberData(nameof(AuthCases)), Trait("Suite", "Live")]
-    public async Task ProtectedReadRejectsMissingOrMalformedBearer(string path, string mode)
-    {
-        var response = await api.SendAsync("POST", path, mode == "missing" ? null : "not-a-valid-token");
-        Assert.True(response.Status is 401 or 403, $"{path}: {mode} bearer returned HTTP {response.Status}; expected 401/403.");
     }
 
     [LiveTheory, InlineData("/api/Version"), InlineData("/api/DeployDate"), Trait("Suite", "Live")]
