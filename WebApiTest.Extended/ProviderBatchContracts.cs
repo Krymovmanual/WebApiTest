@@ -5,69 +5,6 @@ using System.Globalization;
 
 namespace WebApiTest.Extended;
 
-// Known wrapper contracts from existing tests, with Nuvei's documented session response.
-// These checks do not infer request bodies for undocumented read operations.
-[Collection("Stage reads")]
-public class ProviderBatchContracts(ApiHarness api, ITestOutputHelper output)
-{
-    private async Task<JObject> Read(string route) => ApiHarness.SuccessfulJson(
-        await TestReport.SendAsync(api, output, "POST", route, await TestReport.GetTokenAsync(api, output)));
-
-    [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadContract")]
-    public async Task BitoloBalanceReturnsSuccessfulStructuredResult()
-    {
-        var currency = Environment.GetEnvironmentVariable("WEBAPI_BITOLO_CURRENCY")!;
-        var data = await Read("/api/Bitolo/" + Uri.EscapeDataString(currency) + "/getBalance");
-        ProviderBatchChecks.BitoloBalance(data, currency);
-        output.WriteLine("Bitolo: positive integer account_id, numeric balance and currency matching the requested currency verified. Current balance is displayed, not pinned to a historical amount.");
-    }
-
-    [LiveFact, Trait("Suite", "Live"), Trait("Provider", "Nuvei_v2")]
-    public async Task NuveiV2SessionReturnsSuccessfulProviderSession()
-    {
-        var data = await Read("/api/Nuvei_v2_Provider/getSessionToken");
-        ProviderBatchChecks.NuveiSession(data);
-        output.WriteLine("Nuvei_v2: sessionToken present; merchant identifiers present; status SUCCESS; errCode 0. Values of secrets/merchant identifiers omitted.");
-    }
-
-    [LiveFact, Trait("Suite", "Live"), Trait("Provider", "OpenPayd")]
-    public async Task OpenPaydTokenReturnsUsableAuthenticationMetadata()
-    {
-        var data = await Read("/api/OpenPaydProvider/getToken");
-        ProviderBatchChecks.OpenPaydToken(data);
-        output.WriteLine("OpenPayd: access_token present. Optional token_type/expiry validated when returned. Token omitted; issuing a token does not prove account/history access.");
-    }
-
-    [LiveFact, Trait("Suite", "Live"), Trait("Provider", "FacilitaPay")]
-    public async Task FacilitaPayTokenReturnsRequiredIdentityAndTokenFields()
-    {
-        var data = await Read("/api/FacilitaPayProvider/getToken");
-        ProviderBatchChecks.SuccessFlags(data);
-        var result = Assert.IsType<JObject>(data["result"]);
-        foreach (var field in new[] { "username", "name", "jwt" }) ProviderReadContracts.RequiredString(result, field);
-        output.WriteLine("FacilitaPay: username/name/jwt present. Identity and token values omitted.");
-    }
-
-    [LiveFact, Trait("Suite", "Live"), Trait("Provider", "FacilitaPay")]
-    public async Task FacilitaPayExchangeRatesContainPositiveNumericValues()
-    {
-        var data = await Read("/api/FacilitaPayProvider/getExchangeRates");
-        ProviderBatchChecks.SuccessFlags(data);
-        var rates = Assert.IsType<JObject>(data["result"]?["data"]);
-        Assert.NotEmpty(rates.Properties());
-        foreach (var rate in rates.Properties())
-            Assert.True(ProviderReadContracts.NonNegativeNumber(rate.Value) > 0, "Exchange rate must be positive.");
-        output.WriteLine("Verified {0} positive exchange rates. This does not verify rates against a market feed.", rates.Count);
-    }
-
-    [LiveFact, Trait("Suite", "Live"), Trait("Provider", "FacilitaPay")]
-    public async Task FacilitaPayBankAccountsHaveUniqueIdsAndValidOptionalMetadata()
-    {
-        var data = await Read("/api/FacilitaPayProvider/getBankAccounts");
-        ProviderBatchChecks.BankAccounts(data);
-        output.WriteLine("Bank account IDs are unique; optional bank/owner metadata has the expected types. Account numbers, IBANs and owner details omitted.");
-    }
-}
 
 internal static class ProviderBatchChecks
 {

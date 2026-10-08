@@ -23,52 +23,9 @@ public sealed class VerifiedReadFactAttribute : FactAttribute
     }
 }
 
-[Collection("Stage reads")]
-public class VerifiedProviderReadContracts(ApiHarness api, ITestOutputHelper output)
+public abstract class VerifiedProviderReadBase(ApiHarness api, ITestOutputHelper output)
 {
-    [VerifiedReadFact("BitoloBalance"), Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task BitoloBalanceMatchesVerifiedReadAssertions() => Read("BitoloBalance");
-
-    [VerifiedReadFact("BitoloTransactionStatus"), Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task BitoloTransactionStatusMatchesVerifiedReadAssertions() => Read("BitoloTransactionStatus");
-
-    [VerifiedReadFact("BitoloTransactionList"), Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task BitoloTransactionListMatchesVerifiedReadAssertions() => Read("BitoloTransactionList");
-
-    [VerifiedReadFact("FacilitaPayBankAccount"), Trait("Suite", "Live"), Trait("Provider", "FacilitaPay"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task FacilitaPayBankAccountMatchesVerifiedReadAssertions() => Read("FacilitaPayBankAccount");
-
-    [VerifiedReadFact("FacilitaPayBankAccountStatement"), Trait("Suite", "Live"), Trait("Provider", "FacilitaPay"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task FacilitaPayBankAccountStatementMatchesVerifiedReadAssertions() => Read("FacilitaPayBankAccountStatement");
-
-    [VerifiedReadFact("FacilitaPayBankAccountBalance"), Trait("Suite", "Live"), Trait("Provider", "FacilitaPay"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task FacilitaPayBankAccountBalanceMatchesVerifiedReadAssertions() => Read("FacilitaPayBankAccountBalance");
-
-    [VerifiedReadFact("FacilitaPayTransactions"), Trait("Suite", "Live"), Trait("Provider", "FacilitaPay"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task FacilitaPayTransactionsMatchesVerifiedReadAssertions() => Read("FacilitaPayTransactions");
-
-    [VerifiedReadFact("FacilitaPayTransaction"), Trait("Suite", "Live"), Trait("Provider", "FacilitaPay"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task FacilitaPayTransactionMatchesVerifiedReadAssertions() => Read("FacilitaPayTransaction");
-
-    [VerifiedReadFact("OpenPaydHistory"), Trait("Suite", "Live"), Trait("Provider", "OpenPayd"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task OpenPaydHistoryMatchesVerifiedReadAssertions() => Read("OpenPaydHistory");
-
-    [VerifiedReadFact("OpenPaydTransactionInfo"), Trait("Suite", "Live"), Trait("Provider", "OpenPayd"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task OpenPaydTransactionInfoMatchesVerifiedReadAssertions() => Read("OpenPaydTransactionInfo");
-
-    [VerifiedReadFact("OpenPaydAccount"), Trait("Suite", "Live"), Trait("Provider", "OpenPayd"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task OpenPaydAccountMatchesVerifiedReadAssertions() => Read("OpenPaydAccount");
-
-    [VerifiedReadFact("OpenPaydAccounts"), Trait("Suite", "Live"), Trait("Provider", "OpenPayd"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task OpenPaydAccountsMatchesVerifiedReadAssertions() => Read("OpenPaydAccounts");
-
-    [VerifiedReadFact("NuveiV2PayoutStatus"), Trait("Suite", "Live"), Trait("Provider", "Nuvei_v2"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task NuveiV2PayoutStatusMatchesVerifiedReadAssertions() => Read("NuveiV2PayoutStatus");
-
-    [VerifiedReadFact("NuveiV2Requests"), Trait("Suite", "Live"), Trait("Provider", "Nuvei_v2"), Trait("Coverage", "ConfiguredReadAssertions")]
-    public Task NuveiV2RequestsMatchesVerifiedReadAssertions() => Read("NuveiV2Requests");
-
-    private async Task Read(string key)
+    protected async Task Read(string key)
     {
         var file = VerifiedReadProfile.Find();
         Assert.True(file != null, "Verified provider read configuration is missing.");
