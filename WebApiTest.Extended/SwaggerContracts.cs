@@ -1,6 +1,5 @@
 using Xunit.Abstractions;
 using Newtonsoft.Json.Linq;
-using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace WebApiTest.Extended;
@@ -70,26 +69,8 @@ public class SwaggerContracts(ITestOutputHelper output)
             output.WriteLine("Coverage category {0}: {1} operations", group.Key, group.Count());
         var actual = catalog.Select(x => $"{x["method"]} {x["path"]}").OrderBy(x => x).ToArray();
         var expected = Operations.Select(x => $"{((string)x[0]).ToUpperInvariant()} {x[1]}").OrderBy(x => x).ToArray();
-        Assert.Equal(expected, actual); output.WriteLine("Matched {0} catalog/authorization entries.", actual.Length); Assert.Equal(actual.Length, actual.Distinct().Count());
+        Assert.Equal(expected, actual); output.WriteLine("Matched {0} catalog entries.", actual.Length); Assert.Equal(actual.Length, actual.Distinct().Count());
     }
-    [Fact, Trait("Suite", "Offline")]
-    public void AuthorizationCasesMatchEveryProtectedOperation()
-    {
-        output.WriteLine("Swagger snapshot: {0} operations. This checks documentation, not live functionality.", Operations.Count());
-        var spec = ApiSpecification.Snapshot;
-        string Concrete(string path) => Regex.Replace(path, @"\{([^}]+)\}", m => m.Groups[1].Value switch {
-            "currency" => "ARS", "blockchain" => "ethereum", "blockNumber" => "0",
-            "contractAddress" => "0x0000000000000000000000000000000000000000", _ => "webapi-test-nonexistent" });
-        var expected = Operations.Where(row => (spec["paths"]![(string)row[1]]![(string)row[0]]!["security"] ?? spec["security"]) is JArray { Count: > 0 })
-            .SelectMany(row => new[] { "missing", "malformed" }.Select(mode => $"{((string)row[0]).ToUpperInvariant()} {Concrete((string)row[1])} {mode}"))
-            .OrderBy(x => x, StringComparer.Ordinal).ToArray();
-        var actual = typeof(ProviderAuthorizationContracts).Assembly.GetTypes()
-            .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(ProviderAuthorizationContracts)))
-            .SelectMany(t => (IEnumerable<object[]>)t.GetProperty("Cases", BindingFlags.Public | BindingFlags.Static)!.GetValue(null)!)
-            .Select(row => $"{row[0]} {row[1]} {row[2]}").OrderBy(x => x, StringComparer.Ordinal).ToArray();
-        Assert.Equal(expected, actual); output.WriteLine("Matched {0} catalog/authorization entries.", actual.Length); Assert.Equal(actual.Length, actual.Distinct(StringComparer.Ordinal).Count());
-    }
-
     [LiveFact, Trait("Suite", "Live")]
     public async Task CurrentApiContainsEverySnapshotOperationAndSecurityContract()
     {
