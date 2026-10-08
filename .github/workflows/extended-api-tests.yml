@@ -37,6 +37,6 @@ jobs:
         shell: pwsh
         run: |
           $offline = Get-ChildItem WebApiTest.Extended -Recurse -Filter *.cs | Select-String 'Trait\("Suite",\s*"Offline"\)'
-          if ($offline) { throw "Offline test attributes remain" }
+          if ($offline) { $offline | ForEach-Object { Write-Host $_ }; throw "Offline test attributes remain" }
           dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --list-tests
           if ($LASTEXITCODE -ne 0) { throw "Test discovery failed" }
