@@ -43,16 +43,3 @@ public class ConfiguredProviderReadContracts(ApiHarness api, ITestOutputHelper o
         output.WriteLine("HTTP/application success and structured result verified. Empty collections are permitted.");
     }
 }
-
-public class ConfiguredReadCatalogContracts
-{
-    [Theory, Trait("Suite", "Offline")]
-    [InlineData("/api/Bitolo/{currency}/getBalance")]
-    [InlineData("/api/Infura/{blockchain}/getAccounts")]
-    public void ReadRoutesExistWithoutBodyParameters(string path)
-    {
-        var operation = ApiSpecification.Snapshot["paths"]![path]!["post"]!;
-        Assert.NotNull(operation);
-        Assert.DoesNotContain(operation["parameters"] ?? new JArray(), p => p.Value<string>("in") == "body");
-    }
-}

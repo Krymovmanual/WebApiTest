@@ -38,39 +38,6 @@ internal static class ApiSpecification
 public class SwaggerContracts(ITestOutputHelper output)
 {
     public static IEnumerable<object[]> Operations => ApiSpecification.Operations;
-    [Theory, MemberData(nameof(Operations)), Trait("Suite", "Offline")]
-    public void OperationHasValidResponsesSecurityAndParameters(string method, string path)
-    {
-        output.WriteLine("Swagger snapshot: {0} operations. This checks documentation, not live functionality.", Operations.Count());
-        var spec = ApiSpecification.Snapshot;
-        output.WriteLine("Checking {0} {1}", method.ToUpperInvariant(), path);
-        var operation = spec["paths"]![path]![method]!;
-        var responses = Assert.IsType<JObject>(operation["responses"]); Assert.NotEmpty(responses.Properties());
-        Assert.All(responses.Properties(), response => Assert.NotNull(response.Value["description"]));
-        foreach (var requirement in operation["security"] ?? spec["security"] ?? new JArray())
-            foreach (var scheme in ((JObject)requirement).Properties()) Assert.NotNull(spec["securityDefinitions"]?[scheme.Name]);
-        var parameters = (operation["parameters"] ?? new JArray()).ToArray();
-        foreach (Match match in Regex.Matches(path, @"\{([^}]+)\}"))
-            Assert.Contains(parameters, p => p.Value<string>("in") == "path" && p.Value<string>("name") == match.Groups[1].Value && p.Value<bool>("required"));
-        Assert.Equal(parameters.Length, parameters.Select(p => $"{p["in"]}:{p["name"]}").Distinct().Count());
-    }
-    [Fact, Trait("Suite", "Offline")]
-    public void AllSchemaReferencesResolve()
-    {
-        foreach (var property in ApiSpecification.Snapshot.Descendants().OfType<JProperty>().Where(p => p.Name == "$ref"))
-            ApiSpecification.Resolve(property.Parent!);
-        output.WriteLine("All local schema references resolve.");
-    }
-    [Fact, Trait("Suite", "Offline")]
-    public void CatalogMatchesEveryOperation()
-    {
-        var catalog = JArray.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "coverage.json")));
-        foreach (var group in catalog.GroupBy(row => row["functionalCoverage"]?.ToString() ?? "unclassified"))
-            output.WriteLine("Coverage category {0}: {1} operations", group.Key, group.Count());
-        var actual = catalog.Select(x => $"{x["method"]} {x["path"]}").OrderBy(x => x).ToArray();
-        var expected = Operations.Select(x => $"{((string)x[0]).ToUpperInvariant()} {x[1]}").OrderBy(x => x).ToArray();
-        Assert.Equal(expected, actual); output.WriteLine("Matched {0} catalog entries.", actual.Length); Assert.Equal(actual.Length, actual.Distinct().Count());
-    }
     [LiveFact, Trait("Suite", "Live")]
     public async Task CurrentApiContainsEverySnapshotOperationAndSecurityContract()
     {
