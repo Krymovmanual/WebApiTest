@@ -1,27 +1,10 @@
 {
-  "POST /api/Bitolo/{currency}/getBalance": {
-    "body": {},
-    "pathValues": {
-      "currency": null
-    },
-    "query": {}
-  },
   "POST /api/Bitolo/{currency}/getTransactionStatus": {
     "body": {
       "order_id": null
     },
     "pathValues": {
-      "currency": null
-    },
-    "query": {}
-  },
-  "POST /api/Bitolo/{currency}/getTransactionList": {
-    "body": {
-      "page": 1,
-      "limit": 10
-    },
-    "pathValues": {
-      "currency": null
+      "currency": "ars"
     },
     "query": {}
   },

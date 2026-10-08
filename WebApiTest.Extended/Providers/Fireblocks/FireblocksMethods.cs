@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "Fireblocks"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "Fireblocks")]
 public sealed class FireblocksMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/FireblocksProvider/getAssetsData")]

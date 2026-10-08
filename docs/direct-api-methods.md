@@ -16,7 +16,7 @@ Authorization uses `BEARER_TOKEN`, or `STAGE_USERNAME` plus `STAGE_PASSWORD`, or
 
 ## Real request inputs
 
-Provided CoinPayments and FacilitaPay entity IDs are retained for DEV. Other environments need their own configured entity IDs. Swagger demonstration entity IDs, account addresses, hashes and email addresses are not sent. Methods needing those values are **Skipped**, with the missing fields named in the skip reason. A skip does not establish that the endpoint works.
+Provided CoinPayments, FacilitaPay and Bitolo entity IDs are retained for DEV. Other environments need their own configured entity IDs. Swagger demonstration entity IDs, account addresses, hashes and email addresses are not sent. Methods needing those values are **Skipped**, with the missing fields named in the skip reason. A skip does not establish that the endpoint works.
 
 Copy `WebApiTest.Extended/api-requests.example.json` to ignored `api-requests.local.json` in the solution root or Extended directory. Keep only the methods you need and fill their null fields with real data. Request keys are the exact HTTP method and Swagger route:
 
@@ -51,4 +51,12 @@ The other four Infura methods still need configured inputs. No `getTransactionCo
 
 ## Removed tests
 
-At the user's request, the ZeroHash collection reads `GET /api/ZeroHashProvider/deposits/digital_asset_addresses` and `GET /api/ZeroHashProvider/withdrawals/requests`, all three QuantfuryPayments/QuantfuryPaymentsSign cases, and the eleven legacy cases formerly shown under `No Traits` were deleted. Remaining ZeroHash detail routes are retained. This removes test coverage only; it does not remove backend endpoints or shared clients. `Suite=Live` is a grouping of the remaining direct tests, not an additional suite of duplicate cases.
+At the user's request, the ZeroHash collection reads `GET /api/ZeroHashProvider/deposits/digital_asset_addresses` and `GET /api/ZeroHashProvider/withdrawals/requests`, all three QuantfuryPayments/QuantfuryPaymentsSign cases, and the eleven legacy cases formerly shown under `No Traits` were deleted. Remaining ZeroHash detail routes are retained. This removes test coverage only; it does not remove backend endpoints or shared clients. The `Suite=Live` trait has been removed. Test Explorer groups each method only under its provider; Azure executes the same tests without a Suite filter.
+
+## Bitolo supplied inputs
+
+`getBalance` and `getTransactionStatus` use the user's successful `ars` inputs. The status request uses the provided DEV order ID; other API environments require their own `order_id`. `getTransactionList` uses the same configured currency and its existing unfiltered page request. The supplied balance, amounts and SUCCESS status are not pinned to historical values. All three methods print the full current response JSON. Existing `WEBAPI_BITOLO_CURRENCY` and `WEBAPI_BITOLO_ORDER_ID` overrides remain supported.
+
+## Azure execution and grouping
+
+Only `Provider` traits remain on method tests. Removing `Suite=Live` changes Test Explorer grouping, not request execution or scheduling. Keep `WEBAPI_RUN_LIVE=1` in the Azure job. A manually configured hourly Azure schedule runs the same method tests; this change does not create a new schedule. Any external command using `--filter "Suite=Live"` should omit that filter or use `Provider=<name>`.

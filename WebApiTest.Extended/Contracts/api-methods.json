@@ -3,26 +3,28 @@
     "method": "POST",
     "path": "/api/Bitolo/{currency}/getBalance",
     "body": {},
-    "pathValues": {},
+    "pathValues": {
+      "currency": "ars"
+    },
     "query": {},
-    "required": [
-      "path.currency"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Bitolo/{currency}/getTransactionStatus": {
     "method": "POST",
     "path": "/api/Bitolo/{currency}/getTransactionStatus",
     "body": {
-      "order_id": null
+      "order_id": "01a10c31-9a2e-77d8-bfa7-51799c8a59cb"
     },
-    "pathValues": {},
+    "pathValues": {
+      "currency": "ars"
+    },
     "query": {},
-    "required": [
-      "path.currency",
-      "body.order_id"
-    ],
-    "anonymous": false
+    "required": [],
+    "anonymous": false,
+    "devEntityFields": [
+      "order_id"
+    ]
   },
   "POST /api/Bitolo/{currency}/getTransactionList": {
     "method": "POST",
@@ -31,11 +33,11 @@
       "page": 1,
       "limit": 10
     },
-    "pathValues": {},
+    "pathValues": {
+      "currency": "ars"
+    },
     "query": {},
-    "required": [
-      "path.currency"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/CoinPaymentsProvider/getBalances": {

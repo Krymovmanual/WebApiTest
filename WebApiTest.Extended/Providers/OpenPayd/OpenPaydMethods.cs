@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "OpenPayd"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "OpenPayd")]
 public sealed class OpenPaydMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/OpenPaydProvider/getToken")]

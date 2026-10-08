@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "Bitolo"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "Bitolo")]
 public sealed class BitoloMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/Bitolo/{currency}/getBalance")]
