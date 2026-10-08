@@ -32,11 +32,14 @@
     "authorizationCases": 2,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "functionalCoverage": "ReadContract",
+    "nextStep": "Run known DEV order; validates requested identity/currency, identifiers, numeric amounts and event fields; expected status optional; lifecycle/accounting unverified",
     "configuredReadScenario": "BitoloTransactionStatus",
     "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
-    "configuredReadLiveVerification": "NotYetRun"
+    "configuredReadLiveVerification": "NotYetRun",
+    "requiredConfiguration": "WEBAPI_BITOLO_CURRENCY; WEBAPI_BITOLO_ORDER_ID; optional WEBAPI_BITOLO_EXPECTED_STATUS",
+    "responseContractSource": "User-supplied successful DEV ARS order status response, 2026-10-08",
+    "liveVerification": "NewAssertionsPendingDEVRun"
   },
   {
     "method": "POST",

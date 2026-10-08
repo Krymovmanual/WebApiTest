@@ -97,3 +97,22 @@ Captured responses are evidence for building assertions, **not automatically gen
 ### Confirmed Bitolo balance wrapper
 
 The user supplied a successful DEV ARS response on 2026-10-08: `error=ok`, with `result.account_id` as an integer, `result.balance` as a number and `result.currency=ARS`. Both existing bodyless Bitolo read test entry points now use this contract. The new assertions need a DEV rerun. No request profile or body is needed.
+
+
+### Confirmed Bitolo order status wrapper
+
+`BitoloTransactionStatusContracts.StatusReturnsRequestedOrderAndCurrencyWithValidTransactionFields` uses the confirmed body `{ "order_id": "<known DEV order>" }`. It checks returned order/currency identity, positive integer account_id, nonempty transaction_id/status/type, numeric amount/amount_net, event code/message, and optional transaction_specific object. No tax/name values or event message are printed. Gross/net amounts are not required to equal one another or the historical example. Returned SUCCESS is asserted only when the expected status is configured; presence alone does not prove completion.
+
+Inside the selected runsettings `<EnvironmentVariables>` add:
+
+```xml
+<WEBAPI_BITOLO_CURRENCY>ARS</WEBAPI_BITOLO_CURRENCY>
+<WEBAPI_BITOLO_ORDER_ID>1bf101b8-f028-4541-8f47-cdb97f461b06</WEBAPI_BITOLO_ORDER_ID>
+<WEBAPI_BITOLO_EXPECTED_STATUS>SUCCESS</WEBAPI_BITOLO_EXPECTED_STATUS>
+```
+
+The example order came from the user-provided successful DEV response and may stop being available; it is not embedded in the test or a default. Keep WEBAPI_RUN_LIVE=1 and the existing DEV authorization. No local provider-read profile is needed for this direct contract.
+
+```powershell
+dotnet test .\WebApiTest.Extended\WebApiTest.Extended.csproj --settings .\WebApiTest.Extended\dev.runsettings --filter "FullyQualifiedName~BitoloTransactionStatusContracts" --logger "trx;LogFileName=bitolo-status.trx" --results-directory .\TestResults
+```
