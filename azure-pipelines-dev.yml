@@ -12,7 +12,7 @@ pool:
   vmImage: windows-latest
 
 variables:
-  - group: WebApiTest-Stage
+  - group: WebApiTest-Dev
 
 steps:
   - checkout: self
@@ -33,6 +33,6 @@ steps:
     displayName: Run tests
     env:
       WEBAPI_RUN_LIVE: '1'
-      WEBAPI_BASE_URL: 'https://qu-stage-qfwebapi.azurewebsites.net/'
-      STAGE_USERNAME: $(STAGE_USERNAME)
-      STAGE_PASSWORD: $(STAGE_PASSWORD)
+      WEBAPI_BASE_URL: 'https://qu-dev-qfwebapi.azurewebsites.net/'
+      DEV_USERNAME: $(DEV_USERNAME)
+      DEV_PASSWORD: $(DEV_PASSWORD)

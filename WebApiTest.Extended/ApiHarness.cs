@@ -46,16 +46,16 @@ public sealed class ApiHarness : IDisposable
         try
         {
             if (token != null && DateTime.UtcNow < expiresAt) return token;
-            var user = Environment.GetEnvironmentVariable("STAGE_USERNAME");
-            var password = Environment.GetEnvironmentVariable("STAGE_PASSWORD");
+            var user = Environment.GetEnvironmentVariable("DEV_USERNAME");
+            var password = Environment.GetEnvironmentVariable("DEV_PASSWORD");
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password))
             {
                 if (!string.IsNullOrWhiteSpace(user) || !string.IsNullOrWhiteSpace(password))
-                    throw new InvalidOperationException("Set both STAGE_USERNAME and STAGE_PASSWORD.");
+                    throw new InvalidOperationException("Set both DEV_USERNAME and DEV_PASSWORD.");
                 var directory = new DirectoryInfo(AppContext.BaseDirectory);
-                while (directory != null && !File.Exists(Path.Combine(directory.FullName, "stage_creds.json"))) directory = directory.Parent;
-                if (directory == null) throw new InvalidOperationException("Set BEARER_TOKEN, both Stage credential variables, or stage_creds.json at the repository root.");
-                var credentials = JObject.Parse(await File.ReadAllTextAsync(Path.Combine(directory.FullName, "stage_creds.json")));
+                while (directory != null && !File.Exists(Path.Combine(directory.FullName, "dev_creds.json"))) directory = directory.Parent;
+                if (directory == null) throw new InvalidOperationException("Set BEARER_TOKEN, both Dev credential variables, or dev_creds.json at the repository root.");
+                var credentials = JObject.Parse(await File.ReadAllTextAsync(Path.Combine(directory.FullName, "dev_creds.json")));
                 user = credentials.Value<string>("userName"); password = credentials.Value<string>("password");
             }
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password)) throw new InvalidOperationException("Credentials must be non-empty.");

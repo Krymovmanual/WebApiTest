@@ -1,6 +1,6 @@
 namespace WebApiTest.API.Authorization;
 
-public sealed class StageTokenRequest
+public sealed class DevTokenRequest
 {
     public string GrantType { get; init; } = "password";
 
