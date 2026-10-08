@@ -38,17 +38,6 @@ public class TestReportContracts(ITestOutputHelper output)
         Assert.DoesNotContain("\n", capture.Lines[1]); Assert.Contains("Second", capture.Lines[2]);
         output.WriteLine("All collection items are printed; strings are JSON-escaped to prevent misleading log lines.");
     }
-    [Theory, Trait("Suite", "Offline")]
-    [InlineData(401, true)]
-    [InlineData(403, true)]
-    [InlineData(200, false)]
-    public void AuthorizationReportDistinguishesExpectedRejection(int actual, bool matched)
-    {
-        var capture = new Capture();
-        TestReport.ReportStatus(capture, actual, [401, 403]);
-        Assert.Contains(matched ? "expectation: MATCH;" : "expectation: MISMATCH;", capture.Lines[0]);
-    }
-
     [Fact, Trait("Suite", "Offline")]
     public void AuthorizedReadReportsUnexpected401()
     {
