@@ -46,4 +46,30 @@ public class TestReportContracts(ITestOutputHelper output)
         Assert.Contains("MISMATCH", capture.Lines[0]);
         Assert.Contains("Unexpected authorization rejection", capture.Lines[1]);
     }
+
+    [Fact, Trait("Suite", "Offline")]
+    public void FullJsonPreservesNestedBalancesAndUnknownFields()
+    {
+        const string body = """{"error":"ok","result":{"USDC.SOL":{"balance":2400000000,"balancef":24,"status":"available","coin_status":"online"},"ETH":{"balance":1561687,"balancef":0.01561687},"tokens":[{"symbol":"ETH"}],"unknown":{"value":null}}}""";
+        var printed = TestReport.JsonForOutput(body);
+        Assert.True(JToken.DeepEquals(ApiHarness.ParseWireJson(body), ApiHarness.ParseWireJson(printed)));
+    }
+
+    [Fact, Trait("Suite", "Offline")]
+    public void FullJsonMasksCredentialsAtEveryDepthWithoutChangingOriginal()
+    {
+        const string body = """{"access_token":"secret-access","result":[{"PrivateKey":"secret-private","jwt":"secret-jwt","password":"secret-password","message":"Bearer secret-header","echo":"configured-bearer","tokens":[{"symbol":"ETH"}],"balancef":24}]}""";
+        var printed = TestReport.JsonForOutput(body, "configured-bearer");
+        foreach (var secret in new[] { "secret-access", "secret-private", "secret-jwt", "secret-password", "secret-header", "configured-bearer" })
+            Assert.DoesNotContain(secret, printed);
+        Assert.Contains("ETH", printed); Assert.Contains("24", printed);
+        Assert.Equal("secret-access", ApiHarness.ParseWireJson(body).Value<string>("access_token"));
+    }
+
+    [Fact, Trait("Suite", "Offline")]
+    public void FullJsonPrintsErrorAndNullResults()
+    {
+        const string body = """{"error":"orderId must be a valid GUID","result":null,"httpStatus":400}""";
+        Assert.True(JToken.DeepEquals(ApiHarness.ParseWireJson(body), ApiHarness.ParseWireJson(TestReport.JsonForOutput(body))));
+    }
 }

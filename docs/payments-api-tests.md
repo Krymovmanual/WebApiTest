@@ -36,7 +36,7 @@ After running Extended tests, select an individual test case in Test Explorer an
 
 All live Extended requests now report method, route, HTTP status, elapsed milliseconds and configured response-time budget before assertions. Read tests report collection counts and selected IDs, asset names, balances, transaction amounts/statuses/fees and currency pairs. Exchange rates are listed individually. Empty configured collections print zero items; this does not establish provider availability or exercise pagination. Vault pagination reports whether another cursor is present. Provider session tests report token receipt without printing its value. Missing/malformed Bearer tests were deleted at the user's request.
 
-Responses use an explicit field allowlist instead of raw JSON. Passwords, tokens, headers, bank account details, addresses, notes and unknown nested objects are omitted. Bank-account reads show count only. Offline tests describe fixture/documentation checks, never live provider results; the Swagger catalog summary separates functional coverage categories from authorization-only coverage. Output does not weaken existing assertions or turn application errors into success.
+Responses now print complete indented JSON, including nested balances, arrays, bank account details, addresses, notes and unknown fields. Credential fields (tokens, passwords, private/API keys, authorization, signatures) are masked recursively. Token asset catalogs remain visible. Error responses are printed for every HTTP status, before assertions. Request JSON is printed with the same masking. Headers are not printed. Offline tests describe fixture/documentation checks, never live provider results; the Swagger catalog summary separates functional coverage categories from authorization-only coverage. Output does not weaken existing assertions or turn application errors into success.
 
 Example output:
 
@@ -143,3 +143,8 @@ KASHA, MALDO, PayRetailers and Wyre are excluded at the user's request. Their te
 ### Removed negative authorization tests
 
 All 322 missing/malformed Bearer live cases and their offline matrix were deleted. An HTTP 401 from a normal authenticated request remains an error. Original WebApiTest files are unchanged.
+
+
+### Complete JSON output
+
+Select an individual API test → Standard Output. `Request JSON` shows the sent body; `Response body (HTTP ...)` shows the complete formatted response. No collection truncation or field allowlist is applied to this output. Credential values are masked; other personal/provider data remains visible, so reports now contain the data requested by the user. This changes logging only, not response validation. Original WebApiTest tests remain unchanged.

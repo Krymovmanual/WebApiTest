@@ -4,7 +4,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-// Print selected response fields, never raw bodies, request bodies, credentials or headers.
+// Print complete JSON bodies, masking credential fields without changing the assertion input.
 internal static class TestReport
 {
     internal static async Task<string> GetTokenAsync(ApiHarness api, ITestOutputHelper output)
@@ -32,6 +32,8 @@ internal static class TestReport
         string? authorization = null, string? jsonBody = null, int[]? expectedStatuses = null)
     {
         output.WriteLine("Request: {0} {1}", method, path);
+        var sentBody = jsonBody ?? (method is "POST" or "PUT" or "PATCH" ? "{}" : null);
+        if (sentBody != null) output.WriteLine("Request JSON:\n{0}", JsonForOutput(sentBody, authorization));
         var expected = expectedStatuses ?? [200];
         output.WriteLine("Scenario: {0}; expected HTTP {1}.",
             authorization == null ? "anonymous request" : "bearer supplied (value omitted)", string.Join(" or ", expected));
@@ -45,39 +47,56 @@ internal static class TestReport
         output.WriteLine("HTTP {0}; elapsed {1:F0} ms; configured budget {2:F0} ms.",
             response.Status, response.Milliseconds, Settings.MaxMilliseconds);
         ReportStatus(output, response.Status, expected);
-        if (response.Status != 200) { output.WriteLine("Response body omitted. See assertion for expected status."); return response; }
-        try
-        {
-            if (ApiHarness.ParseWireJson(response.Body) is not JObject body) return response;
-            var error = body["error"];
-            output.WriteLine("Application error: {0}.", error == null || error.Type == JTokenType.Null || error.ToString() == "ok" ? "none" : "present (text omitted)");
-            var result = body["result"];
-            if (path.Contains("getToken", StringComparison.Ordinal) || path.Contains("getSessionToken", StringComparison.Ordinal))
-                output.WriteLine("Provider token/session response received. Secret and user fields omitted; assertions validate required fields.");
-            else if (path.EndsWith("getExchangeRates", StringComparison.Ordinal) && result is JObject ratesWrapper && ratesWrapper["data"] is JObject rates)
-            {
-                output.WriteLine("Exchange rates: {0}", rates.Count);
-                foreach (var rate in rates.Properties())
-                    if (decimal.TryParse(rate.Value.ToString(), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _))
-                        output.WriteLine("{0} = {1}", JsonConvert.ToString(rate.Name), rate.Value.ToString(Formatting.None));
-            }
-            else if (path.EndsWith("getBankAccounts", StringComparison.Ordinal))
-            {
-                var accounts = (result as JObject)?["data"] as JArray;
-                output.WriteLine("Bank accounts: {0}. Account numbers and owner details omitted.", accounts?.Count ?? 0);
-                if (accounts != null)
-                    foreach (var account in accounts.OfType<JObject>())
-                        output.WriteLine("Account: id={0}; currency={1}; account_type={2}",
-                            SafeScalar(account["id"]), SafeScalar(account["currency"]), SafeScalar(account["account_type"]));
-            }
-            else if (result != null) Describe(output, "result", result, path.Contains("FireblocksProvider", StringComparison.Ordinal) || path.EndsWith("getAllCurrencyTokenPairs", StringComparison.Ordinal));
-            else output.WriteLine("No result wrapper; body omitted.");
-        }
-        catch (JsonException) { output.WriteLine("Response is not valid JSON; body omitted."); }
+        output.WriteLine("Response body (HTTP {0}):\n{1}", response.Status, JsonForOutput(response.Body, authorization));
         return response;
     }
 
-    private static string SafeScalar(JToken? value) => value is JValue ? value.ToString(Formatting.None) : "[missing/structured]";
+    internal static string JsonForOutput(string body, string? authorization = null)
+    {
+        if (string.IsNullOrWhiteSpace(body)) return "[empty body]";
+        try
+        {
+            var value = ApiHarness.ParseWireJson(body);
+            Redact(value, authorization);
+            return value.ToString(Formatting.Indented);
+        }
+        catch (JsonException)
+        {
+            // Preserve non-JSON error diagnostics, removing embedded credentials where identifiable.
+            var text = MaskEmbeddedSecrets(body, authorization);
+            return "[non-JSON body]\n" + text;
+        }
+    }
+
+    private static bool SecretField(string name)
+    {
+        var key = new string(name.Where(char.IsLetterOrDigit).ToArray()).ToLowerInvariant();
+        return key.Contains("password") || key.Contains("secret") || key.Contains("privatekey") ||
+            key.Contains("apikey") || key.EndsWith("token", StringComparison.Ordinal) || key is "jwt" or "authorization" or
+            "bearer" or "key" or "signature" or "clientassertion" or "credential" or "credentials";
+    }
+
+    private static void Redact(JToken token, string? authorization)
+    {
+        if (token is JObject obj)
+            foreach (var property in obj.Properties().ToArray())
+            {
+                if (SecretField(property.Name)) property.Value = "[REDACTED]";
+                else Redact(property.Value, authorization);
+            }
+        else if (token is JArray array)
+            foreach (var child in array) Redact(child, authorization);
+        else if (token is JValue { Type: JTokenType.String } scalar)
+            scalar.Value = MaskEmbeddedSecrets(scalar.Value<string>()!, authorization);
+    }
+
+    private static string MaskEmbeddedSecrets(string text, string? authorization)
+    {
+        if (!string.IsNullOrEmpty(authorization)) text = text.Replace(authorization, "[REDACTED]", StringComparison.Ordinal);
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"(?i)Bearer\s+[^\s""<>]+", "Bearer [REDACTED]");
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b", "[REDACTED]");
+        return text;
+    }
 
     internal static void ReportStatus(ITestOutputHelper output, int actual, int[] expected)
     {
