@@ -28,7 +28,7 @@ public class ConfiguredProviderReadContracts(ApiHarness api, ITestOutputHelper o
 {
     [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadContract")]
     public Task BitoloBalanceReturnsSuccessfulStructuredResult() =>
-        new ProviderBatchContracts(api, output).BitoloBalanceReturnsSuccessfulStructuredResult();
+        new BitoloProviderBatchContracts(api, output).BitoloBalanceReturnsSuccessfulStructuredResult();
 
     [InfuraReadFact, Trait("Suite", "Live"), Trait("Provider", "Infura"), Trait("Coverage", "ReadEnvelope")]
     public Task InfuraAccountsReturnsSuccessfulStructuredResult() => Read(
