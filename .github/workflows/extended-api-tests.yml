@@ -19,7 +19,7 @@ permissions:
   contents: read
 
 jobs:
-  offline-tests:
+  build-and-discovery:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
@@ -33,25 +33,10 @@ jobs:
         run: dotnet restore WebApiTest.Extended/WebApiTest.Extended.csproj
       - name: Build
         run: dotnet build WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-restore
-      - name: Run offline tests
-        run: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --filter 'Suite=Offline' --logger trx --results-directory TestResults
-      - name: Verify readable report export
+      - name: Verify test discovery and removed offline suite
         shell: pwsh
         run: |
-          $trx = (Get-ChildItem TestResults/*.trx | Select-Object -First 1).FullName
-          & ./scripts/Run-ExtendedTests.ps1 -ExistingTrx $trx
-          if (!(Test-Path TestResults/extended-results.html)) { throw "HTML report missing" }
-          $report = Get-Content -Raw TestResults/extended-results.html
-          if ($report -notmatch 'ConfiguredReadCatalogContracts' -or $report -notmatch 'Passed') { throw "Test rows missing from report" }
-      - name: Verify provider HAR import
-        shell: pwsh
-        run: ./scripts/Test-ProviderReadHarImport.ps1
-      - name: Save test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: extended-api-offline-results
-          path: |
-            TestResults/*.trx
-            TestResults/*.html
-          if-no-files-found: ignore
+          $offline = Get-ChildItem WebApiTest.Extended -Recurse -Filter *.cs | Select-String 'Trait\("Suite",\s*"Offline"\)'
+          if ($offline) { $offline | ForEach-Object { Write-Host $_ }; throw "Offline test attributes remain" }
+          dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --list-tests
+          if ($LASTEXITCODE -ne 0) { throw "Test discovery failed" }

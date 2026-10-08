@@ -12,7 +12,6 @@ The tracked dev.runsettings contains no credentials. Copy it to ignored dev.loca
 
 ## Implemented coverage
 
-- Offline: contract integrity for the 217 operations in the active test scope, schema references, catalog. Separate regression tests validate nested response schema checks.
 - Live provider reads: 10 read endpoints (5 grouped in FireblocksReadContracts, plus vault listing/pagination in FireblocksVaultContracts), 4 provider token/session contracts, Version and DeployDate. Fireblocks checks additionally validate provider metadata, exchange retrieval status, nested fiat balances and wallet field types. See [Fireblocks coverage](fireblocks-coverage.md) for all 49 operations and mapping confidence. Vault listing and transaction history add two functional read endpoints; other Fireblocks gaps remain explicit.
 - Live ZeroHash: 8 nonmutating collection GET requests with schema-based validation. Uses configured API credentials even though Swagger omits security. Application errors fail even with HTTP 200. Missing result fails. Optional nullable CLR properties are accepted because this Swagger 2 snapshot lacks reliable nullable metadata; required properties and present nonnull property types are enforced. No inferred numeric/ID restrictions.
 - Live Infura: 3 missing-required-body validation cases, enabled only when WEBAPI_BLOCKCHAIN is explicitly configured to a supported DEV chain identifier. No transactions or wallet creation.
@@ -24,7 +23,6 @@ See coverage.csv: request/response schema availability and functionalCoverage fo
 
 Schema checks implement only features present in this snapshot: local references, types, properties, arrays/items, required fields, enums and typed additional properties. They are not a full JSON Schema validator or financial correctness check.
 
-CLI offline: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --filter "Suite=Offline"
 CLI live: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --settings WebApiTest.Extended/dev.runsettings --filter "Suite=Live"
 
 FireblocksTransactionContracts checks transaction-history limit and createdAt DESC order, wrapper fields and nullable/unavailable fee representations. No fee arithmetic or cursor pagination is inferred.
@@ -148,3 +146,8 @@ All 322 missing/malformed Bearer live cases and their offline matrix were delete
 ### Complete JSON output
 
 Select an individual API test → Standard Output. `Request JSON` shows the sent body; `Response body (HTTP ...)` shows the complete formatted response. No collection truncation or field allowlist is applied to this output. Credential values are masked; other personal/provider data remains visible, so reports now contain the data requested by the user. This changes logging only, not response validation. Original WebApiTest tests remain unchanged.
+
+
+### Offline suite removed
+
+All Suite=Offline test classes and synthetic fixtures were deleted at the user's request. Shared helpers used by live API tests remain. GitHub Actions now restores/builds and lists tests without running API calls. Azure test execution cannot discover the deleted offline cases. Original WebApiTest remains unchanged.
