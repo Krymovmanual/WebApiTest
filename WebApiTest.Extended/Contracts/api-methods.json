@@ -1,0 +1,1186 @@
+{
+  "POST /api/Bitolo/{currency}/getBalance": {
+    "method": "POST",
+    "path": "/api/Bitolo/{currency}/getBalance",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.currency"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Bitolo/{currency}/getTransactionStatus": {
+    "method": "POST",
+    "path": "/api/Bitolo/{currency}/getTransactionStatus",
+    "body": {
+      "order_id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.currency",
+      "body.order_id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Bitolo/{currency}/getTransactionList": {
+    "method": "POST",
+    "path": "/api/Bitolo/{currency}/getTransactionList",
+    "body": {
+      "page": 1,
+      "limit": 10
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.currency"
+    ],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getBalances": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getBalances",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "all": 0
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getExchangeRates": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getExchangeRates",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getWithdrawalInformation": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getWithdrawalInformation",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "id": "CWJL4PEUFF4FQZB2KEMFMFID2W"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getWithdrawalHistory": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getWithdrawalHistory",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "Limit": 25,
+      "Start": 25,
+      "Newer": 0
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getToken": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getExchangeRates": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getExchangeRates",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccounts": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccount": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccount",
+    "body": {
+      "id": "0330ce03-226e-4326-9b84-212ee103572a"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountStatement": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccountStatement",
+    "body": {
+      "id": "0330ce03-226e-4326-9b84-212ee103572a",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "last_id": null,
+      "per_page": "100"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountBalance": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccountBalance",
+    "body": {
+      "id": "0330ce03-226e-4326-9b84-212ee103572a"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getTransactions": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getTransactions",
+    "body": {
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "complete": true,
+      "last_id": null,
+      "per_page": "100"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getTransaction": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getTransaction",
+    "body": {
+      "id": "4344cb41-0a86-421c-b943-5963e2125965"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAssetsData": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAssetsData",
+    "body": {
+      "assetClass": "NATIVE",
+      "symbol": "ETH",
+      "scope": "GLOBAL",
+      "deprecated": false,
+      "pageSize": 100
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAssets": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAssets",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getVaultAccountsPaged": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getVaultAccountsPaged",
+    "body": {
+      "limit": 50
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getVaultAccount": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getVaultAccount",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getFiatAccounts": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getFiatAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getFiatAccount": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getFiatAccount",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getNetworkFee": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getNetworkFee",
+    "body": {
+      "assetId": "ETH",
+      "operation": "TRANSFER",
+      "source": {
+        "type": "VAULT_ACCOUNT",
+        "id": null
+      },
+      "destination": {
+        "type": "ONE_TIME_ADDRESS",
+        "oneTimeAddress": {
+          "address": null
+        }
+      },
+      "amount": "0.015"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.source.id",
+      "body.destination.oneTimeAddress.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getTransactions": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getTransactions",
+    "body": {
+      "limit": 25,
+      "orderBy": "createdAt",
+      "sort": "DESC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getTransaction": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getTransaction",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getMaxSpendableAmount": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getMaxSpendableAmount",
+    "body": {
+      "accountId": null,
+      "AssetId": "BTC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getUnspentInputs": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getUnspentInputs",
+    "body": {
+      "accountId": null,
+      "AssetId": "BTC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getBalance": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getBalance",
+    "body": {
+      "accountId": null,
+      "AssetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getInternalWallets": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getInternalWallets",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getInternalWallet": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getInternalWallet",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getInternalWalletPaginated": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getInternalWalletPaginated",
+    "body": {
+      "id": null,
+      "pageSize": 200,
+      "pageCursor": ""
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getInternalWalletAsset": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getInternalWalletAsset",
+    "body": {
+      "id": null,
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExternalWallets": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExternalWallets",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExternalWallet": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExternalWallet",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExternalWalletAsset": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExternalWalletAsset",
+    "body": {
+      "id": null,
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAccountAddresses": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAccountAddresses",
+    "body": {
+      "id": null,
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAccountAddressesPaginated": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAccountAddressesPaginated",
+    "body": {
+      "id": null,
+      "assetId": "ETH",
+      "limit": 100,
+      "after": ""
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExchangeAccounts": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExchangeAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExchangeAccountById": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExchangeAccountById",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getFeeForAsset": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getFeeForAsset",
+    "body": {
+      "id": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/DeployDate": {
+    "method": "GET",
+    "path": "/api/DeployDate",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": true
+  },
+  "GET /api/Version": {
+    "method": "GET",
+    "path": "/api/Version",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": true
+  },
+  "POST /api/Infura/{blockchain}/getAccounts": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getBalance": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getBalance",
+    "body": {
+      "address": null,
+      "blockTag": "latest"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "body.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactions": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/getTransactions",
+    "body": {
+      "address": null,
+      "fromBlock": "0x1312d00",
+      "toBlock": "latest"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "path.contractAddress",
+      "body.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getEthTransactions": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getEthTransactions",
+    "body": {
+      "address": null,
+      "fromBlock": "20000000",
+      "toBlock": "20000009"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "body.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getBlockByNumber/{blockNumber}": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getBlockByNumber/{blockNumber}",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "path.blockNumber"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getTransactionRecipient": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getTransactionRecipient",
+    "body": {
+      "transactionHash": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "body.transactionHash"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getTransactionByHash": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getTransactionByHash",
+    "body": {
+      "transactionHash": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "body.transactionHash"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getGasPrice": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getGasPrice",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/token/{contractAddress}/getBalance": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/getBalance",
+    "body": {
+      "address": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "path.contractAddress",
+      "body.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash",
+    "body": {
+      "transactionHash": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "path.contractAddress",
+      "body.transactionHash"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/getTransactionCount": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/getTransactionCount",
+    "body": {
+      "address": null,
+      "blockNumber": "pending"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.blockchain",
+      "body.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getToken": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getAccounyInfo": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getAccounyInfo",
+    "body": {
+      "email": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.email"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getAllCurrencyTokenPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getAllCurrencyTokenPairs",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getCurrencyTokenPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getCurrencyTokenPairs",
+    "body": {
+      "currency": "CLP"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getAllTokenCurrenciesPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getAllTokenCurrenciesPairs",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getTokenCurrenciesPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getTokenCurrenciesPairs",
+    "body": {
+      "coin": "USDC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getPaymentMethods": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getPaymentMethods",
+    "body": {
+      "symbol": "CLP",
+      "clientId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getPayoutMethods": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getPayoutMethods",
+    "body": {
+      "symbol": "CLP",
+      "clientId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getHistory": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getHistory",
+    "body": {
+      "pageSize": 50,
+      "pageNumber": 1,
+      "initDate": "2026-09-01T00:00:00Z",
+      "endDate": "2026-09-30T23:59:59Z"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getOrderInfo": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getOrderInfo",
+    "body": {
+      "orderId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.orderId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getOrderInfoByExternalId": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getOrderInfoByExternalId",
+    "body": {
+      "externalId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.externalId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getBalance": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getBalance",
+    "body": {
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-30"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/KoyweProvider/quotes/{quoteId}": {
+    "method": "GET",
+    "path": "/api/KoyweProvider/quotes/{quoteId}",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.quoteId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Nuvei_v2_Provider/getSessionToken": {
+    "method": "POST",
+    "path": "/api/Nuvei_v2_Provider/getSessionToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/Nuvei_v2_Provider/getPayoutStatus": {
+    "method": "POST",
+    "path": "/api/Nuvei_v2_Provider/getPayoutStatus",
+    "body": {
+      "clientRequestId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.clientRequestId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Nuvei_v2_Provider/getRequests": {
+    "method": "POST",
+    "path": "/api/Nuvei_v2_Provider/getRequests",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/NuveiProvider/getSessionToken": {
+    "method": "POST",
+    "path": "/api/NuveiProvider/getSessionToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/NuveiProvider/getPayoutStatus": {
+    "method": "POST",
+    "path": "/api/NuveiProvider/getPayoutStatus",
+    "body": {
+      "clientRequestId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.clientRequestId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/NuveiProvider/getRequests": {
+    "method": "POST",
+    "path": "/api/NuveiProvider/getRequests",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getToken": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getHistory": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getHistory",
+    "body": {
+      "id": null,
+      "currency": "EUR",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "status": [
+        "COMPLETED"
+      ],
+      "type": [
+        "PAYIN",
+        "PAYOUT"
+      ],
+      "page": 0,
+      "size": 20,
+      "sort": "createdDate,desc"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getTransactionInfo": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getTransactionInfo",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getAccount": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getAccount",
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getAccounts": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getAccounts",
+    "body": {
+      "currency": "EUR",
+      "status": "ACTIVE",
+      "page": 0,
+      "size": 20
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/QuantfuryPaymentsProvider/getKyc": {
+    "method": "POST",
+    "path": "/api/QuantfuryPaymentsProvider/getKyc",
+    "body": {
+      "userId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.userId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/QuantfuryPaymentsProvider/getCurrencyFee": {
+    "method": "POST",
+    "path": "/api/QuantfuryPaymentsProvider/getCurrencyFee",
+    "body": {
+      "currency": "BTC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/QuantfuryPaymentsSign/getCertificateData": {
+    "method": "POST",
+    "path": "/api/QuantfuryPaymentsSign/getCertificateData",
+    "body": {
+      "userName": null,
+      "publicKey": null,
+      "utctime": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.userName",
+      "body.publicKey",
+      "body.utctime"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/assets": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/assets",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/requests": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/requests",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/requests/{id}": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/requests/{id}",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.id"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/locked_network_fee": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/locked_network_fee",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "query.Asset",
+      "query.Amount",
+      "query.WithdrawalAddress"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/estimate_network_fee": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/estimate_network_fee",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "query.Underlying",
+      "query.QuotedCurrency",
+      "query.Amount",
+      "query.DestinationAddress"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/digital_asset_addresses": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/digital_asset_addresses",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/digital_asset_addresses/{id}": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/digital_asset_addresses/{id}",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.id"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/withdrawals/validate_address": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/withdrawals/validate_address",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "query.Asset",
+      "query.Address"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/transfers": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/transfers",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/transfers/{id}": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/transfers/{id}",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.id"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/movements": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/movements",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/accounts": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/accounts/{accountId}": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{accountId}",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.accountId"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/accounts/{accountId}/movements": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{accountId}/movements",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.accountId"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/accounts/{accountId}/run_history": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{accountId}/run_history",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.accountId"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/accounts/{zrn}/details": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/accounts/{zrn}/details",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "path.zrn"
+    ],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/deposits/digital_asset_addresses": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/deposits/digital_asset_addresses",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/ZeroHashProvider/deposits": {
+    "method": "GET",
+    "path": "/api/ZeroHashProvider/deposits",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  }
+}

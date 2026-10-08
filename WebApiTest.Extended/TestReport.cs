@@ -18,15 +18,6 @@ internal static class TestReport
         }
     }
 
-    private static readonly HashSet<string> Fields = new(StringComparer.Ordinal)
-    {
-        "id", "_id", "account_id", "transaction_id", "order_id", "amount_net", "code", "assetId", "symbol", "type", "status", "operation", "decimals",
-        "total", "balance", "available", "pending", "frozen", "lockedAmount", "staked",
-        "amount", "requestedAmount", "netAmount", "fee", "networkFee", "serviceFee", "feeCurrency",
-        "currency", "currencyCode", "availableBalance", "currentBalance", "totalElements", "number", "size", "errCode", "isSuccess",
-        "page", "total_pages", "min", "max", "createdAt", "lastUpdated", "hiddenOnUI", "autoFuel"
-    };
-
     internal static async Task<(int Status, string Body, double Milliseconds)> SendAsync(
         ApiHarness api, ITestOutputHelper output, string method, string path,
         string? authorization = null, string? jsonBody = null, int[]? expectedStatuses = null)
@@ -44,8 +35,8 @@ internal static class TestReport
             output.WriteLine("Request failed before a complete response: {0}. Details omitted.", ex.GetType().Name);
             throw;
         }
-        output.WriteLine("HTTP {0}; elapsed {1:F0} ms; configured budget {2:F0} ms.",
-            response.Status, response.Milliseconds, Settings.MaxMilliseconds);
+        output.WriteLine("HTTP {0}; elapsed {1:F0} ms.",
+            response.Status, response.Milliseconds);
         ReportStatus(output, response.Status, expected);
         output.WriteLine("Response body (HTTP {0}):\n{1}", response.Status, JsonForOutput(response.Body, authorization));
         return response;
@@ -106,22 +97,4 @@ internal static class TestReport
             output.WriteLine("Unexpected authorization rejection: check API environment and configured token/credentials. This is not a provider-data success.");
     }
 
-    internal static void Describe(ITestOutputHelper output, string label, JToken token, bool names = false)
-    {
-        if (token is JArray array)
-        {
-            output.WriteLine("{0}: {1} items", label, array.Count);
-            for (var i = 0; i < array.Count; i++) Describe(output, $"{label}[{i}]", array[i], names);
-        }
-        else if (token is JObject obj)
-        {
-            var fields = obj.Properties().Where(p => Fields.Contains(p.Name) || (names && p.Name == "name"))
-                .Where(p => p.Value is JValue).Select(p => $"{p.Name}={p.Value.ToString(Formatting.None)}");
-            output.WriteLine("{0}: {1}", label, string.Join("; ", fields));
-            foreach (var property in obj.Properties().Where(p => p.Value is JArray || p.Value is JObject))
-                if (property.Name is "assets" or "accounts" or "transactions" or "tokens" or "limits" or "message" or "data" or "amountInfo" or "feeInfo" or "content" or "items" or "balances" or "results" or "event")
-                    Describe(output, $"{label}.{property.Name}", property.Value, names);
-        }
-        else output.WriteLine("{0}: {1}", label, token.Type);
-    }
 }

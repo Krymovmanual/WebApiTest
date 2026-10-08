@@ -10,6 +10,9 @@ TestResults/
 
 # Local verified provider requests and assertions
 provider-read.local.json
+api-requests.local.json
+WebApiTest.Extended/bin/
+WebApiTest.Extended/obj/
 
 # Local browser captures may contain credentials or customer data
 *.har

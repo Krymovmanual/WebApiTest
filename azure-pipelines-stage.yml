@@ -32,5 +32,6 @@ steps:
   - script: dotnet test WebApiTest.sln --configuration Release --no-build --logger trx
     displayName: Run tests
     env:
+      WEBAPI_RUN_LIVE: '1'
       STAGE_USERNAME: $(STAGE_USERNAME)
       STAGE_PASSWORD: $(STAGE_PASSWORD)
