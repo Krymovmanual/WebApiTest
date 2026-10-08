@@ -20,7 +20,7 @@ internal static class TestReport
 
     private static readonly HashSet<string> Fields = new(StringComparer.Ordinal)
     {
-        "id", "_id", "assetId", "symbol", "type", "status", "operation", "decimals",
+        "id", "_id", "account_id", "assetId", "symbol", "type", "status", "operation", "decimals",
         "total", "balance", "available", "pending", "frozen", "lockedAmount", "staked",
         "amount", "requestedAmount", "netAmount", "fee", "networkFee", "serviceFee", "feeCurrency",
         "currency", "currencyCode", "availableBalance", "currentBalance", "totalElements", "number", "size", "errCode", "isSuccess",

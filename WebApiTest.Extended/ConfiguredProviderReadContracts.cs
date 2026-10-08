@@ -26,9 +26,9 @@ public sealed class InfuraReadFactAttribute : FactAttribute
 [Collection("Stage reads")]
 public class ConfiguredProviderReadContracts(ApiHarness api, ITestOutputHelper output)
 {
-    [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadEnvelope")]
-    public Task BitoloBalanceReturnsSuccessfulStructuredResult() => Read(
-        "/api/Bitolo/" + Uri.EscapeDataString(Environment.GetEnvironmentVariable("WEBAPI_BITOLO_CURRENCY")!) + "/getBalance");
+    [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadContract")]
+    public Task BitoloBalanceReturnsSuccessfulStructuredResult() =>
+        new ProviderBatchContracts(api, output).BitoloBalanceReturnsSuccessfulStructuredResult();
 
     [InfuraReadFact, Trait("Suite", "Live"), Trait("Provider", "Infura"), Trait("Coverage", "ReadEnvelope")]
     public Task InfuraAccountsReturnsSuccessfulStructuredResult() => Read(

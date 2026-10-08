@@ -75,7 +75,7 @@ Reports show timing, expected/actual status, counts, allowlisted response fields
 
 The current accessible repository contains tests, not the WebAPI controller implementation. Existing DEV report `provider-batch.trx` executed five checks successfully: FacilitaPay token, twelve positive rates and eight unique bank accounts; OpenPayd token; Nuvei_v2 session. The fourteen configured reads were not executed. This report does not contain their request bodies.
 
-Bitolo balance now also belongs to the normal batch. Set `WEBAPI_BITOLO_CURRENCY` to a confirmed configured currency in the selected runsettings; this basic read needs no local body profile. It still proves only the successful structured envelope, not the exact balance or currency mapping.
+Bitolo balance now also belongs to the normal batch. Set `WEBAPI_BITOLO_CURRENCY` to a confirmed configured currency in the selected runsettings; this basic read needs no local body profile. Its contract now checks a positive integer `account_id`, a JSON-number balance within decimal range, and the response currency matching the configured URL currency. The amount and account ID are displayed but not fixed to the historical sample. This does not verify account ownership or reconcile balances against accounting. Negative balances are permitted until an overdraft policy is agreed.
 
 To capture all available wrapper requests in one browser session:
 
@@ -92,3 +92,8 @@ git pull
 Send `provider-captures.local.json` from the repository root after reviewing it. It contains only successful supported DEV WebAPI reads. Cookies, headers and nested secret/owner/bank-number/address fields are omitted or redacted. The script makes no network calls, does not overwrite an existing capture and reports methods that were not captured. Use `-OutputFile .\provider-captures-next.local.json` for another batch.
 
 Captured responses are evidence for building assertions, **not automatically generated functional coverage**. No `provider-read.local.json` is generated from a successful snapshot. Request fields that were redacted must be restored locally from confirmed data before replay. On older PowerShell versions, JSON date values may be normalized to an ISO string in the redacted capture; do not use those captures to assert exact wire-date formatting.
+
+
+### Confirmed Bitolo balance wrapper
+
+The user supplied a successful DEV ARS response on 2026-10-08: `error=ok`, with `result.account_id` as an integer, `result.balance` as a number and `result.currency=ARS`. Both existing bodyless Bitolo read test entry points now use this contract. The new assertions need a DEV rerun. No request profile or body is needed.

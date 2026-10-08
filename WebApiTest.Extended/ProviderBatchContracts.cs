@@ -1,6 +1,7 @@
 using Newtonsoft.Json.Linq;
 using Xunit.Abstractions;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace WebApiTest.Extended;
 
@@ -12,14 +13,13 @@ public class ProviderBatchContracts(ApiHarness api, ITestOutputHelper output)
     private async Task<JObject> Read(string route) => ApiHarness.SuccessfulJson(
         await TestReport.SendAsync(api, output, "POST", route, await TestReport.GetTokenAsync(api, output)));
 
-    [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadEnvelope")]
+    [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadContract")]
     public async Task BitoloBalanceReturnsSuccessfulStructuredResult()
     {
         var currency = Environment.GetEnvironmentVariable("WEBAPI_BITOLO_CURRENCY")!;
         var data = await Read("/api/Bitolo/" + Uri.EscapeDataString(currency) + "/getBalance");
-        ProviderBatchChecks.SuccessFlags(data);
-        Assert.True(data["result"] is JObject or JArray, "Expected a structured Bitolo balance result.");
-        output.WriteLine("Bitolo: HTTP/application success and structured balance result verified. Currency identity and provider-specific balance fields require confirmed response data.");
+        ProviderBatchChecks.BitoloBalance(data, currency);
+        output.WriteLine("Bitolo: positive integer account_id, numeric balance and currency matching the requested currency verified. Current balance is displayed, not pinned to a historical amount.");
     }
 
     [LiveFact, Trait("Suite", "Live"), Trait("Provider", "Nuvei_v2")]
@@ -71,6 +71,22 @@ public class ProviderBatchContracts(ApiHarness api, ITestOutputHelper output)
 
 internal static class ProviderBatchChecks
 {
+    // Wrapper shape supplied from a successful DEV /api/Bitolo/ARS/getBalance response.
+    internal static void BitoloBalance(JObject data, string expectedCurrency)
+    {
+        SuccessFlags(data);
+        var result = Assert.IsType<JObject>(data["result"]);
+        Assert.True(result["account_id"]?.Type == JTokenType.Integer, "Bitolo account_id must be an integer.");
+        Assert.True(result.Value<long>("account_id") > 0, "Bitolo account_id must be positive.");
+        Assert.True(result["balance"]?.Type is JTokenType.Integer or JTokenType.Float, "Bitolo balance must be a JSON number.");
+        Assert.True(decimal.TryParse(result["balance"]!.ToString(Newtonsoft.Json.Formatting.None), NumberStyles.Float,
+            CultureInfo.InvariantCulture, out _), "Bitolo balance is outside supported decimal precision/range.");
+        var currency = ProviderReadContracts.RequiredString(result, "currency");
+        Assert.True(currency == expectedCurrency, "Bitolo response currency differs from the requested currency; values omitted.");
+        // Do not compare to the historical account 174 / amount supplied as an example.
+        // Negative balances are not rejected without an agreed provider overdraft policy.
+    }
+
     internal static void SuccessFlags(JObject data)
     {
         foreach (var obj in new[] { data, data["result"] as JObject }.OfType<JObject>())
