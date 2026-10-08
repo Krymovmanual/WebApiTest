@@ -16,13 +16,14 @@
     "authorizationCases": 2,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
-    "functionalCoverage": "ReadEnvelopeOnly",
+    "functionalCoverage": "ReadContract",
     "requiredConfiguration": "WEBAPI_BITOLO_CURRENCY",
-    "liveVerification": "NotYetRun",
-    "nextStep": "Supply verified wrapper request and result assertions; run configured scenario before claiming functional coverage",
+    "liveVerification": "NewAssertionsPendingDEVRun",
+    "nextStep": "Run with WEBAPI_BITOLO_CURRENCY; checks positive integer account_id, numeric balance and requested currency; account identity and balance reconciliation are not verified",
     "configuredReadScenario": "BitoloBalance",
     "requiredVerifiedFixture": "provider-read.local.json: verified body plus result assertions",
-    "configuredReadLiveVerification": "NotYetRun"
+    "configuredReadLiveVerification": "NotYetRun",
+    "responseContractSource": "User-supplied successful DEV ARS balance response, 2026-10-08"
   },
   {
     "method": "POST",
