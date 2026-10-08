@@ -532,26 +532,25 @@
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getAccounts",
     "body": {},
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth"
+    },
     "query": {},
-    "required": [
-      "path.blockchain"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/getBalance": {
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getBalance",
     "body": {
-      "address": null,
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
       "blockTag": "latest"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth"
+    },
     "query": {},
-    "required": [
-      "path.blockchain",
-      "body.address"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactions": {
@@ -575,67 +574,64 @@
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getEthTransactions",
     "body": {
-      "address": null,
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
       "fromBlock": "20000000",
       "toBlock": "20000009"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth"
+    },
     "query": {},
-    "required": [
-      "path.blockchain",
-      "body.address"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/getBlockByNumber/{blockNumber}": {
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getBlockByNumber/{blockNumber}",
     "body": {},
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth",
+      "blockNumber": "11868850"
+    },
     "query": {},
-    "required": [
-      "path.blockchain",
-      "path.blockNumber"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/getTransactionRecipient": {
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getTransactionRecipient",
     "body": {
-      "transactionHash": null
+      "transactionHash": "0x71912a3cb4f88594b060e5db101a432bdd0b31f9a7b43b6d149dfb7aa72e1f4b"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth"
+    },
     "query": {},
-    "required": [
-      "path.blockchain",
-      "body.transactionHash"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/getTransactionByHash": {
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getTransactionByHash",
     "body": {
-      "transactionHash": null
+      "transactionHash": "0x71912a3cb4f88594b060e5db101a432bdd0b31f9a7b43b6d149dfb7aa72e1f4b"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth"
+    },
     "query": {},
-    "required": [
-      "path.blockchain",
-      "body.transactionHash"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/getGasPrice": {
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getGasPrice",
     "body": {},
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "eth"
+    },
     "query": {},
-    "required": [
-      "path.blockchain"
-    ],
+    "required": [],
     "anonymous": false
   },
   "POST /api/Infura/{blockchain}/token/{contractAddress}/getBalance": {
@@ -1197,5 +1193,19 @@
     "query": {},
     "required": [],
     "anonymous": false
+  },
+  "POST /api/Infura/{blockchain}/estimateFees": {
+    "method": "POST",
+    "path": "/api/Infura/{blockchain}/estimateFees",
+    "query": {},
+    "anonymous": false,
+    "body": {
+      "to": "0x8ba1f109551bD432803012645Ac136ddd64DBA72",
+      "amount": 0.25
+    },
+    "pathValues": {
+      "blockchain": "eth"
+    },
+    "required": []
   }
 }

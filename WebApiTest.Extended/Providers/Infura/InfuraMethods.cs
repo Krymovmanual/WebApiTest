@@ -38,4 +38,7 @@ public sealed class InfuraMethods(ApiHarness api, ITestOutputHelper output) : Ap
     [ApiMethodFact("POST /api/Infura/{blockchain}/getTransactionCount")]
     public Task getTransactionCount() => CallAsync("POST /api/Infura/{blockchain}/getTransactionCount");
 
+    [ApiMethodFact("POST /api/Infura/{blockchain}/estimateFees")]
+    public Task estimateFees() => CallAsync("POST /api/Infura/{blockchain}/estimateFees");
+
 }
