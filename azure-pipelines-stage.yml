@@ -32,5 +32,7 @@ steps:
   - script: dotnet test WebApiTest.sln --configuration Release --no-build --logger trx
     displayName: Run tests
     env:
+      WEBAPI_RUN_LIVE: '1'
+      WEBAPI_BASE_URL: 'https://qu-stage-qfwebapi.azurewebsites.net/'
       STAGE_USERNAME: $(STAGE_USERNAME)
       STAGE_PASSWORD: $(STAGE_PASSWORD)

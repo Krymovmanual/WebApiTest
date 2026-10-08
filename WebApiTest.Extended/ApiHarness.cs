@@ -5,14 +5,6 @@ using Newtonsoft.Json;
 
 namespace WebApiTest.Extended;
 
-public sealed class LiveFactAttribute : FactAttribute
-{
-    public LiveFactAttribute() { if (!Settings.Live) Skip = "Set WEBAPI_RUN_LIVE=1 to run API integration tests."; }
-}
-public sealed class LiveTheoryAttribute : TheoryAttribute
-{
-    public LiveTheoryAttribute() { if (!Settings.Live) Skip = "Set WEBAPI_RUN_LIVE=1 to run API integration tests."; }
-}
 internal static class Settings
 {
     public static bool Live => Environment.GetEnvironmentVariable("WEBAPI_RUN_LIVE") == "1";
@@ -102,17 +94,5 @@ public sealed class ApiHarness : IDisposable
         return value;
     }
 
-    internal static JObject SuccessfulJson((int Status, string Body, double Milliseconds) response)
-    {
-        Assert.Equal(200, response.Status);
-        Assert.False(string.IsNullOrWhiteSpace(response.Body), "Empty HTTP 200 response.");
-        Assert.True(response.Milliseconds <= Settings.MaxMilliseconds, $"Response exceeded {Settings.MaxMilliseconds} ms; took {response.Milliseconds:F0} ms.");
-        var data = Assert.IsType<JObject>(ParseWireJson(response.Body));
-        var error = data["error"];
-        Assert.True(error == null || error.Type == JTokenType.Null || error.ToString() == "ok", "Provider returned an application error; value omitted.");
-        Assert.NotNull(data["result"]);
-        Assert.NotEqual(JTokenType.Null, data["result"]!.Type);
-        return data;
-    }
     public void Dispose() { client.Dispose(); tokenLock.Dispose(); }
 }

@@ -33,10 +33,15 @@ jobs:
         run: dotnet restore WebApiTest.Extended/WebApiTest.Extended.csproj
       - name: Build
         run: dotnet build WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-restore
-      - name: Verify test discovery and removed offline suite
+      - name: Verify direct method discovery
         shell: pwsh
         run: |
           $offline = Get-ChildItem WebApiTest.Extended -Recurse -Filter *.cs | Select-String 'Trait\("Suite",\s*"Offline"\)'
           if ($offline) { $offline | ForEach-Object { Write-Host $_ }; throw "Offline test attributes remain" }
-          dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --list-tests
+          $catalog = Get-Content WebApiTest.Extended/Contracts/api-methods.json -Raw | ConvertFrom-Json
+          $expected = @($catalog.PSObject.Properties).Count
+          $discovered = dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --list-tests
+          $discovered | ForEach-Object { Write-Host $_ }
+          $actual = @($discovered | Where-Object { $_ -match '^\s+WebApiTest\.Extended\.\w+Methods\.' }).Count
+          if ($actual -ne $expected) { throw "Expected $expected direct method tests; discovered $actual" }
           if ($LASTEXITCODE -ne 0) { throw "Test discovery failed" }

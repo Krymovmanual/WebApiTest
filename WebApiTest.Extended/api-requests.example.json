@@ -1,0 +1,468 @@
+{
+  "POST /api/Bitolo/{currency}/getBalance": {
+    "body": {},
+    "pathValues": {
+      "currency": null
+    },
+    "query": {}
+  },
+  "POST /api/Bitolo/{currency}/getTransactionStatus": {
+    "body": {
+      "order_id": null
+    },
+    "pathValues": {
+      "currency": null
+    },
+    "query": {}
+  },
+  "POST /api/Bitolo/{currency}/getTransactionList": {
+    "body": {
+      "page": 1,
+      "limit": 10
+    },
+    "pathValues": {
+      "currency": null
+    },
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getVaultAccount": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getFiatAccount": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getNetworkFee": {
+    "body": {
+      "assetId": "ETH",
+      "operation": "TRANSFER",
+      "source": {
+        "type": "VAULT_ACCOUNT",
+        "id": null
+      },
+      "destination": {
+        "type": "ONE_TIME_ADDRESS",
+        "oneTimeAddress": {
+          "address": null
+        }
+      },
+      "amount": "0.015"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getTransaction": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getMaxSpendableAmount": {
+    "body": {
+      "accountId": null,
+      "AssetId": "BTC"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getUnspentInputs": {
+    "body": {
+      "accountId": null,
+      "AssetId": "BTC"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getBalance": {
+    "body": {
+      "accountId": null,
+      "AssetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getInternalWallet": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getInternalWalletPaginated": {
+    "body": {
+      "id": null,
+      "pageSize": 200,
+      "pageCursor": ""
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getInternalWalletAsset": {
+    "body": {
+      "id": null,
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getExternalWallet": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getExternalWalletAsset": {
+    "body": {
+      "id": null,
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getAccountAddresses": {
+    "body": {
+      "id": null,
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getAccountAddressesPaginated": {
+    "body": {
+      "id": null,
+      "assetId": "ETH",
+      "limit": 100,
+      "after": ""
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FireblocksProvider/getExchangeAccountById": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getAccounts": {
+    "body": {},
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getBalance": {
+    "body": {
+      "address": null,
+      "blockTag": "latest"
+    },
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactions": {
+    "body": {
+      "address": null,
+      "fromBlock": "0x1312d00",
+      "toBlock": "latest"
+    },
+    "pathValues": {
+      "blockchain": null,
+      "contractAddress": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getEthTransactions": {
+    "body": {
+      "address": null,
+      "fromBlock": "20000000",
+      "toBlock": "20000009"
+    },
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getBlockByNumber/{blockNumber}": {
+    "body": {},
+    "pathValues": {
+      "blockchain": null,
+      "blockNumber": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getTransactionRecipient": {
+    "body": {
+      "transactionHash": null
+    },
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getTransactionByHash": {
+    "body": {
+      "transactionHash": null
+    },
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getGasPrice": {
+    "body": {},
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/token/{contractAddress}/getBalance": {
+    "body": {
+      "address": null
+    },
+    "pathValues": {
+      "blockchain": null,
+      "contractAddress": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash": {
+    "body": {
+      "transactionHash": null
+    },
+    "pathValues": {
+      "blockchain": null,
+      "contractAddress": null
+    },
+    "query": {}
+  },
+  "POST /api/Infura/{blockchain}/getTransactionCount": {
+    "body": {
+      "address": null,
+      "blockNumber": "pending"
+    },
+    "pathValues": {
+      "blockchain": null
+    },
+    "query": {}
+  },
+  "POST /api/KoyweProvider/getAccounyInfo": {
+    "body": {
+      "email": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/KoyweProvider/getOrderInfo": {
+    "body": {
+      "orderId": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/KoyweProvider/getOrderInfoByExternalId": {
+    "body": {
+      "externalId": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "GET /api/KoyweProvider/quotes/{quoteId}": {
+    "body": null,
+    "pathValues": {
+      "quoteId": null
+    },
+    "query": {}
+  },
+  "POST /api/Nuvei_v2_Provider/getPayoutStatus": {
+    "body": {
+      "clientRequestId": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/NuveiProvider/getPayoutStatus": {
+    "body": {
+      "clientRequestId": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/OpenPaydProvider/getHistory": {
+    "body": {
+      "id": null,
+      "currency": "EUR",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "status": [
+        "COMPLETED"
+      ],
+      "type": [
+        "PAYIN",
+        "PAYOUT"
+      ],
+      "page": 0,
+      "size": 20,
+      "sort": "createdDate,desc"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/OpenPaydProvider/getTransactionInfo": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/OpenPaydProvider/getAccount": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/QuantfuryPaymentsProvider/getKyc": {
+    "body": {
+      "userId": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/QuantfuryPaymentsSign/getCertificateData": {
+    "body": {
+      "userName": null,
+      "publicKey": null,
+      "utctime": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/withdrawals/requests/{id}": {
+    "body": null,
+    "pathValues": {
+      "id": null
+    },
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/withdrawals/locked_network_fee": {
+    "body": null,
+    "pathValues": {},
+    "query": {
+      "Asset": null,
+      "Amount": null,
+      "WithdrawalAddress": null
+    }
+  },
+  "GET /api/ZeroHashProvider/withdrawals/estimate_network_fee": {
+    "body": null,
+    "pathValues": {},
+    "query": {
+      "Underlying": null,
+      "QuotedCurrency": null,
+      "Amount": null,
+      "DestinationAddress": null
+    }
+  },
+  "GET /api/ZeroHashProvider/withdrawals/digital_asset_addresses/{id}": {
+    "body": null,
+    "pathValues": {
+      "id": null
+    },
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/withdrawals/validate_address": {
+    "body": null,
+    "pathValues": {},
+    "query": {
+      "Asset": null,
+      "Address": null
+    }
+  },
+  "GET /api/ZeroHashProvider/transfers/{id}": {
+    "body": null,
+    "pathValues": {
+      "id": null
+    },
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/accounts/{accountId}": {
+    "body": null,
+    "pathValues": {
+      "accountId": null
+    },
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/accounts/{accountId}/movements": {
+    "body": null,
+    "pathValues": {
+      "accountId": null
+    },
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/accounts/{accountId}/run_history": {
+    "body": null,
+    "pathValues": {
+      "accountId": null
+    },
+    "query": {}
+  },
+  "GET /api/ZeroHashProvider/accounts/{zrn}/details": {
+    "body": null,
+    "pathValues": {
+      "zrn": null
+    },
+    "query": {}
+  },
+  "POST /api/CoinPaymentsProvider/getWithdrawalInformation": {
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getBankAccount": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountStatement": {
+    "body": {
+      "id": null,
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "last_id": null,
+      "per_page": "100"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountBalance": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getTransaction": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  }
+}
