@@ -12,12 +12,12 @@ The tracked dev.runsettings contains no credentials. Copy it to ignored dev.loca
 
 ## Implemented coverage
 
-- Offline: contract integrity for all 244 operations, schema references, catalog and exact authorization matrix. Separate regression tests validate nested response schema checks.
-- Live authorization: 370 requests (missing/malformed Bearer) for 185 Swagger-protected operations, grouped by provider. No valid credentials or populated bodies are sent. Placeholder routes use ARS/ethereum/deliberately nonexistent IDs only to exercise authorization. 400/404 is a failure, not proof of authentication enforcement.
+- Offline: contract integrity for the 217 operations in the active test scope, schema references, catalog and exact authorization matrix. Separate regression tests validate nested response schema checks.
+- Live authorization: 322 requests (missing/malformed Bearer) for 161 Swagger-protected operations in the active test scope, grouped by provider. No valid credentials or populated bodies are sent. Placeholder routes use ARS/ethereum/deliberately nonexistent IDs only to exercise authorization. 400/404 is a failure, not proof of authentication enforcement.
 - Live provider reads: 10 read endpoints (5 grouped in FireblocksReadContracts, plus vault listing/pagination in FireblocksVaultContracts), 4 provider token/session contracts, Version and DeployDate. Fireblocks checks additionally validate provider metadata, exchange retrieval status, nested fiat balances and wallet field types. See [Fireblocks coverage](fireblocks-coverage.md) for all 49 operations and mapping confidence. Vault listing and transaction history add two functional read endpoints; other Fireblocks gaps remain explicit.
 - Live ZeroHash: 8 nonmutating collection GET requests with schema-based validation. Uses configured API credentials even though Swagger omits security. Application errors fail even with HTTP 200. Missing result fails. Optional nullable CLR properties are accepted because this Swagger 2 snapshot lacks reliable nullable metadata; required properties and present nonnull property types are enforced. No inferred numeric/ID restrictions.
 - Live Infura: 3 missing-required-body validation cases, enabled only when WEBAPI_BLOCKCHAIN is explicitly configured to a supported DEV chain identifier. No transactions or wallet creation.
-- Live current Swagger: verifies presence and security declarations of all 244 operations. This checks contract drift, not functional behavior.
+- Live current Swagger: verifies presence and security declarations of all 217 operations in the active test scope. This checks contract drift, not functional behavior.
 
 ## Remaining gaps
 
@@ -61,7 +61,7 @@ Authorization rejection tests expect 401/403; their success does not verify a wo
 An authenticated read returning 401 prints an unexpected authorization rejection.
 Infura missing-body validation expects 400.
 
-New read-envelope tests cover PayRetailers `getBalance`, Bitolo `{currency}/getBalance`,
+Read-envelope tests cover Bitolo `{currency}/getBalance`,
 and Infura `{blockchain}/getAccounts`. Swagger declares no body for these methods.
 These tests verify HTTP/application success and a structured result only; they have not yet
 been run against DEV and do not claim provider-specific field or financial correctness.
@@ -135,3 +135,8 @@ Offline passes validate the assertions; they do not verify DEV behavior.
 ### Bitolo, OpenPayd, FacilitaPay and Nuvei_v2
 
 See [provider-read-batch.md](provider-read-batch.md) for the fixed read catalog, known-contract batch, local verified request/assertion format and one-command run. Missing verified scenarios remain uncovered functionally.
+
+
+### Provider exclusions
+
+KASHA, MALDO, PayRetailers and Wyre are excluded at the user's request. Their provider authorization classes, related Quantfury deposit authorization rows, and PayRetailers balance read were removed. The active catalog now contains 217 operations. The raw supplied Swagger remains intact as source evidence; its excluded routes are removed from the in-memory specification before offline and live contract checks.

@@ -1131,36 +1131,6 @@
   },
   {
     "method": "POST",
-    "path": "/api/KashaProvider/webhook",
-    "provider": "KashaProvider",
-    "authorizationCases": 0,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/KashaProvider/getPayoutInfo",
-    "provider": "KashaProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/KashaProvider/createPayout",
-    "provider": "KashaProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
     "path": "/api/KoyweProvider/webhook",
     "provider": "KoyweProvider",
     "authorizationCases": 0,
@@ -1324,56 +1294,6 @@
     "path": "/api/Mail/sendMail",
     "provider": "Mail",
     "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/MaldoPayProvider/createTransaction",
-    "provider": "MaldoPayProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/MaldoPayProvider/сheckTransactionStatus",
-    "provider": "MaldoPayProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/MaldoPayProvider/getBalance",
-    "provider": "MaldoPayProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/MaldoPayProvider/getHistory",
-    "provider": "MaldoPayProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/MaldoPayProvider/webhook",
-    "provider": "MaldoPayProvider",
-    "authorizationCases": 0,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
@@ -1672,48 +1592,6 @@
     "configuredReadLiveVerification": "NotYetRun"
   },
   {
-    "method": "POST",
-    "path": "/api/PayRetailersProvider/getBalance",
-    "provider": "PayRetailersProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "ReadEnvelopeOnly",
-    "requiredConfiguration": "WEBAPI_RUN_LIVE=1",
-    "liveVerification": "NotYetRun",
-    "nextStep": "Confirm live wrapper; add provider-specific data assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/PayRetailersProvider/getPayoutInfo",
-    "provider": "PayRetailersProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/PayRetailersProvider/createPayout",
-    "provider": "PayRetailersProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/PayRetailersProvider/webhook",
-    "provider": "PayRetailersProvider",
-    "authorizationCases": 0,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
     "method": "HEAD",
     "path": "/api/Paysafe/webhook",
     "provider": "Paysafe",
@@ -1855,26 +1733,6 @@
   },
   {
     "method": "POST",
-    "path": "/api/QuantfuryPaymentsProvider/depositPayRetailers",
-    "provider": "QuantfuryPaymentsProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/QuantfuryPaymentsProvider/depositMaldoPay",
-    "provider": "QuantfuryPaymentsProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
     "path": "/api/QuantfuryPaymentsProvider/eventWebhookNuvei",
     "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 2,
@@ -1888,16 +1746,6 @@
     "path": "/api/QuantfuryPaymentsProvider/getCurrencyFee",
     "provider": "QuantfuryPaymentsProvider",
     "authorizationCases": 0,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/QuantfuryPaymentsProvider/depositKasha",
-    "provider": "QuantfuryPaymentsProvider",
-    "authorizationCases": 2,
     "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
@@ -2089,126 +1937,6 @@
     "provider": "validate-address",
     "authorizationCases": 2,
     "bodySchemaKnown": true,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/getBalances",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/getAccount",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/getRates",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/getWallet",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/createWallet",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/updateWallet",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/deleteWallet",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/createTransfer",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/confirmTransfer",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/sendTransfer",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/getHistory",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
-    "responseSchemaKnown": false,
-    "functionalCoverage": "NeedsVerifiedScenario",
-    "nextStep": "Obtain verified request and response before adding functional assertions"
-  },
-  {
-    "method": "POST",
-    "path": "/api/WyreProvider/getTransfer",
-    "provider": "WyreProvider",
-    "authorizationCases": 2,
-    "bodySchemaKnown": false,
     "responseSchemaKnown": false,
     "functionalCoverage": "NeedsVerifiedScenario",
     "nextStep": "Obtain verified request and response before adding functional assertions"

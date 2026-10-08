@@ -7,7 +7,20 @@ namespace WebApiTest.Extended;
 
 internal static class ApiSpecification
 {
-    public static JObject Snapshot => JObject.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "swagger.snapshot.json")));
+    // Keep the supplied Swagger intact on disk; apply the requested provider exclusions
+    // consistently to documentation checks, catalog checks and the live drift check.
+    public static bool IncludedInTestScope(string path) =>
+        !new[] { "Kasha", "Maldo", "PayRetailers", "Wyre" }.Any(provider => path.Contains(provider, StringComparison.OrdinalIgnoreCase));
+    public static JObject Snapshot
+    {
+        get
+        {
+            var snapshot = JObject.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "swagger.snapshot.json")));
+            var paths = (JObject)snapshot["paths"]!;
+            foreach (var path in paths.Properties().Where(p => !IncludedInTestScope(p.Name)).ToArray()) path.Remove();
+            return snapshot;
+        }
+    }
     public static readonly string[] Methods = ["get", "post", "put", "patch", "delete", "head", "options"];
     public static IEnumerable<object[]> Operations => ((JObject)Snapshot["paths"]!).Properties()
         .SelectMany(p => ((JObject)p.Value).Properties().Where(o => Methods.Contains(o.Name)).Select(o => new object[] { o.Name, p.Name }));
@@ -90,6 +103,6 @@ public class SwaggerContracts(ITestOutputHelper output)
             var actual = operation!["security"] ?? current["security"] ?? new JArray();
             Assert.True(JToken.DeepEquals(expected, actual), $"Security contract changed for {method} {path}.");
         }
-        output.WriteLine("Live Swagger contains all {0} snapshot operations with matching security.", Operations.Count());
+        output.WriteLine("Live Swagger contains all {0} operations in the active test scope with matching security.", Operations.Count());
     }
 }
