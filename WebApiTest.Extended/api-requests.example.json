@@ -153,23 +153,6 @@
     "pathValues": {},
     "query": {}
   },
-  "POST /api/Infura/{blockchain}/getAccounts": {
-    "body": {},
-    "pathValues": {
-      "blockchain": null
-    },
-    "query": {}
-  },
-  "POST /api/Infura/{blockchain}/getBalance": {
-    "body": {
-      "address": null,
-      "blockTag": "latest"
-    },
-    "pathValues": {
-      "blockchain": null
-    },
-    "query": {}
-  },
   "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactions": {
     "body": {
       "address": null,
@@ -179,50 +162,6 @@
     "pathValues": {
       "blockchain": null,
       "contractAddress": null
-    },
-    "query": {}
-  },
-  "POST /api/Infura/{blockchain}/getEthTransactions": {
-    "body": {
-      "address": null,
-      "fromBlock": "20000000",
-      "toBlock": "20000009"
-    },
-    "pathValues": {
-      "blockchain": null
-    },
-    "query": {}
-  },
-  "POST /api/Infura/{blockchain}/getBlockByNumber/{blockNumber}": {
-    "body": {},
-    "pathValues": {
-      "blockchain": null,
-      "blockNumber": null
-    },
-    "query": {}
-  },
-  "POST /api/Infura/{blockchain}/getTransactionRecipient": {
-    "body": {
-      "transactionHash": null
-    },
-    "pathValues": {
-      "blockchain": null
-    },
-    "query": {}
-  },
-  "POST /api/Infura/{blockchain}/getTransactionByHash": {
-    "body": {
-      "transactionHash": null
-    },
-    "pathValues": {
-      "blockchain": null
-    },
-    "query": {}
-  },
-  "POST /api/Infura/{blockchain}/getGasPrice": {
-    "body": {},
-    "pathValues": {
-      "blockchain": null
     },
     "query": {}
   },

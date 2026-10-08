@@ -1,6 +1,6 @@
 # Direct API method calls
 
-Extended contains 97 read method tests from the supplied `swagger_pay.json`. Each test sends one request to its named method with real API authorization, then prints the full request JSON, HTTP status, elapsed time and full response JSON. Credential fields are masked. Select the individual test and open **Standard Output** in Visual Studio.
+Extended contains 98 read method tests from the supplied Swagger and successful request examples. Each test sends one request to its named method with real API authorization, then prints the full request JSON, HTTP status, elapsed time and full response JSON. Credential fields are masked. Select the individual test and open **Standard Output** in Visual Studio.
 
 Tests are grouped by **Provider**. For example, **CoinPayments → getBalances** displays the balance JSON; `getWithdrawalHistory` uses `Start: 25`. **Koywe → getCurrencyTokenPairs** calls that method directly, without comparing it with another response. **Fireblocks → getTransactions** makes one request, without filter, cursor, sorting or financial assertions.
 
@@ -40,3 +40,11 @@ CLI with HTML/TRX reports:
 ```
 
 The Stage Azure pipeline enables the live suite with `WEBAPI_RUN_LIVE=1` and targets the Stage origin with the existing Stage credentials. Configure Stage entity inputs using `WEBAPI_REQUESTS_FILE`; missing inputs still skip their methods. GitHub Actions only builds and checks discovery; it does not verify live provider availability. A red test retains the actual HTTP/application error and full response in its output.
+
+## Infura supplied examples
+
+Eight direct calls use the supplied successful `eth` examples without extra configuration: `getAccounts`, `getBalance`, `getEthTransactions`, `getBlockByNumber`, `getTransactionRecipient`, `getTransactionByHash`, `getGasPrice`, and `estimateFees`. Each prints its current full JSON. Historical balances, gas, block metadata and transaction contents are not asserted; empty arrays remain valid. The route named `getTransactionRecipient` returns the receipt in the supplied capture, so its response is printed unchanged.
+
+The other four Infura methods still need configured inputs. No `getTransactionCount` example was supplied. The token history example returned `Contract addresses are forbidden.` after the token contract was also used as the wallet address. Token balance returned zero with `decimals: 0` and `symbol: null`, which does not establish a working token-contract input. Token transaction lookup used a 32-byte transaction hash for `contractAddress`, instead of a 20-byte EVM address. These examples are not promoted to successful default requests or expected-error tests; configure real contract/wallet inputs in `api-requests.local.json`.
+
+`generateAddress` remains outside the automatic read suite because it creates an address. `estimateFees` only requests a fee estimate and does not send a transaction. `WEBAPI_BLOCKCHAIN` and local request configuration can override the supplied chain and inputs; use examples from the chosen chain.
