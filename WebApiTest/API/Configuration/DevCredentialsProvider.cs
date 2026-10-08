@@ -2,20 +2,20 @@ using Newtonsoft.Json;
 
 namespace WebApiTest.API.Configuration;
 
-public static class StageCredentialsProvider
+public static class DevCredentialsProvider
 {
-    private const string UserNameEnvironmentVariable = "STAGE_USERNAME";
-    private const string PasswordEnvironmentVariable = "STAGE_PASSWORD";
-    private const string LocalCredentialsFileName = "stage_creds.json";
+    private const string UserNameEnvironmentVariable = "DEV_USERNAME";
+    private const string PasswordEnvironmentVariable = "DEV_PASSWORD";
+    private const string LocalCredentialsFileName = "dev_creds.json";
 
-    public static StageCredentials GetCredentials()
+    public static DevCredentials GetCredentials()
     {
         var userName = Environment.GetEnvironmentVariable(UserNameEnvironmentVariable);
         var password = Environment.GetEnvironmentVariable(PasswordEnvironmentVariable);
 
         if (!string.IsNullOrWhiteSpace(userName) && !string.IsNullOrWhiteSpace(password))
         {
-            return new StageCredentials
+            return new DevCredentials
             {
                 UserName = userName,
                 Password = password
@@ -26,12 +26,12 @@ public static class StageCredentialsProvider
         if (credentialsFile is null)
         {
             throw new InvalidOperationException(
-                $"Stage credentials were not found. Set {UserNameEnvironmentVariable} and {PasswordEnvironmentVariable}, " +
+                $"Dev credentials were not found. Set {UserNameEnvironmentVariable} and {PasswordEnvironmentVariable}, " +
                 $"or create {LocalCredentialsFileName} in the repository root.");
         }
 
         var json = File.ReadAllText(credentialsFile);
-        var credentials = JsonConvert.DeserializeObject<StageCredentials>(json);
+        var credentials = JsonConvert.DeserializeObject<DevCredentials>(json);
 
         if (credentials is null ||
             string.IsNullOrWhiteSpace(credentials.UserName) ||

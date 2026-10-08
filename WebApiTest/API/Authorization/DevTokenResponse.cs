@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace WebApiTest.API.Authorization;
 
-public sealed class StageTokenResponse
+public sealed class DevTokenResponse
 {
     [JsonProperty("access_token")]
     public string? AccessToken { get; init; }

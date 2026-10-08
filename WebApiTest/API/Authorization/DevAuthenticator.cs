@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace WebApiTest.API.Authorization;
 
-public static class StageAuthenticator
+public static class DevAuthenticator
 {
     private static readonly HttpClient TokenClient = new()
     {
-        BaseAddress = new Uri(ApiClientBase.StageBaseUrl)
+        BaseAddress = new Uri(ApiClientBase.DevBaseUrl)
     };
 
     private static readonly SemaphoreSlim TokenSemaphore = new(1, 1);
@@ -29,8 +29,8 @@ public static class StageAuthenticator
                 return accessToken!;
             }
 
-            var credentials = StageCredentialsProvider.GetCredentials();
-            using var requestBody = new StageTokenRequest
+            var credentials = DevCredentialsProvider.GetCredentials();
+            using var requestBody = new DevTokenRequest
             {
                 UserName = credentials.UserName,
                 Password = credentials.Password
@@ -42,17 +42,17 @@ public static class StageAuthenticator
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException(
-                    $"Failed to get stage access token. Status: {(int)response.StatusCode} {response.StatusCode}. Body: {content}");
+                    $"Failed to get dev access token. Status: {(int)response.StatusCode} {response.StatusCode}. Body: {content}");
             }
 
-            var tokenResponse = JsonConvert.DeserializeObject<StageTokenResponse>(content);
+            var tokenResponse = JsonConvert.DeserializeObject<DevTokenResponse>(content);
             if (string.IsNullOrWhiteSpace(tokenResponse?.AccessToken))
             {
                 var errorDetails = string.IsNullOrWhiteSpace(tokenResponse?.Error)
                     ? content
                     : $"{tokenResponse.Error}: {tokenResponse.ErrorDescription}";
 
-                throw new InvalidOperationException($"Stage token response did not contain access_token. Body: {errorDetails}");
+                throw new InvalidOperationException($"Dev token response did not contain access_token. Body: {errorDetails}");
             }
 
             accessToken = tokenResponse.AccessToken;

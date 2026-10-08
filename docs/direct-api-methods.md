@@ -12,7 +12,7 @@ HTTP 200 and absence of explicit application errors are checked. Empty arrays, n
 2. **Test → Configure Run Settings → Select Solution Wide runsettings File**: choose `WebApiTest.Extended/dev.runsettings`.
 3. In Test Explorer, group by **Traits**, expand the provider and run its method tests.
 
-Authorization uses `BEARER_TOKEN`, or `STAGE_USERNAME` plus `STAGE_PASSWORD`, or ignored `stage_creds.json` at the solution root (`userName` and `password`). The default target is DEV; `WEBAPI_BASE_URL` selects another HTTPS origin.
+Authorization uses `BEARER_TOKEN`, or `DEV_USERNAME` plus `DEV_PASSWORD`, or ignored `dev_creds.json` at the solution root (`userName` and `password`). The default target is DEV; `WEBAPI_BASE_URL` selects another HTTPS origin.
 
 ## Real request inputs
 
@@ -39,7 +39,7 @@ CLI with HTML/TRX reports:
 .\scripts\Run-ExtendedTests.ps1
 ```
 
-The Stage Azure pipeline enables the live suite with `WEBAPI_RUN_LIVE=1` and targets the Stage origin with the existing Stage credentials. Configure Stage entity inputs using `WEBAPI_REQUESTS_FILE`; missing inputs still skip their methods. GitHub Actions only builds and checks discovery; it does not verify live provider availability. A red test retains the actual HTTP/application error and full response in its output.
+The Dev Azure pipeline enables the live suite with `WEBAPI_RUN_LIVE=1` and targets the Dev origin with the DEV credentials. Configure DEV entity inputs using `WEBAPI_REQUESTS_FILE`; missing inputs still skip their methods. GitHub Actions only builds and checks discovery; it does not verify live provider availability. A red test retains the actual HTTP/application error and full response in its output.
 
 ## Infura supplied examples
 
