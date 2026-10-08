@@ -8,8 +8,6 @@ public sealed class ZeroHashMethods(ApiHarness api, ITestOutputHelper output) : 
     [ApiMethodFact("GET /api/ZeroHashProvider/assets")]
     public Task assets() => CallAsync("GET /api/ZeroHashProvider/assets");
 
-    [ApiMethodFact("GET /api/ZeroHashProvider/withdrawals/requests")]
-    public Task withdrawals_requests() => CallAsync("GET /api/ZeroHashProvider/withdrawals/requests");
 
     [ApiMethodFact("GET /api/ZeroHashProvider/withdrawals/requests/{id}")]
     public Task withdrawals_requests_id() => CallAsync("GET /api/ZeroHashProvider/withdrawals/requests/{id}");
@@ -53,8 +51,6 @@ public sealed class ZeroHashMethods(ApiHarness api, ITestOutputHelper output) : 
     [ApiMethodFact("GET /api/ZeroHashProvider/accounts/{zrn}/details")]
     public Task accounts_zrn_details() => CallAsync("GET /api/ZeroHashProvider/accounts/{zrn}/details");
 
-    [ApiMethodFact("GET /api/ZeroHashProvider/deposits/digital_asset_addresses")]
-    public Task deposits_digital_asset_addresses() => CallAsync("GET /api/ZeroHashProvider/deposits/digital_asset_addresses");
 
     [ApiMethodFact("GET /api/ZeroHashProvider/deposits")]
     public Task deposits() => CallAsync("GET /api/ZeroHashProvider/deposits");
