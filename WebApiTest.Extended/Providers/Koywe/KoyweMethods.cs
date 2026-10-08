@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "Koywe"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "Koywe")]
 public sealed class KoyweMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/KoyweProvider/getToken")]

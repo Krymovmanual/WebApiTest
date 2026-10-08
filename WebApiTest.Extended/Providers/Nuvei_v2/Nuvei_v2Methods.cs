@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "Nuvei_v2"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "Nuvei_v2")]
 public sealed class Nuvei_v2Methods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/Nuvei_v2_Provider/getSessionToken")]

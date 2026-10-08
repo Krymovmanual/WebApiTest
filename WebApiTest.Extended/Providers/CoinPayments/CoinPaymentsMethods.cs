@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "CoinPayments"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "CoinPayments")]
 public sealed class CoinPaymentsMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/CoinPaymentsProvider/getBalances")]

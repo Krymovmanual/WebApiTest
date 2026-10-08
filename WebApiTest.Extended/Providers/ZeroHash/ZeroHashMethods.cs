@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "ZeroHash"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "ZeroHash")]
 public sealed class ZeroHashMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("GET /api/ZeroHashProvider/assets")]

@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "Infura"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "Infura")]
 public sealed class InfuraMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/Infura/{blockchain}/getAccounts")]

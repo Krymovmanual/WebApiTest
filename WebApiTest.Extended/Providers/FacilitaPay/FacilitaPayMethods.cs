@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace WebApiTest.Extended;
 
-[Collection("API methods"), Trait("Provider", "FacilitaPay"), Trait("Suite", "Live")]
+[Collection("API methods"), Trait("Provider", "FacilitaPay")]
 public sealed class FacilitaPayMethods(ApiHarness api, ITestOutputHelper output) : ApiMethodTestsBase(api, output)
 {
     [ApiMethodFact("POST /api/FacilitaPayProvider/getToken")]
