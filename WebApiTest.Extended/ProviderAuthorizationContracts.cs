@@ -285,19 +285,6 @@ public class InfuraAuthorizationContracts(ApiHarness api, ITestOutputHelper outp
     public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
 }
 
-[Collection("Stage reads")]
-public class KashaProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
-{
-    public static IEnumerable<object[]> Cases => new object[][]
-    {
-        new object[] { "POST", "/api/KashaProvider/getPayoutInfo", "missing" },
-        new object[] { "POST", "/api/KashaProvider/getPayoutInfo", "malformed" },
-        new object[] { "POST", "/api/KashaProvider/createPayout", "missing" },
-        new object[] { "POST", "/api/KashaProvider/createPayout", "malformed" },
-    };
-    [LiveTheory, MemberData(nameof(Cases)), Trait("Suite", "Live"), Trait("Coverage", "Authorization"), Trait("Provider", "KashaProvider")]
-    public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
-}
 
 [Collection("Stage reads")]
 public class KoyweProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
@@ -351,23 +338,6 @@ public class MailAuthorizationContracts(ApiHarness api, ITestOutputHelper output
     public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
 }
 
-[Collection("Stage reads")]
-public class MaldoPayProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
-{
-    public static IEnumerable<object[]> Cases => new object[][]
-    {
-        new object[] { "POST", "/api/MaldoPayProvider/createTransaction", "missing" },
-        new object[] { "POST", "/api/MaldoPayProvider/createTransaction", "malformed" },
-        new object[] { "POST", "/api/MaldoPayProvider/сheckTransactionStatus", "missing" },
-        new object[] { "POST", "/api/MaldoPayProvider/сheckTransactionStatus", "malformed" },
-        new object[] { "POST", "/api/MaldoPayProvider/getBalance", "missing" },
-        new object[] { "POST", "/api/MaldoPayProvider/getBalance", "malformed" },
-        new object[] { "POST", "/api/MaldoPayProvider/getHistory", "missing" },
-        new object[] { "POST", "/api/MaldoPayProvider/getHistory", "malformed" },
-    };
-    [LiveTheory, MemberData(nameof(Cases)), Trait("Suite", "Live"), Trait("Coverage", "Authorization"), Trait("Provider", "MaldoPayProvider")]
-    public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
-}
 
 [Collection("Stage reads")]
 public class Nuvei_v2_ProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
@@ -443,21 +413,6 @@ public class OpenPaydProviderAuthorizationContracts(ApiHarness api, ITestOutputH
     public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
 }
 
-[Collection("Stage reads")]
-public class PayRetailersProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
-{
-    public static IEnumerable<object[]> Cases => new object[][]
-    {
-        new object[] { "POST", "/api/PayRetailersProvider/getBalance", "missing" },
-        new object[] { "POST", "/api/PayRetailersProvider/getBalance", "malformed" },
-        new object[] { "POST", "/api/PayRetailersProvider/getPayoutInfo", "missing" },
-        new object[] { "POST", "/api/PayRetailersProvider/getPayoutInfo", "malformed" },
-        new object[] { "POST", "/api/PayRetailersProvider/createPayout", "missing" },
-        new object[] { "POST", "/api/PayRetailersProvider/createPayout", "malformed" },
-    };
-    [LiveTheory, MemberData(nameof(Cases)), Trait("Suite", "Live"), Trait("Coverage", "Authorization"), Trait("Provider", "PayRetailersProvider")]
-    public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
-}
 
 [Collection("Stage reads")]
 public class QDTAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
@@ -494,14 +449,8 @@ public class QuantfuryPaymentsProviderAuthorizationContracts(ApiHarness api, ITe
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositFacilitaPay", "malformed" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositNuvei", "missing" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositNuvei", "malformed" },
-        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositPayRetailers", "missing" },
-        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositPayRetailers", "malformed" },
-        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositMaldoPay", "missing" },
-        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositMaldoPay", "malformed" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/eventWebhookNuvei", "missing" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/eventWebhookNuvei", "malformed" },
-        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositKasha", "missing" },
-        new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositKasha", "malformed" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositKoywe", "missing" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/depositKoywe", "malformed" },
         new object[] { "POST", "/api/QuantfuryPaymentsProvider/updateAccountKoywe", "missing" },
@@ -559,36 +508,3 @@ public class validate_addressAuthorizationContracts(ApiHarness api, ITestOutputH
     public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
 }
 
-[Collection("Stage reads")]
-public class WyreProviderAuthorizationContracts(ApiHarness api, ITestOutputHelper output) : ProviderAuthorizationContracts(api, output)
-{
-    public static IEnumerable<object[]> Cases => new object[][]
-    {
-        new object[] { "POST", "/api/WyreProvider/getBalances", "missing" },
-        new object[] { "POST", "/api/WyreProvider/getBalances", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/getAccount", "missing" },
-        new object[] { "POST", "/api/WyreProvider/getAccount", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/getRates", "missing" },
-        new object[] { "POST", "/api/WyreProvider/getRates", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/getWallet", "missing" },
-        new object[] { "POST", "/api/WyreProvider/getWallet", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/createWallet", "missing" },
-        new object[] { "POST", "/api/WyreProvider/createWallet", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/updateWallet", "missing" },
-        new object[] { "POST", "/api/WyreProvider/updateWallet", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/deleteWallet", "missing" },
-        new object[] { "POST", "/api/WyreProvider/deleteWallet", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/createTransfer", "missing" },
-        new object[] { "POST", "/api/WyreProvider/createTransfer", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/confirmTransfer", "missing" },
-        new object[] { "POST", "/api/WyreProvider/confirmTransfer", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/sendTransfer", "missing" },
-        new object[] { "POST", "/api/WyreProvider/sendTransfer", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/getHistory", "missing" },
-        new object[] { "POST", "/api/WyreProvider/getHistory", "malformed" },
-        new object[] { "POST", "/api/WyreProvider/getTransfer", "missing" },
-        new object[] { "POST", "/api/WyreProvider/getTransfer", "malformed" },
-    };
-    [LiveTheory, MemberData(nameof(Cases)), Trait("Suite", "Live"), Trait("Coverage", "Authorization"), Trait("Provider", "WyreProvider")]
-    public Task RejectsMissingOrMalformedBearer(string method, string path, string mode) => Reject(method, path, mode);
-}

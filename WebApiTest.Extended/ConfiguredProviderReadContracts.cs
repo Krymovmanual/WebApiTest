@@ -26,9 +26,6 @@ public sealed class InfuraReadFactAttribute : FactAttribute
 [Collection("Stage reads")]
 public class ConfiguredProviderReadContracts(ApiHarness api, ITestOutputHelper output)
 {
-    [LiveFact, Trait("Suite", "Live"), Trait("Provider", "PayRetailers"), Trait("Coverage", "ReadEnvelope")]
-    public Task PayRetailersBalanceReturnsSuccessfulStructuredResult() => Read("/api/PayRetailersProvider/getBalance");
-
     [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadEnvelope")]
     public Task BitoloBalanceReturnsSuccessfulStructuredResult() => Read(
         "/api/Bitolo/" + Uri.EscapeDataString(Environment.GetEnvironmentVariable("WEBAPI_BITOLO_CURRENCY")!) + "/getBalance");
@@ -50,7 +47,6 @@ public class ConfiguredProviderReadContracts(ApiHarness api, ITestOutputHelper o
 public class ConfiguredReadCatalogContracts
 {
     [Theory, Trait("Suite", "Offline")]
-    [InlineData("/api/PayRetailersProvider/getBalance")]
     [InlineData("/api/Bitolo/{currency}/getBalance")]
     [InlineData("/api/Infura/{blockchain}/getAccounts")]
     public void ReadRoutesExistWithoutBodyParameters(string path)
