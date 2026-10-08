@@ -20,7 +20,7 @@ internal static class TestReport
 
     private static readonly HashSet<string> Fields = new(StringComparer.Ordinal)
     {
-        "id", "_id", "account_id", "assetId", "symbol", "type", "status", "operation", "decimals",
+        "id", "_id", "account_id", "transaction_id", "order_id", "amount_net", "code", "assetId", "symbol", "type", "status", "operation", "decimals",
         "total", "balance", "available", "pending", "frozen", "lockedAmount", "staked",
         "amount", "requestedAmount", "netAmount", "fee", "networkFee", "serviceFee", "feeCurrency",
         "currency", "currencyCode", "availableBalance", "currentBalance", "totalElements", "number", "size", "errCode", "isSuccess",
@@ -100,7 +100,7 @@ internal static class TestReport
                 .Where(p => p.Value is JValue).Select(p => $"{p.Name}={p.Value.ToString(Formatting.None)}");
             output.WriteLine("{0}: {1}", label, string.Join("; ", fields));
             foreach (var property in obj.Properties().Where(p => p.Value is JArray || p.Value is JObject))
-                if (property.Name is "assets" or "accounts" or "transactions" or "tokens" or "limits" or "message" or "data" or "amountInfo" or "feeInfo" or "content" or "items" or "balances" or "results")
+                if (property.Name is "assets" or "accounts" or "transactions" or "tokens" or "limits" or "message" or "data" or "amountInfo" or "feeInfo" or "content" or "items" or "balances" or "results" or "event")
                     Describe(output, $"{label}.{property.Name}", property.Value, names);
         }
         else output.WriteLine("{0}: {1}", label, token.Type);
