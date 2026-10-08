@@ -68,6 +68,13 @@ internal static class ApiMethodRequests
     {
         var catalog = JObject.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "api-methods.json")));
         var request = (JObject)(catalog[key]?.DeepClone() ?? throw new InvalidOperationException("Unknown API method: " + key));
+        // Captured entity IDs belong to DEV; another environment needs its own IDs.
+        if (Settings.BaseUrl.Host != "qu-dev-qfwebapi.azurewebsites.net" && request["devEntityFields"] is JArray fields)
+            foreach (var field in fields.Values<string>())
+            {
+                request["body"]![field!] = null;
+                ((JArray)request["required"]!).Add("body." + field);
+            }
         var configPath = Environment.GetEnvironmentVariable("WEBAPI_REQUESTS_FILE") ?? FindLocalFile();
         if (configPath != null)
         {

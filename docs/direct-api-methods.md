@@ -16,7 +16,7 @@ Authorization uses `BEARER_TOKEN`, or `STAGE_USERNAME` plus `STAGE_PASSWORD`, or
 
 ## Real request inputs
 
-Provided CoinPayments and FacilitaPay entity IDs are retained. Swagger demonstration entity IDs, account addresses, hashes and email addresses are not sent. Methods needing those values are **Skipped**, with the missing fields named in the skip reason. A skip does not establish that the endpoint works.
+Provided CoinPayments and FacilitaPay entity IDs are retained for DEV. Other environments need their own configured entity IDs. Swagger demonstration entity IDs, account addresses, hashes and email addresses are not sent. Methods needing those values are **Skipped**, with the missing fields named in the skip reason. A skip does not establish that the endpoint works.
 
 Copy `WebApiTest.Extended/api-requests.example.json` to ignored `api-requests.local.json` in the solution root or Extended directory. Keep only the methods you need and fill their null fields with real data. Request keys are the exact HTTP method and Swagger route:
 
@@ -39,4 +39,4 @@ CLI with HTML/TRX reports:
 .\scripts\Run-ExtendedTests.ps1
 ```
 
-Azure enables the live suite with `WEBAPI_RUN_LIVE=1`. Missing entity inputs still skip their methods. GitHub Actions only builds and checks discovery; it does not verify live provider availability. A red test retains the actual HTTP/application error and full response in its output.
+The Stage Azure pipeline enables the live suite with `WEBAPI_RUN_LIVE=1` and targets the Stage origin with the existing Stage credentials. Configure Stage entity inputs using `WEBAPI_REQUESTS_FILE`; missing inputs still skip their methods. GitHub Actions only builds and checks discovery; it does not verify live provider availability. A red test retains the actual HTTP/application error and full response in its output.

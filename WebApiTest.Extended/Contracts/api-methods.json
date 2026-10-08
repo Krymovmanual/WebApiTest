@@ -74,7 +74,10 @@
     "pathValues": {},
     "query": {},
     "required": [],
-    "anonymous": false
+    "anonymous": false,
+    "devEntityFields": [
+      "id"
+    ]
   },
   "POST /api/CoinPaymentsProvider/getWithdrawalHistory": {
     "method": "POST",
@@ -127,7 +130,10 @@
     "pathValues": {},
     "query": {},
     "required": [],
-    "anonymous": false
+    "anonymous": false,
+    "devEntityFields": [
+      "id"
+    ]
   },
   "POST /api/FacilitaPayProvider/getBankAccountStatement": {
     "method": "POST",
@@ -142,7 +148,10 @@
     "pathValues": {},
     "query": {},
     "required": [],
-    "anonymous": false
+    "anonymous": false,
+    "devEntityFields": [
+      "id"
+    ]
   },
   "POST /api/FacilitaPayProvider/getBankAccountBalance": {
     "method": "POST",
@@ -153,7 +162,10 @@
     "pathValues": {},
     "query": {},
     "required": [],
-    "anonymous": false
+    "anonymous": false,
+    "devEntityFields": [
+      "id"
+    ]
   },
   "POST /api/FacilitaPayProvider/getTransactions": {
     "method": "POST",
@@ -179,7 +191,10 @@
     "pathValues": {},
     "query": {},
     "required": [],
-    "anonymous": false
+    "anonymous": false,
+    "devEntityFields": [
+      "id"
+    ]
   },
   "POST /api/FireblocksProvider/getAssetsData": {
     "method": "POST",

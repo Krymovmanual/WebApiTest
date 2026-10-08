@@ -423,5 +423,46 @@
       "zrn": null
     },
     "query": {}
+  },
+  "POST /api/CoinPaymentsProvider/getWithdrawalInformation": {
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getBankAccount": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountStatement": {
+    "body": {
+      "id": null,
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "last_id": null,
+      "per_page": "100"
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountBalance": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
+  },
+  "POST /api/FacilitaPayProvider/getTransaction": {
+    "body": {
+      "id": null
+    },
+    "pathValues": {},
+    "query": {}
   }
 }
