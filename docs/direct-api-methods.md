@@ -1,10 +1,10 @@
 # Direct API method calls
 
-Extended contains 98 read method tests from the supplied Swagger and successful request examples. Each test sends one request to its named method with real API authorization, then prints the full request JSON, HTTP status, elapsed time and full response JSON. Credential fields are masked. Select the individual test and open **Standard Output** in Visual Studio.
+Extended contains 93 read method tests from the supplied Swagger and successful request examples. Each test sends one request to its named method with real API authorization, then prints the full request JSON, HTTP status, elapsed time and full response JSON. Credential fields are masked. Select the individual test and open **Standard Output** in Visual Studio.
 
 Tests are grouped by **Provider**. For example, **CoinPayments → getBalances** displays the balance JSON; `getWithdrawalHistory` uses `Start: 25`. **Koywe → getCurrencyTokenPairs** calls that method directly, without comparing it with another response. **Fireblocks → getTransactions** makes one request, without filter, cursor, sorting or financial assertions.
 
-HTTP 200 and absence of explicit application errors are checked. Empty arrays, null results, changing balances and different orderings are accepted. There are no synthetic offline cases, invalid-token cases, multi-request scenarios or response-time assertions. Write methods, callbacks and withdrawal creation are excluded. Kasha, Maldo, PayRetailers and Wyre remain excluded. Original `WebApiTest` is unchanged.
+HTTP 200 and absence of explicit application errors are checked. Empty arrays, null results, changing balances and different orderings are accepted. There are no synthetic offline cases, invalid-token cases, multi-request scenarios or response-time assertions. Write methods, callbacks and withdrawal creation are excluded. Kasha, Maldo, PayRetailers and Wyre remain excluded. The eleven legacy `WebApiTest` test cases were deleted at the user's request; shared API clients remain.
 
 ## Run in Visual Studio
 
@@ -48,3 +48,7 @@ Eight direct calls use the supplied successful `eth` examples without extra conf
 The other four Infura methods still need configured inputs. No `getTransactionCount` example was supplied. The token history example returned `Contract addresses are forbidden.` after the token contract was also used as the wallet address. Token balance returned zero with `decimals: 0` and `symbol: null`, which does not establish a working token-contract input. Token transaction lookup used a 32-byte transaction hash for `contractAddress`, instead of a 20-byte EVM address. These examples are not promoted to successful default requests or expected-error tests; configure real contract/wallet inputs in `api-requests.local.json`.
 
 `generateAddress` remains outside the automatic read suite because it creates an address. `estimateFees` only requests a fee estimate and does not send a transaction. `WEBAPI_BLOCKCHAIN` and local request configuration can override the supplied chain and inputs; use examples from the chosen chain.
+
+## Removed tests
+
+At the user's request, the ZeroHash collection reads `GET /api/ZeroHashProvider/deposits/digital_asset_addresses` and `GET /api/ZeroHashProvider/withdrawals/requests`, all three QuantfuryPayments/QuantfuryPaymentsSign cases, and the eleven legacy cases formerly shown under `No Traits` were deleted. Remaining ZeroHash detail routes are retained. This removes test coverage only; it does not remove backend endpoints or shared clients. `Suite=Live` is a grouping of the remaining direct tests, not an additional suite of duplicate cases.

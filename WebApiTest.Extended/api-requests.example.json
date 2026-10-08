@@ -271,22 +271,6 @@
     "pathValues": {},
     "query": {}
   },
-  "POST /api/QuantfuryPaymentsProvider/getKyc": {
-    "body": {
-      "userId": null
-    },
-    "pathValues": {},
-    "query": {}
-  },
-  "POST /api/QuantfuryPaymentsSign/getCertificateData": {
-    "body": {
-      "userName": null,
-      "publicKey": null,
-      "utctime": null
-    },
-    "pathValues": {},
-    "query": {}
-  },
   "GET /api/ZeroHashProvider/withdrawals/requests/{id}": {
     "body": null,
     "pathValues": {

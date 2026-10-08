@@ -5,6 +5,7 @@ on:
     branches: [main, feature/extended-api-tests, 'feature/fireblocks-*']
     paths:
       - 'WebApiTest.Extended/**'
+      - 'WebApiTest/**'
       - '.github/workflows/extended-api-tests.yml'
       - 'scripts/**'
   pull_request:
@@ -30,9 +31,9 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       - name: Restore
-        run: dotnet restore WebApiTest.Extended/WebApiTest.Extended.csproj
+        run: dotnet restore WebApiTest.sln
       - name: Build
-        run: dotnet build WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-restore
+        run: dotnet build WebApiTest.sln --configuration Release --no-restore
       - name: Verify direct method discovery
         shell: pwsh
         run: |

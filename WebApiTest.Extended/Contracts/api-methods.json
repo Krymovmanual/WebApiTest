@@ -965,59 +965,9 @@
     "required": [],
     "anonymous": false
   },
-  "POST /api/QuantfuryPaymentsProvider/getKyc": {
-    "method": "POST",
-    "path": "/api/QuantfuryPaymentsProvider/getKyc",
-    "body": {
-      "userId": null
-    },
-    "pathValues": {},
-    "query": {},
-    "required": [
-      "body.userId"
-    ],
-    "anonymous": false
-  },
-  "POST /api/QuantfuryPaymentsProvider/getCurrencyFee": {
-    "method": "POST",
-    "path": "/api/QuantfuryPaymentsProvider/getCurrencyFee",
-    "body": {
-      "currency": "BTC"
-    },
-    "pathValues": {},
-    "query": {},
-    "required": [],
-    "anonymous": false
-  },
-  "POST /api/QuantfuryPaymentsSign/getCertificateData": {
-    "method": "POST",
-    "path": "/api/QuantfuryPaymentsSign/getCertificateData",
-    "body": {
-      "userName": null,
-      "publicKey": null,
-      "utctime": null
-    },
-    "pathValues": {},
-    "query": {},
-    "required": [
-      "body.userName",
-      "body.publicKey",
-      "body.utctime"
-    ],
-    "anonymous": false
-  },
   "GET /api/ZeroHashProvider/assets": {
     "method": "GET",
     "path": "/api/ZeroHashProvider/assets",
-    "body": null,
-    "pathValues": {},
-    "query": {},
-    "required": [],
-    "anonymous": false
-  },
-  "GET /api/ZeroHashProvider/withdrawals/requests": {
-    "method": "GET",
-    "path": "/api/ZeroHashProvider/withdrawals/requests",
     "body": null,
     "pathValues": {},
     "query": {},
@@ -1174,15 +1124,6 @@
     "required": [
       "path.zrn"
     ],
-    "anonymous": false
-  },
-  "GET /api/ZeroHashProvider/deposits/digital_asset_addresses": {
-    "method": "GET",
-    "path": "/api/ZeroHashProvider/deposits/digital_asset_addresses",
-    "body": null,
-    "pathValues": {},
-    "query": {},
-    "required": [],
     "anonymous": false
   },
   "GET /api/ZeroHashProvider/deposits": {
