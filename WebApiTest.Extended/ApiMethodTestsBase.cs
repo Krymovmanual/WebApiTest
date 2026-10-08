@@ -48,7 +48,8 @@ public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper outpu
         JToken data;
         try { data = ApiHarness.ParseWireJson(response.Body); }
         catch (JsonException) { Assert.Fail("Expected JSON response.\n" + diagnostic); return; }
-        if (data is JObject obj)
+        // Inspect response envelopes only; transaction lifecycle statuses are data.
+        foreach (var obj in new[] { data as JObject, (data as JObject)?["result"] as JObject }.OfType<JObject>())
         {
             var error = obj["error"];
             Assert.True(error == null || error.Type == JTokenType.Null || error.Type == JTokenType.Boolean && !error.Value<bool>() ||
@@ -56,7 +57,8 @@ public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper outpu
             var httpStatus = obj["httpStatus"];
             Assert.True(httpStatus == null || !int.TryParse(httpStatus.ToString(), out var status) || status < 400,
                 "Provider reported an unsuccessful HTTP status.\n" + diagnostic);
-            Assert.True(obj["isSuccess"]?.Type != JTokenType.Boolean || obj.Value<bool>("isSuccess"), "Provider reported isSuccess=false.\n" + diagnostic);
+            foreach (var field in new[] { "isSuccess", "IsSuccess", "success" })
+                Assert.True(obj[field]?.Type != JTokenType.Boolean || obj.Value<bool>(field), "Provider reported " + field + "=false.\n" + diagnostic);
         }
         output.WriteLine("Request succeeded. Full response is above.");
     }
