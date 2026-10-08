@@ -69,3 +69,26 @@ dotnet test .\WebApiTest.Extended\WebApiTest.Extended.csproj --settings .\WebApi
 ```
 
 Reports show timing, expected/actual status, counts, allowlisted response fields and assertion outcomes. Token/merchant/owner/account-number fields are omitted. New configured scenarios remain unverified until run against confirmed DEV bodies and data. Existing authorization coverage remains separate.
+
+
+## Collect the missing bodies and responses as one package
+
+The current accessible repository contains tests, not the WebAPI controller implementation. Existing DEV report `provider-batch.trx` executed five checks successfully: FacilitaPay token, twelve positive rates and eight unique bank accounts; OpenPayd token; Nuvei_v2 session. The fourteen configured reads were not executed. This report does not contain their request bodies.
+
+Bitolo balance now also belongs to the normal batch. Set `WEBAPI_BITOLO_CURRENCY` to a confirmed configured currency in the selected runsettings; this basic read needs no local body profile. It still proves only the successful structured envelope, not the exact balance or currency mapping.
+
+To capture all available wrapper requests in one browser session:
+
+1. Open the DEV WebAPI Swagger you already use. Open DevTools → Network and enable Preserve log.
+2. Execute the available **read methods listed above**, using known DEV account/transaction identifiers. Do not execute withdrawals, payouts, updates, callbacks or webhook methods. If a required body is unknown, leave that method uncaptured.
+3. Export the Network log as HAR **with response content** to a local file. Browser authentication values may be in the original HAR, so import it locally rather than upload the raw HAR.
+4. Run the offline importer:
+
+```powershell
+git pull
+.\scripts\Import-ProviderReadHar.ps1 -HarFile "$env:USERPROFILE\Downloads\providers.har"
+```
+
+Send `provider-captures.local.json` from the repository root after reviewing it. It contains only successful supported DEV WebAPI reads. Cookies, headers and nested secret/owner/bank-number/address fields are omitted or redacted. The script makes no network calls, does not overwrite an existing capture and reports methods that were not captured. Use `-OutputFile .\provider-captures-next.local.json` for another batch.
+
+Captured responses are evidence for building assertions, **not automatically generated functional coverage**. No `provider-read.local.json` is generated from a successful snapshot. Request fields that were redacted must be restored locally from confirmed data before replay. On older PowerShell versions, JSON date values may be normalized to an ISO string in the redacted capture; do not use those captures to assert exact wire-date formatting.

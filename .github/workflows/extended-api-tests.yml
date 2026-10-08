@@ -6,13 +6,13 @@ on:
     paths:
       - 'WebApiTest.Extended/**'
       - '.github/workflows/extended-api-tests.yml'
-      - 'scripts/Run-ExtendedTests.ps1'
+      - 'scripts/**'
   pull_request:
     branches: [main]
     paths:
       - 'WebApiTest.Extended/**'
       - '.github/workflows/extended-api-tests.yml'
-      - 'scripts/Run-ExtendedTests.ps1'
+      - 'scripts/**'
   workflow_dispatch:
 
 permissions:
@@ -43,6 +43,9 @@ jobs:
           if (!(Test-Path TestResults/extended-results.html)) { throw "HTML report missing" }
           $report = Get-Content -Raw TestResults/extended-results.html
           if ($report -notmatch 'ConfiguredReadCatalogContracts' -or $report -notmatch 'Passed') { throw "Test rows missing from report" }
+      - name: Verify provider HAR import
+        shell: pwsh
+        run: ./scripts/Test-ProviderReadHarImport.ps1
       - name: Save test results
         if: always()
         uses: actions/upload-artifact@v4

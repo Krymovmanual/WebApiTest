@@ -12,6 +12,16 @@ public class ProviderBatchContracts(ApiHarness api, ITestOutputHelper output)
     private async Task<JObject> Read(string route) => ApiHarness.SuccessfulJson(
         await TestReport.SendAsync(api, output, "POST", route, await TestReport.GetTokenAsync(api, output)));
 
+    [BitoloReadFact, Trait("Suite", "Live"), Trait("Provider", "Bitolo"), Trait("Coverage", "ReadEnvelope")]
+    public async Task BitoloBalanceReturnsSuccessfulStructuredResult()
+    {
+        var currency = Environment.GetEnvironmentVariable("WEBAPI_BITOLO_CURRENCY")!;
+        var data = await Read("/api/Bitolo/" + Uri.EscapeDataString(currency) + "/getBalance");
+        ProviderBatchChecks.SuccessFlags(data);
+        Assert.True(data["result"] is JObject or JArray, "Expected a structured Bitolo balance result.");
+        output.WriteLine("Bitolo: HTTP/application success and structured balance result verified. Currency identity and provider-specific balance fields require confirmed response data.");
+    }
+
     [LiveFact, Trait("Suite", "Live"), Trait("Provider", "Nuvei_v2")]
     public async Task NuveiV2SessionReturnsSuccessfulProviderSession()
     {
