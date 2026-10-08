@@ -10,3 +10,7 @@ TestResults/
 
 # Local verified provider requests and assertions
 provider-read.local.json
+
+# Local browser captures may contain credentials or customer data
+*.har
+provider-captures*.json
