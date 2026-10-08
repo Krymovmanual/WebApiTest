@@ -72,7 +72,7 @@ internal static class TestReport
     {
         var key = new string(name.Where(char.IsLetterOrDigit).ToArray()).ToLowerInvariant();
         return key.Contains("password") || key.Contains("secret") || key.Contains("privatekey") ||
-            key.Contains("apikey") || key.Contains("token") || key is "jwt" or "authorization" or
+            key.Contains("apikey") || key.EndsWith("token", StringComparison.Ordinal) || key is "jwt" or "authorization" or
             "bearer" or "key" or "signature" or "clientassertion" or "credential" or "credentials";
     }
 
