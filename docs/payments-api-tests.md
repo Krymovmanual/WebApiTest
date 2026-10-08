@@ -12,8 +12,7 @@ The tracked dev.runsettings contains no credentials. Copy it to ignored dev.loca
 
 ## Implemented coverage
 
-- Offline: contract integrity for the 217 operations in the active test scope, schema references, catalog and exact authorization matrix. Separate regression tests validate nested response schema checks.
-- Live authorization: 322 requests (missing/malformed Bearer) for 161 Swagger-protected operations in the active test scope, grouped by provider. No valid credentials or populated bodies are sent. Placeholder routes use ARS/ethereum/deliberately nonexistent IDs only to exercise authorization. 400/404 is a failure, not proof of authentication enforcement.
+- Offline: contract integrity for the 217 operations in the active test scope, schema references, catalog. Separate regression tests validate nested response schema checks.
 - Live provider reads: 10 read endpoints (5 grouped in FireblocksReadContracts, plus vault listing/pagination in FireblocksVaultContracts), 4 provider token/session contracts, Version and DeployDate. Fireblocks checks additionally validate provider metadata, exchange retrieval status, nested fiat balances and wallet field types. See [Fireblocks coverage](fireblocks-coverage.md) for all 49 operations and mapping confidence. Vault listing and transaction history add two functional read endpoints; other Fireblocks gaps remain explicit.
 - Live ZeroHash: 8 nonmutating collection GET requests with schema-based validation. Uses configured API credentials even though Swagger omits security. Application errors fail even with HTTP 200. Missing result fails. Optional nullable CLR properties are accepted because this Swagger 2 snapshot lacks reliable nullable metadata; required properties and present nonnull property types are enforced. No inferred numeric/ID restrictions.
 - Live Infura: 3 missing-required-body validation cases, enabled only when WEBAPI_BLOCKCHAIN is explicitly configured to a supported DEV chain identifier. No transactions or wallet creation.
@@ -35,7 +34,7 @@ FireblocksTransactionContracts checks transaction-history limit and createdAt DE
 
 After running Extended tests, select an individual test case in Test Explorer and open its Output / Standard Output link (label varies by VS version). xUnit captures output for passed and failed tests. A grouped theory node may not show output: select the individual data row. The green toolbar Start button starts the application, not these tests.
 
-All live Extended requests now report method, route, HTTP status, elapsed milliseconds and configured response-time budget before assertions. Read tests report collection counts and selected IDs, asset names, balances, transaction amounts/statuses/fees and currency pairs. Exchange rates are listed individually. Empty configured collections print zero items; this does not establish provider availability or exercise pagination. Vault pagination reports whether another cursor is present. Provider session tests report token receipt without printing its value. Authorization cases state missing/malformed bearer and the expected HTTP 401/403.
+All live Extended requests now report method, route, HTTP status, elapsed milliseconds and configured response-time budget before assertions. Read tests report collection counts and selected IDs, asset names, balances, transaction amounts/statuses/fees and currency pairs. Exchange rates are listed individually. Empty configured collections print zero items; this does not establish provider availability or exercise pagination. Vault pagination reports whether another cursor is present. Provider session tests report token receipt without printing its value. Missing/malformed Bearer tests were deleted at the user's request.
 
 Responses use an explicit field allowlist instead of raw JSON. Passwords, tokens, headers, bank account details, addresses, notes and unknown nested objects are omitted. Bank-account reads show count only. Offline tests describe fixture/documentation checks, never live provider results; the Swagger catalog summary separates functional coverage categories from authorization-only coverage. Output does not weaken existing assertions or turn application errors into success.
 
@@ -57,7 +56,6 @@ When API authentication fails before a provider request, Output identifies autho
 ### Expected HTTP status and additional read scenarios
 
 Each request now prints expected and actual HTTP status separately from body assertions.
-Authorization rejection tests expect 401/403; their success does not verify a working provider operation.
 An authenticated read returning 401 prints an unexpected authorization rejection.
 Infura missing-body validation expects 400.
 
@@ -88,7 +86,7 @@ failure messages, so review it before sharing. No credentials are passed by the 
 
 ### Fireblocks relationships and discriminating read scenarios
 
-`FireblocksScenarioContracts` contains nine live rows, separate from authorization checks:
+`FireblocksScenarioContracts` contains nine live rows, using valid API authorization:
 
 | Scenario | What must be proved |
 | --- | --- |
@@ -139,4 +137,9 @@ See [provider-read-batch.md](provider-read-batch.md) for the fixed read catalog,
 
 ### Provider exclusions
 
-KASHA, MALDO, PayRetailers and Wyre are excluded at the user's request. Their provider authorization classes, related Quantfury deposit authorization rows, and PayRetailers balance read were removed. The active catalog now contains 217 operations. The raw supplied Swagger remains intact as source evidence; its excluded routes are removed from the in-memory specification before offline and live contract checks.
+KASHA, MALDO, PayRetailers and Wyre are excluded at the user's request. Their tests were removed. The active catalog now contains 217 operations. The raw supplied Swagger remains intact as source evidence; its excluded routes are removed from the in-memory specification before offline and live contract checks.
+
+
+### Removed negative authorization tests
+
+All 322 missing/malformed Bearer live cases and their offline matrix were deleted. An HTTP 401 from a normal authenticated request remains an error. Original WebApiTest files are unchanged.
