@@ -33,7 +33,7 @@ try {
 <!doctype html><html lang="en"><meta charset="utf-8"><title>Extended API test results</title>
 <style>body{font:16px system-ui;margin:2rem}details{border-bottom:1px solid #ccc;padding:.6rem}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style>
 <h1>Extended API tests</h1><p>$(Encode ($counts -join ' | '))</p>
-<p>Expected 401/403 authorization rejections do not prove provider functionality. Expand a test to see its scenario and output.</p>
+<p>Expand a test to see its request, response and failure details.</p>
 $($sections -join "`n")</html>
 "@
     $htmlPath = Join-Path $results "extended-results.html"
