@@ -1228,5 +1228,37 @@
     "anonymous": false,
     "devOnly": true,
     "newTransactionIds": true
+  },
+  "POST /api/FireblocksProvider/setAutoFuel": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/setAutoFuel",
+    "body": {
+      "id": "14",
+      "autoFuel": true
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id",
+      "body.autoFuel"
+    ],
+    "anonymous": false,
+    "devOnly": true
+  },
+  "POST /api/FireblocksProvider/refreshBalance": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/refreshBalance",
+    "body": {
+      "accountId": "14",
+      "AssetId": "ETH_TEST5"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId",
+      "body.AssetId"
+    ],
+    "anonymous": false,
+    "devOnly": true
   }
 }
