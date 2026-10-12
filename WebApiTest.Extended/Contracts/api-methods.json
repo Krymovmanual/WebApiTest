@@ -593,18 +593,28 @@
     "method": "POST",
     "path": "/api/Infura/{blockchain}/token/{contractAddress}/getTransactions",
     "body": {
-      "address": null,
-      "fromBlock": "0x1312d00",
-      "toBlock": "latest"
+      "address": "0x7169D38820dfd117C3FA1f22a697dBA58d90BA06",
+      "fromBlock": "0x673C50",
+      "toBlock": "0x673DC0"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "ETH",
+      "contractAddress": "0x7169D38820dfd117C3FA1f22a697dBA58d90BA06"
+    },
     "query": {},
     "required": [
       "path.blockchain",
       "path.contractAddress",
       "body.address"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "pathValues.blockchain",
+      "pathValues.contractAddress",
+      "body.address",
+      "body.fromBlock",
+      "body.toBlock"
+    ]
   },
   "POST /api/Infura/{blockchain}/getEthTransactions": {
     "method": "POST",
@@ -697,16 +707,24 @@
     "method": "POST",
     "path": "/api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash",
     "body": {
-      "transactionHash": null
+      "transactionHash": "0x547b0c4df1c8a417d236e2ec84266ad32e8ea0b7973860d23da03bd6ebe0c63f"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "ETH",
+      "contractAddress": "0x7169D38820dfd117C3FA1f22a697dBA58d90BA06"
+    },
     "query": {},
     "required": [
       "path.blockchain",
       "path.contractAddress",
       "body.transactionHash"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "pathValues.blockchain",
+      "pathValues.contractAddress",
+      "body.transactionHash"
+    ]
   },
   "POST /api/Infura/{blockchain}/getTransactionCount": {
     "method": "POST",
@@ -905,14 +923,17 @@
     "method": "POST",
     "path": "/api/Nuvei_v2_Provider/getPayoutStatus",
     "body": {
-      "clientRequestId": null
+      "clientRequestId": "019F123E-79FF-78FF-AED0-BA7B695544B4"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.clientRequestId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.clientRequestId"
+    ]
   },
   "POST /api/Nuvei_v2_Provider/getRequests": {
     "method": "POST",
