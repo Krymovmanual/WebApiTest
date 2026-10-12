@@ -43,9 +43,9 @@ The Dev Azure pipeline enables the live suite with `WEBAPI_RUN_LIVE=1` and targe
 
 ## Infura supplied examples
 
-Ten direct calls use the supplied successful `eth` examples without extra configuration: `getAccounts`, `getBalance`, `getEthTransactions`, `getBlockByNumber`, `getTransactionRecipient`, `getTransactionByHash`, `getGasPrice`, `estimateFees`, `getTransactionCount`, and token `getBalance`. Each prints its current full JSON. Historical balances, gas, block metadata and transaction contents are not asserted; empty arrays remain valid. The route named `getTransactionRecipient` returns the receipt in the supplied capture, so its response is printed unchanged.
+All twelve direct calls use the supplied successful `eth` examples without extra configuration: `getAccounts`, `getBalance`, `getEthTransactions`, `getBlockByNumber`, `getTransactionRecipient`, `getTransactionByHash`, `getGasPrice`, `estimateFees`, `getTransactionCount`, token `getBalance`, token `getTransactions`, and token `getTransactionByHash`. Each prints its current full JSON. Historical balances, gas, block metadata and transaction contents are not asserted; empty arrays remain valid. The route named `getTransactionRecipient` returns the receipt in the supplied capture, so its response is printed unchanged.
 
-The supplied token balance request uses contract `0xc3761EB917CD790B30dAD99f6Cc5b4Ff93C4F9eA` and the supplied wallet address. Its captured zero balance, zero decimals and null symbol are accepted as returned data; the test does not establish token metadata correctness. Token history and token transaction lookup still require real inputs. The previous failing examples for these two methods are not reused.
+The supplied token balance request uses contract `0xc3761EB917CD790B30dAD99f6Cc5b4Ff93C4F9eA` and the supplied wallet address. Its captured zero balance, zero decimals and null symbol are accepted as returned data; the test does not establish token metadata correctness. Token history and token transaction lookup now use the latest supplied successful DEV requests with contract 0x7169D38820dfd117C3FA1f22a697dBA58d90BA06; empty results are accepted without asserting matching transfers exist. The earlier failing examples are not reused.
 
 `generateAddress` remains outside the automatic read suite because it creates an address. `estimateFees` only requests a fee estimate and does not send a transaction. `WEBAPI_BLOCKCHAIN` and local request configuration can override the supplied chain and inputs; use examples from the chosen chain.
 
@@ -73,7 +73,7 @@ The user explicitly authorized `POST /api/FireblocksProvider/createTransaction` 
 
 ## Auto-fuel and balance refresh
 
-The supplied DEV calls `setAutoFuel` (id 14, autoFuel true) and `refreshBalance` (accountId 14, AssetId ETH_TEST5) are included in Run All and the hourly Azure suite. Both are blocked outside the DEV host. setAutoFuel sets vault 14 auto-fuel to true on every run; it does not toggle or restore the setting. refreshBalance requests the current refreshed balance; historical amounts and block heights are not asserted. Both use existing HTTP/application error checks and print full responses. These operations are separate from transaction creation and do not generate transaction IDs. Local request overrides remain supported. Total discovery: 96 methods; 21 methods still need missing real inputs in the default configuration.
+The supplied DEV calls `setAutoFuel` (id 14, autoFuel true) and `refreshBalance` (accountId 14, AssetId ETH_TEST5) are included in Run All and the hourly Azure suite. Both are blocked outside the DEV host. setAutoFuel sets vault 14 auto-fuel to true on every run; it does not toggle or restore the setting. refreshBalance requests the current refreshed balance; historical amounts and block heights are not asserted. Both use existing HTTP/application error checks and print full responses. These operations are separate from transaction creation and do not generate transaction IDs. Local request overrides remain supported. Total discovery: 96 methods; 18 methods still need missing real inputs in the default configuration.
 
 ## Koywe supplied DEV detail requests
 
@@ -82,3 +82,9 @@ Four previously gated methods now use the user's successful DEV inputs: `getOrde
 ## OpenPayd supplied DEV details
 
 `getAccount` uses id USD05617307136470 and `getTransactionInfo` uses id 9aa292d1-adae-41ba-bffa-247dc8f6a101 from the user's successful requests. Captured IDs are gated to DEV; local overrides remain supported. Each method prints the full current JSON. An actual HTTP 200 and absence of application errors are checked; wrapper httpStatus 0, negative payout amounts, null fields and lifecycle status RELEASED are accepted as data. Balances and historical amounts are not pinned. No payout is created. Discovery remains 96 methods. Default missing-input skips decrease from 23 to 21; OpenPayd getHistory still needs an ID.
+
+## Nuvei v2 payout and remaining Infura inputs
+
+Nuvei_v2 `getPayoutStatus` uses the supplied clientRequestId 019F123E-79FF-78FF-AED0-BA7B695544B4. This is a status read, not payout creation. Captured APPROVED/SUCCESS and amount are not pinned.
+
+Infura token `getTransactionByHash` uses the supplied transaction hash and token `getTransactions` uses the supplied address and exact block range 0x673C50 to 0x673DC0. Both use ETH and contract 0x7169D38820dfd117C3FA1f22a697dBA58d90BA06. The user's successful empty arrays are valid; the tests do not claim any token transfer was found. These three requests are gated to DEV and retain local overrides. Full JSON and existing HTTP/application error checks remain. Discovery remains 96 methods; default missing-input skips decrease from 21 to 18. All twelve Infura methods now have supplied inputs. A live run determines actual outcomes.
