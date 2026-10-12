@@ -20,9 +20,6 @@ public sealed class FireblocksMethods(ApiHarness api, ITestOutputHelper output) 
     [ApiMethodFact("POST /api/FireblocksProvider/getFiatAccounts")]
     public Task getFiatAccounts() => CallAsync("POST /api/FireblocksProvider/getFiatAccounts");
 
-    [ApiMethodFact("POST /api/FireblocksProvider/getFiatAccount")]
-    public Task getFiatAccount() => CallAsync("POST /api/FireblocksProvider/getFiatAccount");
-
     [ApiMethodFact("POST /api/FireblocksProvider/getNetworkFee")]
     public Task getNetworkFee() => CallAsync("POST /api/FireblocksProvider/getNetworkFee");
 
@@ -44,23 +41,8 @@ public sealed class FireblocksMethods(ApiHarness api, ITestOutputHelper output) 
     [ApiMethodFact("POST /api/FireblocksProvider/getInternalWallets")]
     public Task getInternalWallets() => CallAsync("POST /api/FireblocksProvider/getInternalWallets");
 
-    [ApiMethodFact("POST /api/FireblocksProvider/getInternalWallet")]
-    public Task getInternalWallet() => CallAsync("POST /api/FireblocksProvider/getInternalWallet");
-
-    [ApiMethodFact("POST /api/FireblocksProvider/getInternalWalletPaginated")]
-    public Task getInternalWalletPaginated() => CallAsync("POST /api/FireblocksProvider/getInternalWalletPaginated");
-
-    [ApiMethodFact("POST /api/FireblocksProvider/getInternalWalletAsset")]
-    public Task getInternalWalletAsset() => CallAsync("POST /api/FireblocksProvider/getInternalWalletAsset");
-
     [ApiMethodFact("POST /api/FireblocksProvider/getExternalWallets")]
     public Task getExternalWallets() => CallAsync("POST /api/FireblocksProvider/getExternalWallets");
-
-    [ApiMethodFact("POST /api/FireblocksProvider/getExternalWallet")]
-    public Task getExternalWallet() => CallAsync("POST /api/FireblocksProvider/getExternalWallet");
-
-    [ApiMethodFact("POST /api/FireblocksProvider/getExternalWalletAsset")]
-    public Task getExternalWalletAsset() => CallAsync("POST /api/FireblocksProvider/getExternalWalletAsset");
 
     [ApiMethodFact("POST /api/FireblocksProvider/getAccountAddresses")]
     public Task getAccountAddresses() => CallAsync("POST /api/FireblocksProvider/getAccountAddresses");
