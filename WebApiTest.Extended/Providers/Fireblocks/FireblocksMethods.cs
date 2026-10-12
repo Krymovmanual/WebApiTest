@@ -79,4 +79,9 @@ public sealed class FireblocksMethods(ApiHarness api, ITestOutputHelper output) 
 
     [ApiMethodFact("POST /api/FireblocksProvider/createTransaction")]
     public Task createTransaction() => CallAsync("POST /api/FireblocksProvider/createTransaction");
+    [ApiMethodFact("POST /api/FireblocksProvider/setAutoFuel")]
+    public Task setAutoFuel() => CallAsync("POST /api/FireblocksProvider/setAutoFuel");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/refreshBalance")]
+    public Task refreshBalance() => CallAsync("POST /api/FireblocksProvider/refreshBalance");
 }
