@@ -993,27 +993,33 @@
     "method": "POST",
     "path": "/api/OpenPaydProvider/getTransactionInfo",
     "body": {
-      "id": null
+      "id": "9aa292d1-adae-41ba-bffa-247dc8f6a101"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id"
+    ]
   },
   "POST /api/OpenPaydProvider/getAccount": {
     "method": "POST",
     "path": "/api/OpenPaydProvider/getAccount",
     "body": {
-      "id": null
+      "id": "USD05617307136470"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id"
+    ]
   },
   "POST /api/OpenPaydProvider/getAccounts": {
     "method": "POST",
