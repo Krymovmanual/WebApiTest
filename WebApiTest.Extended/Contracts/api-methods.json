@@ -237,14 +237,17 @@
     "method": "POST",
     "path": "/api/FireblocksProvider/getVaultAccount",
     "body": {
-      "id": null
+      "id": "12"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id"
+    ]
   },
   "POST /api/FireblocksProvider/getFiatAccounts": {
     "method": "POST",
@@ -272,16 +275,16 @@
     "method": "POST",
     "path": "/api/FireblocksProvider/getNetworkFee",
     "body": {
-      "assetId": "ETH",
+      "assetId": "ETH_TEST5",
       "operation": "TRANSFER",
       "source": {
         "type": "VAULT_ACCOUNT",
-        "id": null
+        "id": "14"
       },
       "destination": {
         "type": "ONE_TIME_ADDRESS",
         "oneTimeAddress": {
-          "address": null
+          "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
         }
       },
       "amount": "0.015"
@@ -292,7 +295,12 @@
       "body.source.id",
       "body.destination.oneTimeAddress.address"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.assetId",
+      "body.source.id",
+      "body.destination.oneTimeAddress.address"
+    ]
   },
   "POST /api/FireblocksProvider/getTransactions": {
     "method": "POST",
@@ -311,56 +319,71 @@
     "method": "POST",
     "path": "/api/FireblocksProvider/getTransaction",
     "body": {
-      "id": null
+      "id": "afbf693d-a139-4a57-95ff-dc1b2fa88b48"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id"
+    ]
   },
   "POST /api/FireblocksProvider/getMaxSpendableAmount": {
     "method": "POST",
     "path": "/api/FireblocksProvider/getMaxSpendableAmount",
     "body": {
-      "accountId": null,
-      "AssetId": "BTC"
+      "accountId": "14",
+      "AssetId": "BTC_TEST"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.accountId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.accountId",
+      "body.AssetId"
+    ]
   },
   "POST /api/FireblocksProvider/getUnspentInputs": {
     "method": "POST",
     "path": "/api/FireblocksProvider/getUnspentInputs",
     "body": {
-      "accountId": null,
-      "AssetId": "BTC"
+      "accountId": "14",
+      "AssetId": "BTC_TEST"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.accountId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.accountId",
+      "body.AssetId"
+    ]
   },
   "POST /api/FireblocksProvider/getBalance": {
     "method": "POST",
     "path": "/api/FireblocksProvider/getBalance",
     "body": {
-      "accountId": null,
-      "AssetId": "ETH"
+      "accountId": "14",
+      "AssetId": "ETH_TEST5"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.accountId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.accountId",
+      "body.AssetId"
+    ]
   },
   "POST /api/FireblocksProvider/getInternalWallets": {
     "method": "POST",
@@ -453,7 +476,7 @@
     "method": "POST",
     "path": "/api/FireblocksProvider/getAccountAddresses",
     "body": {
-      "id": null,
+      "id": "4",
       "assetId": "ETH"
     },
     "pathValues": {},
@@ -461,13 +484,17 @@
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id",
+      "body.assetId"
+    ]
   },
   "POST /api/FireblocksProvider/getAccountAddressesPaginated": {
     "method": "POST",
     "path": "/api/FireblocksProvider/getAccountAddressesPaginated",
     "body": {
-      "id": null,
+      "id": "12",
       "assetId": "ETH",
       "limit": 100,
       "after": ""
@@ -477,7 +504,11 @@
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id",
+      "body.assetId"
+    ]
   },
   "POST /api/FireblocksProvider/getExchangeAccounts": {
     "method": "POST",
@@ -492,14 +523,17 @@
     "method": "POST",
     "path": "/api/FireblocksProvider/getExchangeAccountById",
     "body": {
-      "id": null
+      "id": "4bb58f8b-90f3-4bda-b235-748a1d171555"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.id"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.id"
+    ]
   },
   "POST /api/FireblocksProvider/getFeeForAsset": {
     "method": "POST",
@@ -640,16 +674,24 @@
     "method": "POST",
     "path": "/api/Infura/{blockchain}/token/{contractAddress}/getBalance",
     "body": {
-      "address": null
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "ETH",
+      "contractAddress": "0xc3761EB917CD790B30dAD99f6Cc5b4Ff93C4F9eA"
+    },
     "query": {},
     "required": [
       "path.blockchain",
       "path.contractAddress",
       "body.address"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.address",
+      "pathValues.blockchain",
+      "pathValues.contractAddress"
+    ]
   },
   "POST /api/Infura/{blockchain}/token/{contractAddress}/getTransactionByHash": {
     "method": "POST",
@@ -670,16 +712,22 @@
     "method": "POST",
     "path": "/api/Infura/{blockchain}/getTransactionCount",
     "body": {
-      "address": null,
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
       "blockNumber": "pending"
     },
-    "pathValues": {},
+    "pathValues": {
+      "blockchain": "ETH"
+    },
     "query": {},
     "required": [
       "path.blockchain",
       "body.address"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.address",
+      "pathValues.blockchain"
+    ]
   },
   "POST /api/KoyweProvider/getToken": {
     "method": "POST",

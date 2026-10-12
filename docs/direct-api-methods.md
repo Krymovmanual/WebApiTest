@@ -16,7 +16,7 @@ Authorization uses `BEARER_TOKEN`, or `DEV_USERNAME` plus `DEV_PASSWORD`, or ign
 
 ## Real request inputs
 
-Provided CoinPayments, FacilitaPay and Bitolo entity IDs are retained for DEV. Other environments need their own configured entity IDs. Swagger demonstration entity IDs, account addresses, hashes and email addresses are not sent. Methods needing those values are **Skipped**, with the missing fields named in the skip reason. A skip does not establish that the endpoint works.
+Provided CoinPayments, FacilitaPay, Bitolo, Fireblocks and Infura inputs are retained for DEV. Other environments need their own configured entity IDs. Swagger demonstration entity IDs, account addresses, hashes and email addresses are not sent. Methods needing those values are **Skipped**, with the missing fields named in the skip reason. A skip does not establish that the endpoint works.
 
 Copy `WebApiTest.Extended/api-requests.example.json` to ignored `api-requests.local.json` in the solution root or Extended directory. Keep only the methods you need and fill their null fields with real data. Request keys are the exact HTTP method and Swagger route:
 
@@ -43,9 +43,9 @@ The Dev Azure pipeline enables the live suite with `WEBAPI_RUN_LIVE=1` and targe
 
 ## Infura supplied examples
 
-Eight direct calls use the supplied successful `eth` examples without extra configuration: `getAccounts`, `getBalance`, `getEthTransactions`, `getBlockByNumber`, `getTransactionRecipient`, `getTransactionByHash`, `getGasPrice`, and `estimateFees`. Each prints its current full JSON. Historical balances, gas, block metadata and transaction contents are not asserted; empty arrays remain valid. The route named `getTransactionRecipient` returns the receipt in the supplied capture, so its response is printed unchanged.
+Ten direct calls use the supplied successful `eth` examples without extra configuration: `getAccounts`, `getBalance`, `getEthTransactions`, `getBlockByNumber`, `getTransactionRecipient`, `getTransactionByHash`, `getGasPrice`, `estimateFees`, `getTransactionCount`, and token `getBalance`. Each prints its current full JSON. Historical balances, gas, block metadata and transaction contents are not asserted; empty arrays remain valid. The route named `getTransactionRecipient` returns the receipt in the supplied capture, so its response is printed unchanged.
 
-The other four Infura methods still need configured inputs. No `getTransactionCount` example was supplied. The token history example returned `Contract addresses are forbidden.` after the token contract was also used as the wallet address. Token balance returned zero with `decimals: 0` and `symbol: null`, which does not establish a working token-contract input. Token transaction lookup used a 32-byte transaction hash for `contractAddress`, instead of a 20-byte EVM address. These examples are not promoted to successful default requests or expected-error tests; configure real contract/wallet inputs in `api-requests.local.json`.
+The supplied token balance request uses contract `0xc3761EB917CD790B30dAD99f6Cc5b4Ff93C4F9eA` and the supplied wallet address. Its captured zero balance, zero decimals and null symbol are accepted as returned data; the test does not establish token metadata correctness. Token history and token transaction lookup still require real inputs. The previous failing examples for these two methods are not reused.
 
 `generateAddress` remains outside the automatic read suite because it creates an address. `estimateFees` only requests a fee estimate and does not send a transaction. `WEBAPI_BLOCKCHAIN` and local request configuration can override the supplied chain and inputs; use examples from the chosen chain.
 
@@ -60,3 +60,9 @@ At the user's request, the ZeroHash collection reads `GET /api/ZeroHashProvider/
 ## Azure execution and grouping
 
 Only `Provider` traits remain on method tests. Removing `Suite=Live` changes Test Explorer grouping, not request execution or scheduling. Keep `WEBAPI_RUN_LIVE=1` in the Azure job. The canonical `azure-pipelines-dev-hourly.yml` matches the deployed Azure pipeline: hourly main schedule, `payments-tests` variable group, Windows 2025, .NET SDK 8.0.425 and TRX publication. See `azure-devops-dev.md` for update instructions. Any external command using `--filter "Suite=Live"` should omit that filter or use `Provider=<name>`.
+
+## Fireblocks supplied DEV inputs
+
+Nine previously gated reads now use the user's successful bodies: `getAccountAddresses` (id 4, ETH), `getAccountAddressesPaginated` (id 12, ETH, limit 100, after empty), `getBalance` (account 14, ETH_TEST5), `getExchangeAccountById`, `getMaxSpendableAmount` (account 14, BTC_TEST), `getNetworkFee` (ETH_TEST5, account 14 and the supplied one-time address), `getTransaction`, `getUnspentInputs` (account 14, BTC_TEST), and `getVaultAccount` (id 12). Fee estimation does not send a transfer. Empty address arrays and null paging are accepted. Captured amounts, fees, transaction status and asset lists are not pinned. Full current responses are printed.
+
+These supplied Fireblocks and new Infura inputs are gated to the DEV host. Another environment needs configured values, including nested source/destination fields and route selectors; local overrides remain supported. Total discovery remains 93 methods. With no additional local configuration, these 11 examples reduce missing-input skips from 38 to 27; actual HTTP outcomes must be checked in a fresh live run.
