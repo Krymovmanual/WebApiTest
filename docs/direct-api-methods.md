@@ -1,6 +1,6 @@
 # Direct API method calls
 
-Extended contains 96 method tests (93 reads, one DEV transfer, auto-fuel configuration and balance refresh) from the supplied Swagger and successful request examples. Each test sends one request to its named method with real API authorization, then prints the full request JSON, HTTP status, elapsed time and full response JSON. Credential fields are masked. Select the individual test and open **Standard Output** in Visual Studio.
+Extended contains 78 method tests (75 reads, one DEV transfer, auto-fuel configuration and balance refresh) from the supplied Swagger and successful request examples. Each test sends one request to its named method with real API authorization, then prints the full request JSON, HTTP status, elapsed time and full response JSON. Credential fields are masked. Select the individual test and open **Standard Output** in Visual Studio.
 
 Tests are grouped by **Provider**. For example, **CoinPayments → getBalances** displays the balance JSON; `getWithdrawalHistory` uses `Start: 25`. **Koywe → getCurrencyTokenPairs** calls that method directly, without comparing it with another response. **Fireblocks → getTransactions** makes one request, without filter, cursor, sorting or financial assertions.
 
@@ -65,7 +65,7 @@ Only `Provider` traits remain on method tests. Removing `Suite=Live` changes Tes
 
 Nine previously gated reads now use the user's successful bodies: `getAccountAddresses` (id 4, ETH), `getAccountAddressesPaginated` (id 12, ETH, limit 100, after empty), `getBalance` (account 14, ETH_TEST5), `getExchangeAccountById`, `getMaxSpendableAmount` (account 14, BTC_TEST), `getNetworkFee` (ETH_TEST5, account 14 and the supplied one-time address), `getTransaction`, `getUnspentInputs` (account 14, BTC_TEST), and `getVaultAccount` (id 12). Fee estimation does not send a transfer. Empty address arrays and null paging are accepted. Captured amounts, fees, transaction status and asset lists are not pinned. Full current responses are printed.
 
-These supplied Fireblocks and new Infura inputs are gated to the DEV host. Another environment needs configured values, including nested source/destination fields and route selectors; local overrides remain supported. Total discovery is now 96 methods. With no additional local configuration, these 11 examples reduce missing-input skips from 38 to 27; actual HTTP outcomes must be checked in a fresh live run.
+These supplied Fireblocks and new Infura inputs are gated to the DEV host. Another environment needs configured values, including nested source/destination fields and route selectors; local overrides remain supported. Total discovery is now 78 methods. With no additional local configuration, these 11 examples reduce missing-input skips from 38 to 27; actual HTTP outcomes must be checked in a fresh live run.
 
 ## Hourly DEV transfer
 
@@ -73,18 +73,43 @@ The user explicitly authorized `POST /api/FireblocksProvider/createTransaction` 
 
 ## Auto-fuel and balance refresh
 
-The supplied DEV calls `setAutoFuel` (id 14, autoFuel true) and `refreshBalance` (accountId 14, AssetId ETH_TEST5) are included in Run All and the hourly Azure suite. Both are blocked outside the DEV host. setAutoFuel sets vault 14 auto-fuel to true on every run; it does not toggle or restore the setting. refreshBalance requests the current refreshed balance; historical amounts and block heights are not asserted. Both use existing HTTP/application error checks and print full responses. These operations are separate from transaction creation and do not generate transaction IDs. Local request overrides remain supported. Total discovery: 96 methods; 18 methods still need missing real inputs in the default configuration.
+The supplied DEV calls `setAutoFuel` (id 14, autoFuel true) and `refreshBalance` (accountId 14, AssetId ETH_TEST5) are included in Run All and the hourly Azure suite. Both are blocked outside the DEV host. setAutoFuel sets vault 14 auto-fuel to true on every run; it does not toggle or restore the setting. refreshBalance requests the current refreshed balance; historical amounts and block heights are not asserted. Both use existing HTTP/application error checks and print full responses. These operations are separate from transaction creation and do not generate transaction IDs. Local request overrides remain supported. Total discovery: 78 methods; No methods need missing real inputs after removal of the 18 gated methods in the default configuration.
 
 ## Koywe supplied DEV detail requests
 
-Four previously gated methods now use the user's successful DEV inputs: `getOrderInfo` with orderId 6481cd16-9c71-4ece-993f-c79cc1310e46, `getOrderInfoByExternalId` with externalId 08288140-e704-4f53-923c-0fd1b1318fe0, `getAccounyInfo` (the route spelling is preserved) with email dlkjg@kj.com, and GET `quotes/{quoteId}` with quoteId 698b4410603700abc5861978. Inputs are gated to DEV and local overrides remain supported. REJECTED/DELIVERED are order lifecycle data, not request failures. Null account address fields and historical quote validity are accepted; no historical amounts, statuses or future quote validity are asserted. Each method prints its full current JSON and uses the existing HTTP/application error checks. Discovery remains 96 methods. Missing-input skips in the default configuration decrease from 27 to 23; a fresh live run determines actual results.
+Four previously gated methods now use the user's successful DEV inputs: `getOrderInfo` with orderId 6481cd16-9c71-4ece-993f-c79cc1310e46, `getOrderInfoByExternalId` with externalId 08288140-e704-4f53-923c-0fd1b1318fe0, `getAccounyInfo` (the route spelling is preserved) with email dlkjg@kj.com, and GET `quotes/{quoteId}` with quoteId 698b4410603700abc5861978. Inputs are gated to DEV and local overrides remain supported. REJECTED/DELIVERED are order lifecycle data, not request failures. Null account address fields and historical quote validity are accepted; no historical amounts, statuses or future quote validity are asserted. Each method prints its full current JSON and uses the existing HTTP/application error checks. Discovery remains 78 methods. Missing-input skips in the default configuration decrease from 27 to 23; a fresh live run determines actual results.
 
 ## OpenPayd supplied DEV details
 
-`getAccount` uses id USD05617307136470 and `getTransactionInfo` uses id 9aa292d1-adae-41ba-bffa-247dc8f6a101 from the user's successful requests. Captured IDs are gated to DEV; local overrides remain supported. Each method prints the full current JSON. An actual HTTP 200 and absence of application errors are checked; wrapper httpStatus 0, negative payout amounts, null fields and lifecycle status RELEASED are accepted as data. Balances and historical amounts are not pinned. No payout is created. Discovery remains 96 methods. Default missing-input skips decrease from 23 to 21; OpenPayd getHistory still needs an ID.
+`getAccount` uses id USD05617307136470 and `getTransactionInfo` uses id 9aa292d1-adae-41ba-bffa-247dc8f6a101 from the user's successful requests. Captured IDs are gated to DEV; local overrides remain supported. Each method prints the full current JSON. An actual HTTP 200 and absence of application errors are checked; wrapper httpStatus 0, negative payout amounts, null fields and lifecycle status RELEASED are accepted as data. Balances and historical amounts are not pinned. No payout is created. Discovery remains 78 methods. Default missing-input skips decrease from 23 to 21; OpenPayd getHistory still needs an ID.
 
 ## Nuvei v2 payout and remaining Infura inputs
 
 Nuvei_v2 `getPayoutStatus` uses the supplied clientRequestId 019F123E-79FF-78FF-AED0-BA7B695544B4. This is a status read, not payout creation. Captured APPROVED/SUCCESS and amount are not pinned.
 
-Infura token `getTransactionByHash` uses the supplied transaction hash and token `getTransactions` uses the supplied address and exact block range 0x673C50 to 0x673DC0. Both use ETH and contract 0x7169D38820dfd117C3FA1f22a697dBA58d90BA06. The user's successful empty arrays are valid; the tests do not claim any token transfer was found. These three requests are gated to DEV and retain local overrides. Full JSON and existing HTTP/application error checks remain. Discovery remains 96 methods; default missing-input skips decrease from 21 to 18. All twelve Infura methods now have supplied inputs. A live run determines actual outcomes.
+Infura token `getTransactionByHash` uses the supplied transaction hash and token `getTransactions` uses the supplied address and exact block range 0x673C50 to 0x673DC0. Both use ETH and contract 0x7169D38820dfd117C3FA1f22a697dBA58d90BA06. The user's successful empty arrays are valid; the tests do not claim any token transfer was found. These three requests are gated to DEV and retain local overrides. Full JSON and existing HTTP/application error checks remain. Discovery remains 78 methods; default missing-input skips decrease from 21 to 18. All twelve Infura methods now have supplied inputs. A live run determines actual outcomes.
+
+## Removed on 12 October 2026
+
+At the user's request, the following 18 direct method tests and their catalog/example entries were removed:
+
+- `POST /api/FireblocksProvider/getExternalWallet`
+- `POST /api/FireblocksProvider/getExternalWalletAsset`
+- `POST /api/FireblocksProvider/getFiatAccount`
+- `POST /api/FireblocksProvider/getInternalWallet`
+- `POST /api/FireblocksProvider/getInternalWalletAsset`
+- `POST /api/FireblocksProvider/getInternalWalletPaginated`
+- `POST /api/NuveiProvider/getPayoutStatus`
+- `POST /api/OpenPaydProvider/getHistory`
+- `GET /api/ZeroHashProvider/accounts/{accountId}`
+- `GET /api/ZeroHashProvider/accounts/{accountId}/movements`
+- `GET /api/ZeroHashProvider/accounts/{accountId}/run_history`
+- `GET /api/ZeroHashProvider/accounts/{zrn}/details`
+- `GET /api/ZeroHashProvider/transfers/{id}`
+- `GET /api/ZeroHashProvider/withdrawals/digital_asset_addresses/{id}`
+- `GET /api/ZeroHashProvider/withdrawals/estimate_network_fee`
+- `GET /api/ZeroHashProvider/withdrawals/locked_network_fee`
+- `GET /api/ZeroHashProvider/withdrawals/requests/{id}`
+- `GET /api/ZeroHashProvider/withdrawals/validate_address`
+
+Current discovery is 78 methods: 75 reads plus createTransaction, setAutoFuel and refreshBalance. The 18 remaining missing-input cases were removed; default DEV requests now have all required inputs. This does not guarantee every live API request succeeds. Backend endpoints and shared API clients are unchanged. Earlier count/skip figures above describe prior updates. Nuvei_v2 getPayoutStatus remains included. Azure YAML is unchanged.
