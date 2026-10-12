@@ -1,21 +1,27 @@
-# Azure DevOps Dev Pipeline Setup
+# Azure DevOps DEV pipeline
 
-The dev API tests run against `https://qu-dev-qfwebapi.azurewebsites.net/` and need credentials for `POST /api/token`.
+The canonical pipeline is `azure-pipelines-dev-hourly.yml`. It matches the working configuration supplied by DevOps for Azure Repos `payments-tests`.
 
-DevOps setup:
+- DEV API: `https://qu-dev-qfwebapi.azurewebsites.net/`
+- Variable group: `payments-tests`
+- Secret variables: `DEV_USERNAME`, `DEV_PASSWORD`
+- Agent image: `windows-2025`
+- .NET SDK: `8.0.425`
+- Manual runs and hourly runs of `main`; no push or PR triggers.
+- Run only `WebApiTest.Extended`, without a Suite filter.
+- Publish TRX even when tests fail; fail the job for failed tests or missing reports.
 
-1. Create an Azure Pipeline Library variable group named `WebApiTest-Dev`.
-2. Add secret variables `DEV_USERNAME` and `DEV_PASSWORD`.
-3. Authorize the pipeline to access the `WebApiTest-Dev` variable group.
-4. Create an Azure Pipeline from `azure-pipelines-dev.yml`.
+## Setup and updates
 
-For local execution, create `dev_creds.json` in the repository root:
+1. Authorize the existing `payments-tests` variable group for `WebApiTest-DEV`.
+2. Keep the Azure pipeline YAML path at `/azure-pipelines-dev-hourly.yml`.
+3. Update source files through an Azure branch and PR, preserving Azure Git history. Remove obsolete source files identified by the update; simply copying over old files can retain deleted tests.
+4. Keep credentials and Azure permissions in Azure. Never commit `dev_creds.json`, bearer tokens or private request configurations.
+5. Future ZIP exports must include this tracked YAML unchanged. Do not regenerate a second pipeline from old setup instructions.
+6. Run manually after importing an update and inspect the Tests tab.
 
-```json
-{
-  "userName": "your-dev-username",
-  "password": "your-dev-password"
-}
-```
+The former `azure-pipelines-dev.yml` is retired. When updating an older checkout, remove that file and keep the existing hourly YAML path. An Azure pipeline still configured to use the retired path must be switched once to the canonical path; do not create a duplicate schedule.
 
-`dev_creds.json` is ignored by git and must not be committed.
+For local Visual Studio runs, select `WebApiTest.Extended/dev.runsettings` and use ignored `dev_creds.json` at the repository root, with `userName` and `password`, or the same DEV environment variables. Pipeline changes do not alter local test behavior.
+
+Methods missing real inputs are skipped. Optional additional inputs may be supplied through an authorized Azure Secure File and `WEBAPI_REQUESTS_FILE`. See `direct-api-methods.md`.

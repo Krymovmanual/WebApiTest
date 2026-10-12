@@ -59,4 +59,4 @@ At the user's request, the ZeroHash collection reads `GET /api/ZeroHashProvider/
 
 ## Azure execution and grouping
 
-Only `Provider` traits remain on method tests. Removing `Suite=Live` changes Test Explorer grouping, not request execution or scheduling. Keep `WEBAPI_RUN_LIVE=1` in the Azure job. A manually configured hourly Azure schedule runs the same method tests; this change does not create a new schedule. Any external command using `--filter "Suite=Live"` should omit that filter or use `Provider=<name>`.
+Only `Provider` traits remain on method tests. Removing `Suite=Live` changes Test Explorer grouping, not request execution or scheduling. Keep `WEBAPI_RUN_LIVE=1` in the Azure job. The canonical `azure-pipelines-dev-hourly.yml` matches the deployed Azure pipeline: hourly main schedule, `payments-tests` variable group, Windows 2025, .NET SDK 8.0.425 and TRX publication. See `azure-devops-dev.md` for update instructions. Any external command using `--filter "Suite=Live"` should omit that filter or use `Provider=<name>`.
