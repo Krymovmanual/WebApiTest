@@ -742,14 +742,17 @@
     "method": "POST",
     "path": "/api/KoyweProvider/getAccounyInfo",
     "body": {
-      "email": null
+      "email": "dlkjg@kj.com"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.email"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.email"
+    ]
   },
   "POST /api/KoyweProvider/getAllCurrencyTokenPairs": {
     "method": "POST",
@@ -833,27 +836,33 @@
     "method": "POST",
     "path": "/api/KoyweProvider/getOrderInfo",
     "body": {
-      "orderId": null
+      "orderId": "6481cd16-9c71-4ece-993f-c79cc1310e46"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.orderId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.orderId"
+    ]
   },
   "POST /api/KoyweProvider/getOrderInfoByExternalId": {
     "method": "POST",
     "path": "/api/KoyweProvider/getOrderInfoByExternalId",
     "body": {
-      "externalId": null
+      "externalId": "08288140-e704-4f53-923c-0fd1b1318fe0"
     },
     "pathValues": {},
     "query": {},
     "required": [
       "body.externalId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "body.externalId"
+    ]
   },
   "POST /api/KoyweProvider/getBalance": {
     "method": "POST",
@@ -871,12 +880,17 @@
     "method": "GET",
     "path": "/api/KoyweProvider/quotes/{quoteId}",
     "body": null,
-    "pathValues": {},
+    "pathValues": {
+      "quoteId": "698b4410603700abc5861978"
+    },
     "query": {},
     "required": [
       "path.quoteId"
     ],
-    "anonymous": false
+    "anonymous": false,
+    "devRequestFields": [
+      "pathValues.quoteId"
+    ]
   },
   "POST /api/Nuvei_v2_Provider/getSessionToken": {
     "method": "POST",
