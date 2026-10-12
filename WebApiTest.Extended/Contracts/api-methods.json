@@ -1198,5 +1198,35 @@
       "blockchain": "eth"
     },
     "required": []
+  },
+  "POST /api/FireblocksProvider/createTransaction": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/createTransaction",
+    "body": {
+      "assetId": "ETH_TEST5",
+      "operation": "TRANSFER",
+      "source": {
+        "type": "VAULT_ACCOUNT",
+        "id": "14"
+      },
+      "destination": {
+        "type": "ONE_TIME_ADDRESS",
+        "oneTimeAddress": {
+          "address": "0xbc9B16dc45BeF56c8b4E332387fa330Be95aF6ca",
+          "tag": ""
+        }
+      },
+      "amount": "0.00001",
+      "feeLevel": "MEDIUM",
+      "treatAsGrossAmount": false,
+      "note": "DEV API test",
+      "customerRefId": "c0a8012e-5d3f-4b7a-8e21-6f9b4c2d1e70"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false,
+    "devOnly": true,
+    "newTransactionIds": true
   }
 }
