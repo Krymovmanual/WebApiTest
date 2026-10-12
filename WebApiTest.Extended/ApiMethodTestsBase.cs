@@ -15,7 +15,10 @@ public sealed class ApiMethodFactAttribute : FactAttribute
         // Bad configuration must fail during execution instead of being counted as a skip.
         try
         {
-            var missing = ApiMethodRequests.Missing(ApiMethodRequests.Load(key));
+            var request = ApiMethodRequests.Load(key);
+            if (request.Value<bool>("devOnly") && Settings.BaseUrl.Host != "qu-dev-qfwebapi.azurewebsites.net")
+            { Skip = "Transaction creation is enabled only for the DEV API host."; return; }
+            var missing = ApiMethodRequests.Missing(request);
             if (missing.Count != 0)
                 Skip = $"{key}: configure {string.Join(", ", missing)} in api-requests.local.json (see api-requests.example.json).";
         }
@@ -28,6 +31,8 @@ public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper outpu
     protected async Task CallAsync(string key)
     {
         var request = ApiMethodRequests.Load(key);
+        Assert.True(!request.Value<bool>("devOnly") || Settings.BaseUrl.Host == "qu-dev-qfwebapi.azurewebsites.net",
+            "Transaction creation is enabled only for the DEV API host.");
         var missing = ApiMethodRequests.Missing(request);
         Assert.True(missing.Count == 0, "Missing request inputs: " + string.Join(", ", missing));
         var path = request.Value<string>("path")!;
@@ -40,6 +45,20 @@ public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper outpu
         if (queryString.Length != 0) path += "?" + queryString;
         var authorization = request.Value<bool>("anonymous") ? null : await TestReport.GetTokenAsync(api, output);
         var body = request["body"];
+        if (request.Value<bool>("newTransactionIds"))
+        {
+            Assert.Equal("ETH_TEST5", body!.Value<string>("assetId"));
+            Assert.Equal("TRANSFER", body.Value<string>("operation"));
+            Assert.Equal("VAULT_ACCOUNT", body.SelectToken("source.type")?.ToString());
+            Assert.Equal("14", body.SelectToken("source.id")?.ToString());
+            Assert.Equal("ONE_TIME_ADDRESS", body.SelectToken("destination.type")?.ToString());
+            Assert.Equal("0xbc9B16dc45BeF56c8b4E332387fa330Be95aF6ca", body.SelectToken("destination.oneTimeAddress.address")?.ToString());
+            Assert.Equal("0.00001", body.Value<string>("amount"));
+            var operationId = Guid.NewGuid().ToString("D");
+            body["externalTxId"] = operationId;
+            body["idempotencyKey"] = operationId;
+            output.WriteLine("Creating one DEV test transfer. Operation ID: " + operationId);
+        }
         var response = await TestReport.SendAsync(api, output, request.Value<string>("method")!, path,
             authorization, body?.Type == JTokenType.Null ? null : body?.ToString(Formatting.None));
         var diagnostic = $"{key}: HTTP {response.Status}\n{TestReport.JsonForOutput(response.Body, authorization)}";
@@ -59,6 +78,11 @@ public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper outpu
                 "Provider reported an unsuccessful HTTP status.\n" + diagnostic);
             foreach (var field in new[] { "isSuccess", "IsSuccess", "success" })
                 Assert.True(obj[field]?.Type != JTokenType.Boolean || obj.Value<bool>(field), "Provider reported " + field + "=false.\n" + diagnostic);
+        }
+        if (request.Value<bool>("newTransactionIds"))
+        {
+            var transactionId = data.SelectToken("result.id") ?? data.SelectToken("result.txId");
+            Assert.False(string.IsNullOrWhiteSpace(transactionId?.ToString()), "Creation response has no transaction ID.\n" + diagnostic);
         }
         output.WriteLine("Request succeeded. Full response is above.");
     }
