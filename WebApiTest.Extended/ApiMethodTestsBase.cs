@@ -77,6 +77,16 @@ internal static class ApiMethodRequests
                 request["body"]![field!] = null;
                 ((JArray)request["required"]!).Add("body." + field);
             }
+        // Supplied DEV inputs can include nested body values and route selectors.
+        if (Settings.BaseUrl.Host != "qu-dev-qfwebapi.azurewebsites.net" && request["devRequestFields"] is JArray devFields)
+            foreach (var field in devFields.Values<string>())
+            {
+                var value = request.SelectToken(field!);
+                value?.Replace(JValue.CreateNull());
+                var required = (JArray)request["required"]!;
+                var selector = field!.Replace("pathValues.", "path.", StringComparison.Ordinal);
+                if (!required.Values<string>().Contains(selector)) required.Add(selector);
+            }
         var configPath = Environment.GetEnvironmentVariable("WEBAPI_REQUESTS_FILE") ?? FindLocalFile();
         if (configPath != null)
         {
