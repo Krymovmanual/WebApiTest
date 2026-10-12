@@ -1,0 +1,50 @@
+trigger: none
+pr: none
+
+schedules:
+  - cron: '0 * * * *'
+    displayName: hourly dev API tests
+    branches:
+      include:
+        - main
+    always: true
+
+pool:
+  vmImage: windows-2025
+
+variables:
+  - group: payments-tests
+
+steps:
+  - checkout: self
+
+  - task: UseDotNet@2
+    displayName: install .NET SDK 8.0.425
+    inputs:
+      packageType: sdk
+      version: 8.0.425
+
+  - script: dotnet restore WebApiTest.sln
+    displayName: restore WebApiTest.sln
+
+  - script: dotnet build WebApiTest.sln --configuration Release --no-restore
+    displayName: build WebApiTest.sln
+
+  - script: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --logger trx --results-directory "$(Agent.TempDirectory)/TestResults"
+    displayName: run dev API method tests
+    env:
+      WEBAPI_RUN_LIVE: '1'
+      WEBAPI_BASE_URL: 'https://qu-dev-qfwebapi.azurewebsites.net/'
+      DEV_USERNAME: $(DEV_USERNAME)
+      DEV_PASSWORD: $(DEV_PASSWORD)
+
+  - task: PublishTestResults@2
+    displayName: publish dev API test results
+    condition: always()
+    inputs:
+      testResultsFormat: VSTest
+      searchFolder: '$(Agent.TempDirectory)/TestResults'
+      testResultsFiles: '**/*.trx'
+      testRunTitle: DEV API methods
+      failTaskOnFailedTests: true
+      failTaskOnMissingResultsFile: true
