@@ -25,3 +25,7 @@ The former `azure-pipelines-dev.yml` is retired. When updating an older checkout
 For local Visual Studio runs, select `WebApiTest.Extended/dev.runsettings` and use ignored `dev_creds.json` at the repository root, with `userName` and `password`, or the same DEV environment variables. Pipeline changes do not alter local test behavior.
 
 Methods missing real inputs are skipped. Optional additional inputs may be supplied through an authorized Azure Secure File and `WEBAPI_REQUESTS_FILE`. See `direct-api-methods.md`.
+
+## Telegram notification
+
+The canonical YAML includes the DevOps-supplied `scripts/Send-TelegramTestSummary.ps1` after TRX publication. Preserve both files in future source exports. The step uses `condition: always()` and `continueOnError: true`. Existing Azure variables `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` provide the destination and credential; do not commit their values. No Telegram message is sent by GitHub build/discovery CI. The script is preserved as supplied: its Failed count is total minus passed and therefore includes skipped/non-passing tests. Missing TRX raises an error in the notification step. Azure has already deployed this integration; this change synchronizes the GitHub source for future updates.
