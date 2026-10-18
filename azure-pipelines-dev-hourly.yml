@@ -48,3 +48,13 @@ steps:
       testRunTitle: DEV API methods
       failTaskOnFailedTests: true
       failTaskOnMissingResultsFile: true
+
+  - pwsh: ./scripts/Send-TelegramTestSummary.ps1 -ResultsDirectory "$env:RESULTS_DIRECTORY" -Title "$env:PIPELINE_TITLE"
+    displayName: notify telegram
+    condition: always()
+    continueOnError: true
+    env:
+      RESULTS_DIRECTORY: $(Agent.TempDirectory)/TestResults
+      PIPELINE_TITLE: $(Build.DefinitionName)
+      TELEGRAM_BOT_TOKEN: $(TELEGRAM_BOT_TOKEN)
+      TELEGRAM_CHAT_ID: $(TELEGRAM_CHAT_ID)
