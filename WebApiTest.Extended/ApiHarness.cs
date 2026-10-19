@@ -7,15 +7,26 @@ namespace WebApiTest.Extended;
 
 internal static class Settings
 {
+    public static string TargetEnvironment
+    {
+        get
+        {
+            var value = (Environment.GetEnvironmentVariable("WEBAPI_ENVIRONMENT") ?? "DEV").ToUpperInvariant();
+            if (value is not ("DEV" or "STAGE")) throw new InvalidOperationException("WEBAPI_ENVIRONMENT must be DEV or STAGE.");
+            return value;
+        }
+    }
     public static bool Live => Environment.GetEnvironmentVariable("WEBAPI_RUN_LIVE") == "1";
     public static Uri BaseUrl
     {
         get
         {
-            var value = Environment.GetEnvironmentVariable("WEBAPI_BASE_URL") ?? "https://qu-dev-qfwebapi.azurewebsites.net/";
+            var value = Environment.GetEnvironmentVariable("WEBAPI_BASE_URL") ?? (TargetEnvironment == "DEV" ? "https://qu-dev-qfwebapi.azurewebsites.net/" : "https://qu-stage-qfwebapi.azurewebsites.net/");
             if (!Uri.TryCreate(value, UriKind.Absolute, out var uri) || uri.Scheme != "https" ||
                 !string.IsNullOrEmpty(uri.UserInfo) || uri.Query.Length != 0 || uri.Fragment.Length != 0 ||
                 uri.AbsolutePath != "/") throw new InvalidOperationException("WEBAPI_BASE_URL must be an HTTPS origin.");
+            var expectedHost = TargetEnvironment == "DEV" ? "qu-dev-qfwebapi.azurewebsites.net" : "qu-stage-qfwebapi.azurewebsites.net";
+            if (uri.Host != expectedHost || !uri.IsDefaultPort) throw new InvalidOperationException("API host does not match WEBAPI_ENVIRONMENT.");
             return uri;
         }
     }
@@ -40,22 +51,23 @@ public sealed class ApiHarness : IDisposable
     private DateTime expiresAt;
     public async Task<string> GetTokenAsync()
     {
-        var supplied = Environment.GetEnvironmentVariable("BEARER_TOKEN");
+        var supplied = Environment.GetEnvironmentVariable(Settings.TargetEnvironment + "_BEARER_TOKEN") ?? (Settings.TargetEnvironment == "DEV" ? Environment.GetEnvironmentVariable("BEARER_TOKEN") : null);
         if (!string.IsNullOrWhiteSpace(supplied)) return supplied.Trim();
         await tokenLock.WaitAsync();
         try
         {
             if (token != null && DateTime.UtcNow < expiresAt) return token;
-            var user = Environment.GetEnvironmentVariable("DEV_USERNAME");
-            var password = Environment.GetEnvironmentVariable("DEV_PASSWORD");
+            var user = Environment.GetEnvironmentVariable(Settings.TargetEnvironment + "_USERNAME");
+            var password = Environment.GetEnvironmentVariable(Settings.TargetEnvironment + "_PASSWORD");
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password))
             {
                 if (!string.IsNullOrWhiteSpace(user) || !string.IsNullOrWhiteSpace(password))
-                    throw new InvalidOperationException("Set both DEV_USERNAME and DEV_PASSWORD.");
+                    throw new InvalidOperationException("Set both " + Settings.TargetEnvironment + "_USERNAME and " + Settings.TargetEnvironment + "_PASSWORD.");
+                var credentialsFile = Settings.TargetEnvironment.ToLowerInvariant() + "_creds.json";
                 var directory = new DirectoryInfo(AppContext.BaseDirectory);
-                while (directory != null && !File.Exists(Path.Combine(directory.FullName, "dev_creds.json"))) directory = directory.Parent;
-                if (directory == null) throw new InvalidOperationException("Set BEARER_TOKEN, both Dev credential variables, or dev_creds.json at the repository root.");
-                var credentials = JObject.Parse(await File.ReadAllTextAsync(Path.Combine(directory.FullName, "dev_creds.json")));
+                while (directory != null && !File.Exists(Path.Combine(directory.FullName, credentialsFile))) directory = directory.Parent;
+                if (directory == null) throw new InvalidOperationException("Set credentials for " + Settings.TargetEnvironment + " or " + credentialsFile + " at the repository root.");
+                var credentials = JObject.Parse(await File.ReadAllTextAsync(Path.Combine(directory.FullName, credentialsFile)));
                 user = credentials.Value<string>("userName"); password = credentials.Value<string>("password");
             }
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password)) throw new InvalidOperationException("Credentials must be non-empty.");

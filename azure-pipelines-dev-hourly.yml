@@ -30,9 +30,10 @@ steps:
   - script: dotnet build WebApiTest.sln --configuration Release --no-restore
     displayName: build WebApiTest.sln
 
-  - script: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --logger trx --results-directory "$(Agent.TempDirectory)/TestResults"
+  - script: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --filter "Environment=DEV" --logger trx --results-directory "$(Agent.TempDirectory)/TestResults"
     displayName: run dev API method tests
     env:
+      WEBAPI_ENVIRONMENT: 'DEV'
       WEBAPI_RUN_LIVE: '1'
       WEBAPI_BASE_URL: 'https://qu-dev-qfwebapi.azurewebsites.net/'
       DEV_USERNAME: $(DEV_USERNAME)

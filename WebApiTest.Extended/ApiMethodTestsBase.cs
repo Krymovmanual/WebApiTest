@@ -9,8 +9,9 @@ public sealed class ApiMethodsCollection : ICollectionFixture<ApiHarness> { }
 
 public sealed class ApiMethodFactAttribute : FactAttribute
 {
-    public ApiMethodFactAttribute(string key)
+    public ApiMethodFactAttribute(string key, string environment)
     {
+        if (Settings.TargetEnvironment != environment) { Skip = "Select " + environment + " runsettings."; return; }
         if (!Settings.Live) { Skip = "Set WEBAPI_RUN_LIVE=1 or use dev.runsettings."; return; }
         // Bad configuration must fail during execution instead of being counted as a skip.
         try
@@ -26,10 +27,11 @@ public sealed class ApiMethodFactAttribute : FactAttribute
     }
 }
 
-public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper output)
+public abstract class ApiMethodTestsBase(ApiHarness api, ITestOutputHelper output, string environment)
 {
     protected async Task CallAsync(string key)
     {
+        Assert.Equal(environment, Settings.TargetEnvironment);
         var request = ApiMethodRequests.Load(key);
         Assert.True(!request.Value<bool>("devOnly") || Settings.BaseUrl.Host == "qu-dev-qfwebapi.azurewebsites.net",
             "Transaction creation is enabled only for the DEV API host.");
@@ -92,7 +94,7 @@ internal static class ApiMethodRequests
 {
     internal static JObject Load(string key)
     {
-        var catalog = JObject.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "api-methods.json")));
+        var catalog = JObject.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Contracts", "requests." + Settings.TargetEnvironment.ToLowerInvariant() + ".json")));
         var request = (JObject)(catalog[key]?.DeepClone() ?? throw new InvalidOperationException("Unknown API method: " + key));
         // Captured entity IDs belong to DEV; another environment needs its own IDs.
         if (Settings.BaseUrl.Host != "qu-dev-qfwebapi.azurewebsites.net" && request["devEntityFields"] is JArray fields)
@@ -149,9 +151,12 @@ internal static class ApiMethodRequests
         var directory = new DirectoryInfo(AppContext.BaseDirectory);
         while (directory != null)
         {
-            foreach (var path in new[] { Path.Combine(directory.FullName, "api-requests.local.json"),
-                Path.Combine(directory.FullName, "WebApiTest.Extended", "api-requests.local.json") })
+            foreach (var path in new[] { Path.Combine(directory.FullName, "api-requests." + Settings.TargetEnvironment.ToLowerInvariant() + ".local.json"),
+                Path.Combine(directory.FullName, "WebApiTest.Extended", "api-requests." + Settings.TargetEnvironment.ToLowerInvariant() + ".local.json") })
                 if (File.Exists(path)) return path;
+            if (Settings.TargetEnvironment == "DEV")
+                foreach (var legacy in new[] { Path.Combine(directory.FullName, "api-requests.local.json"), Path.Combine(directory.FullName, "WebApiTest.Extended", "api-requests.local.json") })
+                    if (File.Exists(legacy)) return legacy;
             directory = directory.Parent;
         }
         return null;

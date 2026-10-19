@@ -18,3 +18,6 @@ WebApiTest.Extended/obj/
 # Local browser captures may contain credentials or customer data
 *.har
 provider-captures*.json
+
+stage_creds.json
+api-requests.*.local.json

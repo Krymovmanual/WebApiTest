@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <TestCaseFilter>Environment=STAGE</TestCaseFilter>
+    <EnvironmentVariables>
+      <WEBAPI_ENVIRONMENT>STAGE</WEBAPI_ENVIRONMENT>
+      <WEBAPI_RUN_LIVE>1</WEBAPI_RUN_LIVE>
+      <WEBAPI_BASE_URL>https://qu-stage-qfwebapi.azurewebsites.net/</WEBAPI_BASE_URL>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>

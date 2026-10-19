@@ -1,0 +1,280 @@
+{
+  "POST /api/Bitolo/{currency}/getBalance": {
+    "method": "POST",
+    "path": "/api/Bitolo/{currency}/getBalance",
+    "body": {},
+    "pathValues": {
+      "currency": "ars"
+    },
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/Bitolo/{currency}/getTransactionStatus": {
+    "method": "POST",
+    "path": "/api/Bitolo/{currency}/getTransactionStatus",
+    "body": {
+      "order_id": "01a01a7d-2bc8-72ec-9dae-b6483ac5fae3"
+    },
+    "pathValues": {
+      "currency": "ars"
+    },
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/Bitolo/{currency}/getTransactionList": {
+    "method": "POST",
+    "path": "/api/Bitolo/{currency}/getTransactionList",
+    "body": {
+      "page": 1,
+      "limit": 10
+    },
+    "pathValues": {
+      "currency": "ars"
+    },
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getBalances": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getBalances",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "all": 0
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getExchangeRates": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getExchangeRates",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getWithdrawalInformation": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getWithdrawalInformation",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "id": "CWKF3C7EWMSNRGC9TOLSNJ1XYK"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/CoinPaymentsProvider/getWithdrawalHistory": {
+    "method": "POST",
+    "path": "/api/CoinPaymentsProvider/getWithdrawalHistory",
+    "body": {
+      "key": "mCoinPublicKey",
+      "PrivateKey": "mCoinPrivateKey",
+      "Limit": 25,
+      "Start": 25,
+      "Newer": 0
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getToken": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getExchangeRates": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getExchangeRates",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccounts": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccount": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccount",
+    "body": {
+      "id": "b7a423d1-bfa8-40aa-b517-137a2f2ff07c"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountBalance": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccountBalance",
+    "body": {
+      "id": "b7a423d1-bfa8-40aa-b517-137a2f2ff07c"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getTransactions": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getTransactions",
+    "body": {
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "complete": true,
+      "last_id": null,
+      "per_page": "100"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getTransaction": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getTransaction",
+    "body": {
+      "id": "27c07f91-fee4-43d9-9ac0-696fab339524"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAssetsData": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAssetsData",
+    "body": {
+      "assetClass": "NATIVE",
+      "symbol": "ETH",
+      "scope": "GLOBAL",
+      "deprecated": false,
+      "pageSize": 100
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAssets": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAssets",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getVaultAccountsPaged": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getVaultAccountsPaged",
+    "body": {
+      "limit": 50
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getVaultAccount": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getVaultAccount",
+    "body": {
+      "id": "4"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getFiatAccounts": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getFiatAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getBalance": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getBalance",
+    "body": {
+      "accountId": "4",
+      "AssetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getInternalWallets": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getInternalWallets",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExternalWallets": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExternalWallets",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAccountAddresses": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAccountAddresses",
+    "body": {
+      "id": "4",
+      "assetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExchangeAccounts": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExchangeAccounts",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  }
+}
