@@ -1,0 +1,61 @@
+trigger: none
+pr: none
+
+schedules:
+  - cron: '30 * * * *'
+    displayName: hourly stage API tests
+    branches:
+      include:
+        - main
+    always: true
+
+pool:
+  vmImage: windows-2025
+
+variables:
+  - group: payments-tests-stage
+
+steps:
+  - checkout: self
+
+  - task: UseDotNet@2
+    displayName: install .NET SDK 8.0.425
+    inputs:
+      packageType: sdk
+      version: 8.0.425
+
+  - script: dotnet restore WebApiTest.sln
+    displayName: restore WebApiTest.sln
+
+  - script: dotnet build WebApiTest.sln --configuration Release --no-restore
+    displayName: build WebApiTest.sln
+
+  - script: dotnet test WebApiTest.Extended/WebApiTest.Extended.csproj --configuration Release --no-build --filter "Environment=STAGE" --logger trx --results-directory "$(Agent.TempDirectory)/TestResults"
+    displayName: run stage API method tests
+    env:
+      WEBAPI_ENVIRONMENT: 'STAGE'
+      WEBAPI_RUN_LIVE: '1'
+      WEBAPI_BASE_URL: 'https://qu-stage-qfwebapi.azurewebsites.net/'
+      STAGE_USERNAME: $(STAGE_USERNAME)
+      STAGE_PASSWORD: $(STAGE_PASSWORD)
+
+  - task: PublishTestResults@2
+    displayName: publish stage API test results
+    condition: always()
+    inputs:
+      testResultsFormat: VSTest
+      searchFolder: '$(Agent.TempDirectory)/TestResults'
+      testResultsFiles: '**/*.trx'
+      testRunTitle: STAGE API methods
+      failTaskOnFailedTests: true
+      failTaskOnMissingResultsFile: true
+
+  - pwsh: ./scripts/Send-TelegramTestSummary.ps1 -ResultsDirectory "$env:RESULTS_DIRECTORY" -Title "$env:PIPELINE_TITLE"
+    displayName: notify telegram
+    condition: always()
+    continueOnError: true
+    env:
+      RESULTS_DIRECTORY: $(Agent.TempDirectory)/TestResults
+      PIPELINE_TITLE: $(Build.DefinitionName)
+      TELEGRAM_BOT_TOKEN: $(TELEGRAM_BOT_TOKEN)
+      TELEGRAM_CHAT_ID: $(TELEGRAM_CHAT_ID)
