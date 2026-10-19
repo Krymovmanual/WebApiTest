@@ -13,5 +13,4 @@ public sealed class BitoloMethods(ApiHarness api, ITestOutputHelper output) : Ap
 
     [ApiMethodFact("POST /api/Bitolo/{currency}/getTransactionList", "STAGE")]
     public Task getTransactionList() => CallAsync("POST /api/Bitolo/{currency}/getTransactionList");
-
 }

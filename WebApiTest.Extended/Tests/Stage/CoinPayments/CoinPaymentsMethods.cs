@@ -16,5 +16,4 @@ public sealed class CoinPaymentsMethods(ApiHarness api, ITestOutputHelper output
 
     [ApiMethodFact("POST /api/CoinPaymentsProvider/getWithdrawalHistory", "STAGE")]
     public Task getWithdrawalHistory() => CallAsync("POST /api/CoinPaymentsProvider/getWithdrawalHistory");
-
 }
