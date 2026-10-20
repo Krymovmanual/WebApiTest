@@ -276,5 +276,126 @@
     "query": {},
     "required": [],
     "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getAccountAddressesPaginated": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getAccountAddressesPaginated",
+    "body": {
+      "id": "12",
+      "assetId": "ETH",
+      "limit": 100,
+      "after": ""
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getExchangeAccountById": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getExchangeAccountById",
+    "body": {
+      "id": "141a8713-3fb1-4102-955d-780a061f2089"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getNetworkFee": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getNetworkFee",
+    "body": {
+      "assetId": "ETH",
+      "operation": "TRANSFER",
+      "source": {
+        "type": "VAULT_ACCOUNT",
+        "id": "4"
+      },
+      "destination": {
+        "type": "ONE_TIME_ADDRESS",
+        "oneTimeAddress": {
+          "address": "0x06d35b8d97518d8206e96455A159743BdF87629F"
+        }
+      },
+      "amount": "0.015"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.source.id",
+      "body.destination.oneTimeAddress.address"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getMaxSpendableAmount": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getMaxSpendableAmount",
+    "body": {
+      "accountId": "4",
+      "AssetId": "BTC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getUnspentInputs": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getUnspentInputs",
+    "body": {
+      "accountId": "4",
+      "AssetId": "BTC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getFeeForAsset": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getFeeForAsset",
+    "body": {
+      "id": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getToken": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getAllCurrencyTokenPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getAllCurrencyTokenPairs",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getAllTokenCurrenciesPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getAllTokenCurrenciesPairs",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
   }
 }
