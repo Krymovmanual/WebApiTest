@@ -52,4 +52,10 @@ public sealed class FireblocksMethods(ApiHarness api, ITestOutputHelper output) 
 
     [ApiMethodFact("POST /api/FireblocksProvider/getFeeForAsset", "STAGE")]
     public Task getFeeForAsset() => CallAsync("POST /api/FireblocksProvider/getFeeForAsset");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getTransactions", "STAGE")]
+    public Task getTransactions() => CallAsync("POST /api/FireblocksProvider/getTransactions");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getTransaction", "STAGE")]
+    public Task getTransaction() => CallAsync("POST /api/FireblocksProvider/getTransaction");
 }
