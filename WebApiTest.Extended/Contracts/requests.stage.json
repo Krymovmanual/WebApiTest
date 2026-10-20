@@ -397,5 +397,182 @@
     "query": {},
     "required": [],
     "anonymous": false
+  },
+  "POST /api/FacilitaPayProvider/getBankAccountStatement": {
+    "method": "POST",
+    "path": "/api/FacilitaPayProvider/getBankAccountStatement",
+    "body": {
+      "id": "b7a423d1-bfa8-40aa-b517-137a2f2ff07c",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-09-30T23:59:59Z",
+      "last_id": null,
+      "per_page": "100"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getTransactions": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getTransactions",
+    "body": {
+      "after": 1735689600000,
+      "before": 1738368000000,
+      "status": [
+        "COMPLETED",
+        "FAILED"
+      ],
+      "orderBy": "createdAt",
+      "sourceType": "VAULT_ACCOUNT",
+      "sourceId": "4",
+      "assets": [
+        "ETH",
+        "USDT_ERC20"
+      ],
+      "limit": "200",
+      "nextOrPreviousPage": ""
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/getTransaction": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/getTransaction",
+    "body": {
+      "id": "dcd22c23-039a-46ba-a7c4-72c7cd6de5c5"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getAccounyInfo": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getAccounyInfo",
+    "body": {
+      "email": "quinonespaul189@gmail.com"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.email"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getCurrencyTokenPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getCurrencyTokenPairs",
+    "body": {
+      "currency": "CLP"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getTokenCurrenciesPairs": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getTokenCurrenciesPairs",
+    "body": {
+      "coin": "USDC"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getPaymentMethods": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getPaymentMethods",
+    "body": {
+      "symbol": "CLP",
+      "clientId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getPayoutMethods": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getPayoutMethods",
+    "body": {
+      "symbol": "CLP",
+      "clientId": null
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getHistory": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getHistory",
+    "body": {
+      "pageSize": 50,
+      "pageNumber": 1,
+      "initDate": "2026-09-01T00:00:00Z",
+      "endDate": "2026-09-30T23:59:59Z"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getOrderInfo": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getOrderInfo",
+    "body": {
+      "orderId": "6481cd16-9c71-4ece-993f-c79cc1310e46"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.orderId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getOrderInfoByExternalId": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getOrderInfoByExternalId",
+    "body": {
+      "externalId": "08288140-e704-4f53-923c-0fd1b1318fe0"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.externalId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/KoyweProvider/getBalance": {
+    "method": "POST",
+    "path": "/api/KoyweProvider/getBalance",
+    "body": {
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-30"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "GET /api/KoyweProvider/quotes/{quoteId}": {
+    "method": "GET",
+    "path": "/api/KoyweProvider/quotes/{quoteId}",
+    "body": null,
+    "pathValues": {
+      "quoteId": "699d935ffcc48a1386cb3cd0"
+    },
+    "query": {},
+    "required": [
+      "path.quoteId"
+    ],
+    "anonymous": false
   }
 }

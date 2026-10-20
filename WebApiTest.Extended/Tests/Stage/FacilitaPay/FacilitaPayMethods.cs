@@ -25,4 +25,7 @@ public sealed class FacilitaPayMethods(ApiHarness api, ITestOutputHelper output)
 
     [ApiMethodFact("POST /api/FacilitaPayProvider/getTransaction", "STAGE")]
     public Task getTransaction() => CallAsync("POST /api/FacilitaPayProvider/getTransaction");
+
+    [ApiMethodFact("POST /api/FacilitaPayProvider/getBankAccountStatement", "STAGE")]
+    public Task getBankAccountStatement() => CallAsync("POST /api/FacilitaPayProvider/getBankAccountStatement");
 }
