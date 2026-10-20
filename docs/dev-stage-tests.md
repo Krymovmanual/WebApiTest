@@ -4,8 +4,8 @@
 Тесты находятся в Tests/Dev и Tests/Stage, namespace разделяет их в Test Explorer.
 Группировка: Namespace → Class → Method. Trait Environment позволяет выбирать среду.
 
-DEV: 78 методов. STAGE: 24 подтвержденных метода (Bitolo 3, CoinPayments 4,
-FacilitaPay 7, Fireblocks 10). Остальные STAGE методы добавляются после получения
+DEV: 78 методов. STAGE: 33 подтвержденных метода (Bitolo 3, CoinPayments 4,
+FacilitaPay 7, Fireblocks 16, Koywe 3). Остальные STAGE методы добавляются после получения
 их данных. Infura, ZeroHash и операции записи в STAGE не включены.
 
 ## Локально

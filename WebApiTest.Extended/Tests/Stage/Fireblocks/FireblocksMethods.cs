@@ -34,4 +34,22 @@ public sealed class FireblocksMethods(ApiHarness api, ITestOutputHelper output) 
 
     [ApiMethodFact("POST /api/FireblocksProvider/getExchangeAccounts", "STAGE")]
     public Task getExchangeAccounts() => CallAsync("POST /api/FireblocksProvider/getExchangeAccounts");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getAccountAddressesPaginated", "STAGE")]
+    public Task getAccountAddressesPaginated() => CallAsync("POST /api/FireblocksProvider/getAccountAddressesPaginated");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getExchangeAccountById", "STAGE")]
+    public Task getExchangeAccountById() => CallAsync("POST /api/FireblocksProvider/getExchangeAccountById");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getNetworkFee", "STAGE")]
+    public Task getNetworkFee() => CallAsync("POST /api/FireblocksProvider/getNetworkFee");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getMaxSpendableAmount", "STAGE")]
+    public Task getMaxSpendableAmount() => CallAsync("POST /api/FireblocksProvider/getMaxSpendableAmount");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getUnspentInputs", "STAGE")]
+    public Task getUnspentInputs() => CallAsync("POST /api/FireblocksProvider/getUnspentInputs");
+
+    [ApiMethodFact("POST /api/FireblocksProvider/getFeeForAsset", "STAGE")]
+    public Task getFeeForAsset() => CallAsync("POST /api/FireblocksProvider/getFeeForAsset");
 }
