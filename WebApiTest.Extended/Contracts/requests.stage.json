@@ -574,5 +574,136 @@
       "path.quoteId"
     ],
     "anonymous": false
+  },
+  "GET /api/DeployDate": {
+    "method": "GET",
+    "path": "/api/DeployDate",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": true
+  },
+  "GET /api/Version": {
+    "method": "GET",
+    "path": "/api/Version",
+    "body": null,
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": true
+  },
+  "POST /api/Nuvei_v2_Provider/getSessionToken": {
+    "method": "POST",
+    "path": "/api/Nuvei_v2_Provider/getSessionToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/Nuvei_v2_Provider/getPayoutStatus": {
+    "method": "POST",
+    "path": "/api/Nuvei_v2_Provider/getPayoutStatus",
+    "body": {
+      "clientRequestId": "01A0C3EF-6FAD-7ABA-95CB-59C73C0A727E"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.clientRequestId"
+    ],
+    "anonymous": false
+  },
+  "POST /api/Nuvei_v2_Provider/getRequests": {
+    "method": "POST",
+    "path": "/api/Nuvei_v2_Provider/getRequests",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/NuveiProvider/getSessionToken": {
+    "method": "POST",
+    "path": "/api/NuveiProvider/getSessionToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/NuveiProvider/getRequests": {
+    "method": "POST",
+    "path": "/api/NuveiProvider/getRequests",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getToken": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getToken",
+    "body": {},
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getTransactionInfo": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getTransactionInfo",
+    "body": {
+      "id": "38ee015a-5679-4992-8643-6876f229a420"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getAccount": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getAccount",
+    "body": {
+      "id": "EUR06448606191470"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.id"
+    ],
+    "anonymous": false
+  },
+  "POST /api/OpenPaydProvider/getAccounts": {
+    "method": "POST",
+    "path": "/api/OpenPaydProvider/getAccounts",
+    "body": {
+      "currency": "EUR",
+      "status": "ACTIVE",
+      "page": 0,
+      "size": 20
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [],
+    "anonymous": false
+  },
+  "POST /api/FireblocksProvider/refreshBalance": {
+    "method": "POST",
+    "path": "/api/FireblocksProvider/refreshBalance",
+    "body": {
+      "accountId": "4",
+      "AssetId": "ETH"
+    },
+    "pathValues": {},
+    "query": {},
+    "required": [
+      "body.accountId",
+      "body.AssetId"
+    ],
+    "anonymous": false
   }
 }
